@@ -1,51 +1,18 @@
----
-title: "Exercise sheet 1: Biology Basics"
----
+Version: 1.0
 
----------------------------------
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
 
-# Exercise 1 - General
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
 
-Here are some general biology questions. Using the Possible Solutions tab will
-convert each question to multiple choice 
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
 
-#### {.tabset}
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes
 
-##### Question 1A
-
-::: {.question data-latex=""}
-
-Where is the genome stored in prokaryotes and eukaryotes?
-
-::: 
-
-##### Hint 1 : Possible Solutions
-
-- [ ] Inside the nucleus in eukaryotes
-
-- [ ] Outside the cell in prokaryotes
-
-- [ ] Prokaryotes have no genome
-
-- [ ] Inside the nucleolus in prokaryotes
-
-- [ ] In chromatin in eukaryotes
-
-- [ ] Partially in mitochondria in prokaryotes
-
-- [ ] Directly inside the cell in prokaryotes
-
-
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-- [x] Inside the nucleus in eukaryotes
-- [x] Directly inside the cell in prokaryotes
-
-
-::: 
-
-#### {-}
-
+BuildType: Website
