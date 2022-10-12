@@ -1,0 +1,19 @@
+table td:first-child { border-right:  1px solid; }
+table th {border-bottom: 1px solid;}
+.navbar-default {background-color: #003591ff}
+.navbar .navbar-brand {
+  vertical-align: middle;
+}
+.navbar .navbar-img {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navbar img {
+  height: 50px;
+}
+
+.title {
+  font-weight: bold;
+}

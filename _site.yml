@@ -1,0 +1,21 @@
+name: "BioinformaticsII"
+output_dir: "docs"
+author: "@CARD"
+date: "SS2022"
+language: en
+output:
+  html_document:
+    self_contained: no # ensure no html embedding of plots etc
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+    theme: "cosmo"
+    css: "bioinf-style.css"
+  pdf_document:
+    includes:
+      in_header: "_tex/latex_commands.tex"
+urlcolor: blue
+linkcolor: blue
+exclude: ["*.tex", "*.log"]
+
