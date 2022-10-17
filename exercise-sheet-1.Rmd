@@ -19,7 +19,7 @@ Where is the genome stored in prokaryotes and eukaryotes?
 
 ::: 
 
-##### Hint 1 : Possible Solutions
+##### Hint : Possible Answers
 
 - [ ] Inside the nucleus in eukaryotes
 
@@ -37,7 +37,7 @@ Where is the genome stored in prokaryotes and eukaryotes?
 
 
 
-##### Solution
+##### Correct Answer
 
 ::: {.answer data-latex=""}
 
@@ -48,4 +48,573 @@ Where is the genome stored in prokaryotes and eukaryotes?
 ::: 
 
 #### {-}
+
+#### {.tabset}
+
+##### Question 1B
+
+::: {.question data-latex=""}
+
+Name two more differences between prokaryotes and eukaryotes?
+
+::: 
+
+##### Hint : Possible Answers
+
+- [ ] Prokaryotes have compartmentation through membrane
+
+- [ ] Eukaryotes are not multi-cellular organisms
+
+- [ ] Prokaryotes have mitochondria
+
+- [ ] Eukaryotes have no nucleus
+
+- [ ] Prokaryotes have no ER
+
+- [ ] Eukaryotes are single cell organisms
+
+- [ ] Eukaryotes have no flagellum
+
+
+
+##### Correct Answer
+
+::: {.answer data-latex=""}
+
+- [x] Prokaryotes have no ER
+
+
+::: 
+
+#### {-}
+
+
+#### {.tabset}
+
+##### Question 1C
+
+::: {.question data-latex=""}
+
+List examples of  prokaryotes and eukaryotes.
+
+::: 
+
+##### Hint : Possible Answers
+
+- [ ] Escherichia coli is a prokaryote
+
+- [ ] Amoebas are prokaryotes
+
+- [ ] Fungi are eukaryotes
+
+- [ ] Archaea are eukaryotes
+
+- [ ] Insects are eukaryotes
+
+- [ ] Salmonella is a prokaryote
+
+- [ ] Plasmodium malariae is a prokaryote
+
+
+
+##### Correct Answer
+
+::: {.answer data-latex=""}
+
+- [x] Escherichia coli is a prokaryote
+- [x] Fungi are eukaryotes
+- [x] Insects are eukaryotes
+- [x] Salmonella is a prokaryote
+
+
+::: 
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 1D
+
+::: {.question data-latex=""}
+
+What are the three information-carrying biopolymers?
+
+::: 
+
+##### Hint : Possible Answers
+
+- [ ] Protein
+
+- [ ] Cellulose
+
+- [ ] DNA
+
+- [ ] Polysaccharides
+
+- [ ] RNA
+
+- [ ] amino acid
+
+- [ ] nucleotide
+
+
+
+##### Correct Answer
+
+::: {.answer data-latex=""}
+
+- [x] Protein
+- [x] DNA
+- [x] RNA
+
+
+::: 
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 1E
+
+::: {.question data-latex=""}
+
+What is denoted by the “Central Dogma” of molecular biology?
+
+::: 
+
+##### Hint : Possible Answers
+
+- [ ] Protein can make Protein
+
+- [ ] DNA can make DNA
+
+- [ ] Protein can make RNA and then RNA makes DNA
+
+- [ ] DNA can make RNA and then RNA makes Protein
+
+- [ ] RNA can make RNA
+
+- [ ] DNA can make RNA and then RNA makes DNA
+
+- [ ] Protein can make DNA
+
+
+
+##### Correct Answer
+
+::: {.answer data-latex=""}
+
+- [x] DNA can make DNA
+- [x] DNA can make RNA and then RNA makes Protein
+- [x] RNA can make RNA
+- [x] DNA can make RNA and then RNA makes DNA
+
+::: 
+
+#### {-}
+
+
+
+
+
+
+
+
+# Exercise 2 - DNA and RNA
+The genetic information of an organism is stored in the DNA in the form of a code. This code consists of four building blocks or bases (A for adenine, C for cytosine, G for guanine, T for thymine). These bases or nucleotides follow each other in a certain sequence, e.g.:
+```
+AGTCGTAATTGGCCCCAATTGCAAAAA
+```
+
+A single hereditary unit consists of a subsequence of DNA (called a gene), which contains the information to build a functional RNA or protein molecule.
+
+#### {.tabset} 
+
+
+##### Question 2A
+
+::: {.question data-latex=""}
+
+Match these terms to the correct number in the figure below: adenine, thymine, cytosine, guanine, uracil, phosphate, deoxyribose, hydrogen bond, backbone, and bases.
+
+:::
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("figures/sheet-1/sheet1-q2.png")
+```
+
+##### Hint
+
+1. bases  
+2. 
+3. deoxyribose
+4. 
+5. 
+6. hydrogen_bond
+7. 
+8. thymine
+9. 
+10. backbone
+
+
+##### Correct Answer
+
+
+
+1. bases  
+2. phosphate 
+3. deoxyribose
+4. guanine
+5. cytosine
+6. hydrogen_bond
+7. adenine
+8. thymine
+9. uracil
+10. backbone
+
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2B
+
+::: {.question data-latex=""}
+
+A piece of DNA contains 33% guanine. What are the percentages of adenine, cytosine, and thymine in that piece of DNA?
+
+:::
+
+##### Hint
+
+::: {.question data-latex=""}
+
+What is the percentage of cytosine?
+
+What is the combined percentage of guanine and cytosine?
+
+What is the combined percentage of adenine and thymine?
+
+:::
+
+
+##### Correct Answer
+
+- guanine: 33%
+- cytosine: 33%
+- adenine: 17%
+- thymine: 17%
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2C
+
+::: {.question data-latex=""}
+
+Decide which bases are pyrimidines and which are purines: A for adenine, C for cytosine, G for guanine, T for thymine, U for uracil.
+
+:::
+
+##### Hint
+
+
+
+##### Correct Answer
+
+
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2D
+
+::: {.question data-latex=""}
+
+Which of these statements concerning DNA and RNA are correct?
+
+- [ ] Uracil is a standard base in RNA
+- [ ] DNA is longer than RNA
+- [ ] DNA and RNA have a different structure
+- [ ] RNA has an intermolecular double-helix structure
+- [ ] RNA contains ribose sugar
+
+:::
+
+##### Hint
+
+
+
+
+##### Correct Answer
+
+
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2E
+
+::: {.question data-latex=""}
+
+In what direction is an RNA sequence written?
+
+:::
+
+##### Hint
+
+- [ ] 3' end to 5' end
+- [ ] 5' end to 3' end
+
+
+##### Correct Answer
+
+
+
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 2F
+
+::: {.question data-latex=""}
+
+Why is the RNA sequence written in that direction?
+
+:::
+
+##### Hint: Possible Answers
+
+- [ ] The order is based on the numbering of the carbons in the sugar of the nucleic acid
+- [ ] The order is based on the numbering of the carbons in the phosphate of the nucleic acid
+- [ ] The order was arbitrarily chosen by the discoverer of RNA
+
+
+##### Correct Answer
+
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2G
+
+::: {.question data-latex=""}
+
+Decide for the following RNAs whether they are coding or non-coding: mRNA, tRNA, rRNA, microRNA, siRNA, snoRNA
+
+:::
+##### Hint
+
+There is only one coding RNA
+
+##### Correct Answer
+
+- coding: mRNA
+- non-coding: tRNA, rRNA, microRNA, siRNA, snoRNA
+
+#### {-}
+
+# Exercise 3 - DNA and RNA
+
+
+
+#### {.tabset} 
+
+
+##### Question 3A
+
+
+
+What do these acronyms stand for within this course?
+
+- DNA
+- RNA
+- ncRNA
+- mRNA
+- UTR
+- ORF
+- CDS
+
+
+##### Hint
+
+- [ ] non-coding-RNA
+- [ ] Opposite-Reading-Frame
+- [ ] Deoxyribonucleic acid
+- [ ] non-complementary-RNA
+- [ ] missense-RNA
+- [ ] messenger-RNA
+- [ ] ribonucleic acid
+- [ ] untranslated region
+- [ ] coding-strand
+- [ ] coding-sequence
+- [ ] open reading frame
+
+##### Correct Answer
+
+- [x] DNA - Deoxyribonucleic acid
+- [x] RNA - Deoxyribonucleic acid
+- [x] ncRNA - non-coding-RNA
+- [x] mRNA - messenger-RNA
+- [x] UTR - untranslated region
+- [x] ORF - open reading frame
+- [x] CDS - coding-sequence
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 3B
+
+Check whether the following terms belong to Eukaryotes, Prokaryotes or both.
+
+DNA
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+splicing
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+transcription
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+ncRNA"
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+single-cell-organism
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+##### Hint
+
+DNA
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+splicing
+
+- `r knitr::asis_output("\U2714")` Eukaryotes
+- `r knitr::asis_output("\U2716")` Prokaryotes
+
+transcription
+
+- `r knitr::asis_output("\U2714")` Eukaryotes
+- `r knitr::asis_output("\U2714")` Prokaryotes
+
+ncRNA"
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+single-cell-organism
+
+- [ ] Eukaryotes
+- [ ] Prokaryotes
+
+
+##### Correct Answer
+
+DNA
+
+- [x] Eukaryotes
+- [x] Prokaryotes
+
+splicing
+
+- [x] Eukaryotes
+- [ ] Prokaryotes
+
+transcription
+
+- [x] Eukaryotes
+- [x] Prokaryotes
+
+ncRNA"
+
+- [x] Eukaryotes
+- [x] Prokaryotes
+
+single-cell-organism
+
+- [ ] Eukaryotes
+- [x] Prokaryotes
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 3C
+
+Check whether the  following statements are True or False.
+
+
+- [ ] The genome is stored in the nucleus
+
+- [ ] FASTA files are used to store sequence information
+
+- [ ] A Watson-Crick base pair describes a pyrimidine pairing with a purine
+
+- [ ] A Watson-Crick base pair describes a purine pairing with a purine
+
+- [ ] RNA is a single stranded bio-polymer
+
+##### Hint
+
+- [ ] The genome is stored in the nucleus
+
+- `r knitr::asis_output("\U2714")` FASTA files are used to store sequence information
+
+- [ ] A Watson-Crick base pair describes a pyrimidine pairing with a purine
+
+- `r knitr::asis_output("\U2716")` A Watson-Crick base pair describes a purine pairing with a purine
+
+- [ ] RNA is a single stranded bio-polymer
+
+##### Correct Answer
+
+- [ ] The genome is stored in the nucleus
+
+- [x] FASTA files are used to store sequence information
+
+- [x] A Watson-Crick base pair describes a pyrimidine pairing with a purine
+
+- [ ] A Watson-Crick base pair describes a purine pairing with a purine
+
+- [ ] RNA is a single stranded bio-polymer
+
+#### {-}
+
+
 
