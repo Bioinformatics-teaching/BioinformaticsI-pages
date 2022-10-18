@@ -1,0 +1,247 @@
+---
+title: "Exercise sheet 2: Edit operations and alignments"
+---
+
+---------------------------------
+
+# Exercise sheet 2 - Levenshtein Distance
+
+Compute the minimal Levenshtein edit distance for the following pairs of sequences.
+
+#### {.tabset}
+
+##### Question 1A
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = A\\
+S_{2} = T
+\end{align}
+
+:::
+
+##### Hint
+
+A `r knitr::asis_output("\U2192")` T
+
+
+
+##### Correct Answer
+
+A `r knitr::asis_output("\U2192")` T = 1
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 1B
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} &= AGATATA\\
+S_{2} &= TATATATA
+\end{align}
+
+:::
+
+##### Hint
+
+AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` ...
+
+
+##### Correct Answer
+
+AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` TATATATA = 3
+
+#### {-}
+
+
+#### {.tabset}
+
+##### Question 1C
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = AGTCCT\\
+S_{2} = CGCTCA
+\end{align}
+
+:::
+
+##### Hint
+
+AGTCCT `r knitr::asis_output("\U2192")` AGCTCA `r knitr::asis_output("\U2192")` ...
+
+
+
+##### Correct Answer
+
+AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCA = 4
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 1D
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = TGCATAT\\
+S_{2} = ATCCGAT
+\end{align}
+
+:::
+
+##### Hint
+
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ...
+
+
+
+##### Correct Answer
+
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCCGAT = 4
+
+#### {-}
+
+
+#### {.tabset} 
+
+
+##### Question 1E
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = ACGTATATAGCCCCGCG\\
+S_{2} = ACGTTATATAGCCGCGC
+\end{align}
+
+:::
+
+##### Hint
+
+You need to use all the possible operations
+
+ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ...
+
+##### Correct Answer
+
+ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGC = 4
+
+#### {-}
+
+
+
+# Exercise 2 - Metric function
+
+Check if the corresponding functions are metric.
+
+#### {.tabset} 
+
+
+##### Question 2A
+
+::: {.question data-latex=""}
+
+\begin{align}
+w(x,y) = x-y
+\end{align}
+
+:::
+
+##### Hint
+
+What if x = -5 and y = -5?
+
+
+##### Correct Answer
+
+Not metric
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2B
+
+\begin{align}
+w(x,y) = |x-y|
+\end{align}
+
+##### Hint
+
+You need to check all the properties.
+
+
+##### Correct Answer
+
+Metric
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2C
+
+\begin{align}
+w(x,y) = x+y
+\end{align}
+
+##### Hint
+
+What if x = -5 and y = -5?
+
+##### Correct Answer
+
+Not metric
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+##### Question 2D
+
+\begin{align}
+w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
+\\0\ \text{else}
+\end{cases}
+\end{align}
+
+##### Hint
+
+You need to check all the properties.
+
+##### Correct Answer
+
+Metric
+
+
+#### {-}
+
+#### {.tabset} 
+
+
+
+# Exercise 3 - DNA and RNA
+
+
+
+#### {.tabset} 
+
+
+
+
+
+
