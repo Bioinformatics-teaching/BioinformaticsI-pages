@@ -1,0 +1,306 @@
+
+
+```{r, include=FALSE}
+source("custom_functions.R")
+library(flextable)
+library(officer)
+```
+
+---
+title: "Exercise sheet 3: Sequence Alignment"
+---
+
+---------------------------------
+
+# Exercise 1 - Alignments
+
+For the given examples which ones can be called alignments:
+
+
+#### {.tabset}
+
+##### Question 1A
+
+```
+AGTTTTTT
+AGGTTTTT
+``` 
+
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+True
+
+
+::: 
+
+#### {-}
+
+
+#### {.tabset}
+
+##### Question 1B
+
+```
+CCGTTTTTT
+-AGGTTTTT
+``` 
+
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+True
+
+
+::: 
+
+#### 
+
+#### {.tabset}
+
+##### Question 1C
+
+```
+CCCGTTTTTTGC
+-CGGTTTTT
+``` 
+
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+False. In an alignment both strings must have the same length
+
+
+::: 
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 1D
+
+```
+AG--TTTTTT
+AG-GTTTTTT
+``` 
+
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+False. Gaps cannot be aligned with gaps
+
+
+::: 
+
+#### {-}
+
+# Exercise 2 - Hands on Needleman-Wunsch algorithm
+
+The Needleman-Wunsch algorithm enables the calculation of the optimal pairwise sequence alignment with linear gap cost. Given the following two sequences S1, S2 and the given cost function complete the tasks *A-D*.
+
+
+
+::: {.answer data-latex=""}
+
+
+
+\begin{align}
+  S1 &= TACCGCGC\\
+  S2 &= TCCGA
+\end{align}
+
+
+$$
+w(x,y)=
+\begin{cases}
+  + 1 & if\ x = `-`\ \vee\ y=`-`\\
+  - 1 & if\ x = y \\
+  0 & else\\ 
+\end{cases} 
+$$
+:::
+
+
+```{r, include=FALSE}
+zm <- data.frame(a = c("-", "T",  "A",   "C",   "G", "C", "G", "C"),
+                 b = c(" ", " ", " ",  " ",  " ", " ", " ", " "),
+                 c = c(" ", " ", " ",  " ",  " ", " ", " ", " "),
+                 d = c(" ", " ", " ",  " ",  " ", " ", " ", " "),
+                 e = c(" ", " ", " ",  " ",  " ", " ", " ", " "),                 
+                 f = c(" ", " ", " ",  " ",  " ", " ", " ", " "),
+                 g = c(" ", " ", " ",  " ",  " ", " ", " ", " "))
+names(zm) <- c("D_{i,j}", "-", "T1", "C1", "C2", "G1", "A1")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+zm_ft <- flextable(zm)
+zm_ft <- custom_theme(zm_ft)
+index_replace(zm_ft)
+```
+
+
+#### {.tabset}
+
+##### Question 2A
+
+Complete the provided table with the correct initialization step.
+
+##### Hint1: Formulae
+
+\begin{align}
+  D_{0,0} &= 0\\
+  \forall i \leq |S1|:  D_{i,0} &= \sum_{k=0}^{i} w(S1_i, -) \\
+  \forall j \leq |S2|: D_{0,j} &= \sum_{k=0}^{j} w(-, S2_j) 
+\end{align}
+
+
+##### Solution
+
+```{r, include=FALSE}
+zm <- data.frame(a = c( "-", "T",  "A",   "C",   "G", "C", "G", "C"),
+                 b = c(0, 1,  2,  3, 4, 5, 6, 7),
+                 c = c(1, " ",  " ",  " ", " ", " ", " ", " "),
+                 d = c(2, " ",  " ",  " ", " ", " ", " ", " "),
+                 e = c(3, " ",  " ",  " ", " ", " ", " ", " "),
+                 f = c(4, " ",  " ",  " ", " ", " ", " ", " "),
+                 g = c(5, " ",  " ",  " ", " ", " ", " ", " "))
+names(zm) <- c("D_{i,j}", "-", "T1", "C1", "C2", "G1", "A1")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+zm_ft <- flextable(zm)
+zm_ft <- custom_theme(zm_ft)
+index_replace(zm_ft)
+```
+
+
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 2B
+
+Using dynamic programming technique fill in all values in the matrix.
+
+##### Hint1: Formulae
+
+$$
+\forall\ i,j >0\ : D_{i,j}=min
+\begin{cases}
+  D_{i-1,j-1} + w(S1_i, S2_j)\\
+  D_{i,j-1} + w(-, S2_j) \\
+  D_{i-1,j} + w(S1_i, -)
+\end{cases} 
+$$
+
+
+##### Solution
+
+```{r, include=FALSE}
+zm <- data.frame(a = c( "-", "T",  "A",   "C",   "G", "C", "G", "C"),
+                 b = c(0, 1,  2,  3, 4, 5, 6, 7),
+                 c = c(1, -1,  0,  1, 2, 3, 4, 5),
+                 d = c(2, 0,  -1,  -1, 0, 1, 2, 3),
+                 e = c(3, 1,  0,  -2, -1, -1, 0, 1),
+                 f = c(4, 2,  1,  -1, -3, -2, -2, -1),
+                 g = c(5, 3,  1, 0, -2, -3, -2, -2))
+names(zm) <- c("D_{i,j}", "-", "T1", "C1", "C2", "G1", "A1")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+zm_ft <- flextable(zm)
+zm_ft <- custom_theme(zm_ft)
+index_replace(zm_ft)
+```
+
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 2C
+
+Using the matrix from 1B) find the optimal alignment of the given sequences.
+
+##### Solution
+
+```
+TACGCGC
+| | ||:
+T-C-CGA
+``` 
+
+#### {-}
+
+
+#### {.tabset}
+
+##### Question 2D
+
+Find an optimal alignment of the given sequences, while assuming that the first G character in each sequence has to be matched/aligned.
+
+##### Hint1:
+You can split the alignment at the G and treat it as two separate alignments
+
+##### Solution
+
+```
+TACGCGC   TACGCGC   TACGCGC
+|:|||     |:|| :    |:||  :
+TCCGA--   TCCG-A-   TCCG--A
+``` 
+
+#### {-}
+
+# Exercise 3 - Hirschberg recursion
+
+Which statements about Needleman-Wunsch and the Hirschberg recursion are True
+and which are False.
+
+#### {.tabset}
+
+##### Question 3
+
+ - [ ] Hirschberg computes global alignment in O(n²) space.
+ - [ ] Needleman-Wunsch computes global alignment in O(n²) time.
+ - [ ] The Hirschberg recursion is a space optimized version of the Needleman-Wunsch algorithm.
+ - [ ] Hirschberg computes global alignment in O(n) time.
+ 
+##### Solution
+ 
+ - [ ] Hirschberg computes global alignment in O(n²) space.
+ - [x] Needleman-Wunsch computes global alignment in O(n²) time.
+ - [x] The Hirschberg recursion is a space optimized version of the Needleman-Wunsch algorithm.
+ - [ ] Hirschberg computes global alignment in O(n) time.
+
+#### {-}
+
+---------------------------------
+
+# Exercise 4 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 03]().
+
+-------------------------------------------
+
+
+
+
+
+
+
+
+
