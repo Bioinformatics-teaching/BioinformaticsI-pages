@@ -13,7 +13,7 @@
 
 <title>Exercise sheet 2: Edit operations and alignments</title>
 
-<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -182,8 +182,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -191,9 +191,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -339,6 +346,8 @@ div.tocify {
         <li><a href="howto.html">HowTo</a></li>
         <li><a href="exercise-sheet-1.html">ES 1</a></li>
         <li><a href="exercise-sheet-3.html">ES 3</a></li>
+        <li><a href="exercise-sheet-4.html">ES 4</a></li>
+
 
         <!--<li><a href="exercise-sheet-10.html">Sheet 10</a></li>-->
       </ul>
@@ -353,18 +362,15 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Exercise sheet 2: Edit operations and
-alignments</h1>
+<h1 class="title toc-ignore">Exercise sheet 2: Edit operations and alignments</h1>
 
 </div>
 
 
 <hr />
-<div id="exercise-sheet-2---levenshtein-distance"
-class="section level1">
+<div id="exercise-sheet-2---levenshtein-distance" class="section level1">
 <h1>Exercise sheet 2 - Levenshtein Distance</h1>
-<p>Compute the minimal Levenshtein edit distance for the following pairs
-of sequences.</p>
+<p>Compute the minimal Levenshtein edit distance for the following pairs of sequences.</p>
 <div id="section" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="question-1a" class="section level5">
@@ -475,8 +481,7 @@ S_{2} = ACGTTATATAGCCGCGC
 </div>
 <div id="correct-answer-4" class="section level5">
 <h5>Correct Answer</h5>
-<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → ACGTTATATAGCCGCGCG →
-ACGTTATATAGCCGCGC = 4</p>
+<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → ACGTTATATAGCCGCGCG → ACGTTATATAGCCGCGC = 4</p>
 </div>
 </div>
 <div id="section-9" class="section level4 unnumbered">
