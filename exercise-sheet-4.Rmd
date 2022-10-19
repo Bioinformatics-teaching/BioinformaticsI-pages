@@ -33,9 +33,9 @@ performant or is one of them better than the other?
 
 ::: {.answer data-latex=""}
 
-- [] both are equally performant.
-- [] checking in increasing direction performs better
-- [] checking in decreasing direction performs better
+- [ ] both are equally performant.
+- [ ] checking in increasing direction performs better
+- [ ] checking in decreasing direction performs better
 
 
 ::: 
@@ -45,8 +45,8 @@ performant or is one of them better than the other?
 ::: {.answer data-latex=""}
 
 - [x] both are equally performant. 
-- [] checking in increasing direction performs better
-- [] checking in decreasing direction performs better
+- [ ] checking in increasing direction performs better
+- [ ] checking in decreasing direction performs better
 
 (You still have to check all possible gap sizes)
 
