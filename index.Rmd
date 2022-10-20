@@ -26,3 +26,19 @@ Not every exercise sheet will have a programming assignment.
 
 Exercises are designed for self-teaching. Every week there will be a exercise session where questions about the current exercise sheet will be answered and discussed. Please check the Bioinformatics II Ilias course page for more information about dates and times.
 
+:::: {#explaining .warning-box }
+
+::: {#note-exp .warning-header}
+`r knitr::asis_output("\U26A0")` **Warning**
+:::
+::: {#note-exp .note-body}
+
+You will find hints in the self learning materials which e.g. include information
+about the formulae that you have to use.
+However, in the exam we won't provide those formulae. You have to learn them by heart.
+
+:::
+
+
+::::
+

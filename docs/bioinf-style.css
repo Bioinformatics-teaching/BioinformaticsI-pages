@@ -17,3 +17,68 @@ table th {border-bottom: 1px solid;}
 .title {
   font-weight: bold;
 }
+
+.message-box {
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  box-shadow: 0 .2rem .5rem #d8d8d8, 0 0 .0625rem #d8d8d8 !important;
+  margin-bottom: 15px;
+  border-left: 5px solid rgba(  47, 134, 162, 1);
+
+
+}
+
+.warning-box {
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  box-shadow: 0 .2rem .5rem #d8d8d8, 0 0 .0625rem #d8d8d8 !important;
+  margin-bottom: 15px;
+  border-left: 5px solid rgba(238, 144, 64, 1);
+}
+
+.note-header {
+  background-color:  rgba(  47, 134, 162, 0.5);
+  padding: 5px;
+  border-radius: 0px 5px 0px 0px;
+}
+
+.message-box p {
+  margin: 0 !important;
+}
+
+.warning-box p {
+  margin: 0 !important;
+}
+
+.note-body {
+  padding: 5px;
+}
+
+.tutorial-img {
+    border-radius: 5px;
+    box-shadow: 0 .2rem .5rem #d8d8d8, 0 0 .0625rem #d8d8d8 !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top 40px;
+    margin-bottom 40px;
+    width: 80%;
+
+}
+
+.extra-m {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.warning-header {
+  background-color:  rgba(238, 144, 64, .4);
+  padding: 5px;
+  border-radius: 0px 5px 0px 0px;
+}
