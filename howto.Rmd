@@ -56,7 +56,10 @@ Some exercise-sheets have programming tasks.
 :::: {#explaining .message-box }
 
 ::: {#note-exp .note-header}
-`r knitr::asis_output("\U1F6C8")` **Note**
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
 :::
 ::: {#note-exp .note-body}
 

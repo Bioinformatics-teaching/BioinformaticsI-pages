@@ -8,12 +8,15 @@ title: "Bioinformatics I Exercises"
 
 All exercises for the lecture Bioinformatics I are provided on this web page.
 
-The exercises complement the lecture slides and aim to improve your understanding of the diverse topics of this course.
+The exercises complement the lecture and aim to improve your understanding of the diverse topics of this course.
 
 :::: {#explaining .message-box }
 
 ::: {#note-exp .note-header}
-`r knitr::asis_output("\U1F6C8")` **Note**
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
 :::
 ::: {#note-exp .note-body}
 
@@ -30,20 +33,23 @@ exam.
 
 Exercises contain two parts:
 
-- standard theory and calculation questions 
+- theory and calculation questions 
 - programming assignments.
 
-Standard questions can be found on this web page.
+Theory and calculation questions can be found on this web page.
 
-Programming assignments are available via Github Classroom. Links to the appropriate programming assignments will be provided in the according exercise sheet.
+Programming assignments are available via Github Classroom. Links to the programming assignments will be provided in the corresponding exercise sheet.
 Not every exercise sheet will have a programming assignment.
 
-Exercises are designed for self-teaching. Every week there will be a exercise session where questions about the current exercise sheet will be answered and discussed. Please check the Bioinformatics I Ilias course page for more information about dates and times.
+Exercises are designed for self-teaching. Every week there will be an exercise session where questions about the current exercise sheet will be answered and discussed. Please check the Bioinformatics I Ilias course page for more information about dates and times.
 
 :::: {#explaining .warning-box }
 
 ::: {#note-exp .warning-header}
-`r knitr::asis_output("\U26A0")` **Warning**
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/warningicon.svg")
+```
+**Warning**
 :::
 ::: {#note-exp .note-body}
 
