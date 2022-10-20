@@ -1,16 +1,30 @@
 ---
-title: "Bioinformatics II Exercises"
+title: "Bioinformatics I Exercises"
 ---
 
 ---------------------------------
 
 # Introduction
 
-All exercises for the lecture Bioinformatics II are provided on this web page.
+All exercises for the lecture Bioinformatics I are provided on this web page.
 
 The exercises complement the lecture slides and aim to improve your understanding of the diverse topics of this course.
 
-`r knitr::asis_output("\U26A0")` We highly recommend doing these exercises.
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+`r knitr::asis_output("\U1F6C8")` **Note**
+:::
+::: {#note-exp .note-body}
+
+
+We highly recommend doing these exercises. It will help you to prepare for the 
+exam.
+
+:::
+
+
+::::
 
 # Details
 
@@ -24,7 +38,7 @@ Standard questions can be found on this web page.
 Programming assignments are available via Github Classroom. Links to the appropriate programming assignments will be provided in the according exercise sheet.
 Not every exercise sheet will have a programming assignment.
 
-Exercises are designed for self-teaching. Every week there will be a exercise session where questions about the current exercise sheet will be answered and discussed. Please check the Bioinformatics II Ilias course page for more information about dates and times.
+Exercises are designed for self-teaching. Every week there will be a exercise session where questions about the current exercise sheet will be answered and discussed. Please check the Bioinformatics I Ilias course page for more information about dates and times.
 
 :::: {#explaining .warning-box }
 
