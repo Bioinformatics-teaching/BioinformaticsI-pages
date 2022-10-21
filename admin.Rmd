@@ -8,6 +8,9 @@ title: "Admin"
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
 knitr::include_graphics("figures/ingo.svg")
 ```
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/alex.svg")
+```
 ::: 
 
 

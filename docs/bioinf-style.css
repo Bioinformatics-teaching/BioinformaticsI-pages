@@ -37,10 +37,14 @@ a.fill-div {
 }
 
 .ingo {
-    width: 5%;
+    width: 20%;
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+.ingo img{
+    width: 45%;
 }
 
 .message-box {
