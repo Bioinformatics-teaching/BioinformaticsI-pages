@@ -62,3 +62,9 @@ However, in the exam we won't provide those formulae. You have to learn them by 
 
 ::::
 
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::asis_output('<div id="admin-panel"><a href="admin.html" class="fill-div"></a></div>')
+```
+
+
