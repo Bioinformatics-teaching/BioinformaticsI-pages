@@ -1,0 +1,311 @@
+---
+title: "Exercise sheet 5: Local Sequence Alignment"
+---
+
+---------------------------------
+
+# Exercise 1 - Smith-Waterman
+
+Consider the following sequences $S1$ and $S2$, a similarity scoring via $s(x,y)$ and a gap cost function $g(k)$.
+
+\begin{align}
+S1 &= TCCGA\\
+S2 &= TACGCAGA\\
+s(x, y) &=
+  \begin{cases}
+  +1 &if\ x=y\\
+  0 &else
+  \end{cases}\\
+g(k) &= -k
+\end{align}
+
+
+#### {.tabset}
+
+##### Question 1A
+
+Compute the local alignment matrix $S_{i,j}$ for the given sequence.
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet5_e1.csv", check.names=FALSE, sep=";")
+sij_non_filled <- data.frame(sij, check.names=FALSE)
+sij_non_filled[-1, c(-2, -1)] = " "
+```
+
+##### Matrix
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_non_filled_ft <- flextable(sij_non_filled)
+sij_non_filled_ft <- custom_theme(sij_non_filled_ft)
+index_replace(sij_non_filled_ft)
+```
+
+##### Hint: Formulae
+
+\begin{align}
+  H_{0,0} &= 0\\
+  H_{i,0} &= 0\\
+  H_{0,j} &= 0\\
+  H_{i,j} &= max
+  \begin{cases}
+    H_{i-1, j-1} + s(a_i, b_j)\\
+    H_{i-1,j} + s(a_i, -)\\
+    H_{i, j-1} + s(-, b_j)\\
+    0
+  \end{cases}
+\end{align}
+
+
+##### Solution
+
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 1B
+
+Give all optimal local alignments and the according score.
+
+##### Solution
+
+score: 3
+
+```
+TCCG    TCCGA   TCCG-A    CCGA
+|:||    |:||:   |:|| |    |:||
+TACG    TACGC   TACGCA    CAGA
+```
+
+#### {-}
+
+
+
+# Exercise 2 - Affine gap costs
+
+#### {.tabset}
+
+##### Question 2A
+
+Which of these statements are correct?
+
+- [ ] Distance and similarity scores are equally useful for local alignment scoring
+- [ ] Similarity scores are not suited for local alignment scoring
+- [ ] Distance scores are not suited for local alignment scoring
+
+##### Solution
+
+- [ ] Distance and similarity scores are equally useful for local alignment scoring
+- [ ] Similarity scores are not suited for local alignment scoring
+- [X] Distance scores are not suited for local alignment scoring
+
+#### {-}
+
+
+#### {.tabset}
+
+##### Question 2B
+
+You want to extend the Smith-Waterman algorithm for local alignment to more general gap scoring functions $g(k)$ (where $k$ denotes the gap length).
+
+The following recursions were created analogously to the Waterman-Smith-Beyer algorithm. 
+Which of these (if any) represents a variant of the Smith-Waterman algorithm that allows 
+for an arbitrary gap scoring function?
+
+$$
+D_{0,0} = 0,\ D_{i,0}=0,\ D_{0,j}=0
+$$
+
+\begin{align}
+  D_{i,j} &\stackrel{(i)}{=} max
+  \begin{cases}
+    D{i-1, j-1} + s(a_i, b_j)\\
+    max_{1 \leq k \leq j} D_{i,j-k} + g(1)\\
+    max_{1 \leq k \leq i} D_{i-k,j} + g(1)\\
+    0
+  \end{cases}
+   &D_{i,j} &\stackrel{(ii)}{=} max
+  \begin{cases}
+    D{i-1, j-1} + s(a_i, b_j)\\
+    max_{1 \leq k \leq j} D_{i,j-k} + g(k)\\
+    max_{1 \leq k \leq i} D_{i-k,j} + g(k)\\
+    0
+  \end{cases}\\
+  \\
+  D_{i,j} &\stackrel{(iii)}{=} min
+  \begin{cases}
+    D{i-1, j-1} + s(a_i, b_j)\\
+    max_{1 \leq k \leq j} D_{i,j-k} + g(k)\\
+    max_{1 \leq k \leq i} D_{i-k,j} + g(k)\\
+    0
+  \end{cases}
+   &D_{i,j} &\stackrel{(iv)}{=} min
+  \begin{cases}
+    D{i-1, j-1} + s(a_i, b_j)\\
+    max_{1 \leq k \leq j} D_{i,j-k} + g(1)\\
+    max_{1 \leq k \leq i} D_{i-k,j} + g(1)\\
+    0
+  \end{cases}\\
+  \\
+   D_{i,j} &\stackrel{(v)}{=} max
+  \begin{cases}
+    D{i-1, j-1} + s(a_i, b_j)\\
+    max_{1 \leq k \leq j} D_{i,j-k} + g(1)\\
+    max_{1 \leq k \leq i} D_{i-k,j} + g(1)\\
+    -1
+  \end{cases}
+\end{align}
+
+##### Solution
+
+Only Formula $ii$ allows for an arbitrary gap scoring.
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+Distance scores are not suited for local alignment scoring, thus all minimization 
+approaches are not suitable. Further $g(1)$ does not represent an affine scoring.
+:::
+::::
+
+#### {-}
+
+#### {.tabset}
+
+##### Question 2C
+
+The following recursions were created analogously to the Gotoh algorithm.
+Which of these (if any) represents a variant of the Smith-Waterman algorithm 
+that allows for an affine gap scoring function?
+
+
+$$
+D_{0,0} = 0,\ D_{i,0}=0,\ D_{0,j}=0
+$$
+\begin{align}
+  D_{i,j} &\stackrel{(i)}{=} max
+  \begin{cases}
+    D_{i-1, j-1} + s(a_i, b_j)\\
+    P_{i,j}\\
+    Q_{i,j}\\
+    0
+  \end{cases}
+  \begin{aligned}
+    P_{i,j} &= max
+    \begin{cases}
+      D_{i-1,j} + g(1)\\
+      P_{i-1, j} + \beta
+    \end{cases}\\
+    Q_{i,j} &= max
+    \begin{cases}
+      D_{i,j-1} + g(1)\\
+      Q_{i, j-1} + \beta
+    \end{cases}\\
+  \end{aligned}\\
+  \\
+  D_{i,j} &\stackrel{(ii)}{=} max
+  \begin{cases}
+    D_{i-1, j-1} + s(a_i, b_j)\\
+    P_{i,j}\\
+    Q_{i,j}\\
+    0
+  \end{cases}
+  \begin{aligned}
+    P_{i,j} &= max
+    \begin{cases}
+      D_{i-1,j} + g(k)\\
+      P_{i-1, j} + \beta
+    \end{cases}\\
+    Q_{i,j} &= max
+    \begin{cases}
+      D_{i,j-1} + g(k)\\
+      Q_{i, j-1} + \beta
+    \end{cases}\\
+  \end{aligned}\\
+  \\
+  D_{i,j} &\stackrel{(iii)}{=} min
+  \begin{cases}
+    D_{i-1, j-1} + s(a_i, b_j)\\
+    P_{i,j}\\
+    Q_{i,j}\\
+    0
+  \end{cases}
+  \begin{aligned}
+    P_{i,j} &= min
+    \begin{cases}
+      D_{i-1,j} + g(k)\\
+      P_{i-1, j} + \beta
+    \end{cases}\\
+    Q_{i,j} &= min
+    \begin{cases}
+      D_{i,j-1} + g(k)\\
+      Q_{i, j-1} + \beta
+    \end{cases}\\
+  \end{aligned}\\
+  \\
+  D_{i,j} &\stackrel{(iv)}{=} min
+  \begin{cases}
+    D_{i-1, j-1} + s(a_i, b_j)\\
+    P_{i,j}\\
+    Q_{i,j}\\
+    0
+  \end{cases}
+  \begin{aligned}
+    P_{i,j} &= min
+    \begin{cases}
+      D_{i-1,j} + g(1)\\
+      P_{i-1, j} + \beta
+    \end{cases}\\
+    Q_{i,j} &= min
+    \begin{cases}
+      D_{i,j-1} + g(1)\\
+      Q_{i, j-1} + \beta
+    \end{cases}\\
+  \end{aligned}
+\end{align}
+
+
+##### Solution
+
+Only Formula $i$ allows for an affine gap scoring.
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+Distance scores are not suited for local alignment scoring, thus all minimization 
+approaches are not suitable. Further $g(1)$ does not represent an affine scoring.
+:::
+::::
+
+
+#### {-}
+
+
+---------------------------------
+
+# Exercise 3 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 05]().
+
+-------------------------------------------
+
