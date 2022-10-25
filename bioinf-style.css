@@ -91,7 +91,7 @@ pre {
   width: 100%;
   margin: 1em auto 1em auto;
   overflow-x: scroll;
-  font-family: mono;
+  font-family: "SFMono-Regular",Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
   font-size: 14px;
   border: 1px solid #c9c9c9;
   padding: 5px 10px;
