@@ -110,10 +110,135 @@ The important file for you will be the `exercise-sheet.py` file. It contains ske
 
 You can either edit this file directly via Github using the edit button, or clone the repository to your PC and edit it with your preferred IDE.
 
-```{r, include=knitr::is_html_output(), echo=F}
-knitr::asis_output('If you are not familiar with Github or similar systems, we recommend that you spend some time to get used to it: <a href="https://docs.github.com/en/get-started" title=" ">Github Docs</a>')
-```
+
+
+# Recommended good practices
+
 
 For this course, you will mainly need the basic `git clone`, `git add`, `git commit`, `git push` and `git pull` commands. 
 
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('If you are not familiar with Github or similar systems, we recommend that you spend some time to get used to it: <a href="https://docs.github.com/en/get-started" title=" ">Github Docs</a>')
+```
+:::
+::::
+
+Here we have included some best practices helping you solve the exercises as efficiently as possible. For demonstration purposes we will use the first exercise sheet.
+
+First, clone the assignment repository.
+
+::: {#code .code}
+git clone git<!-- breaklink -->@github.com:Bioinformatics-teaching/exercise-sheet-01-biology-basics-{userID}.git
+:::
+
+Now you should have a local copy of your git repository. Within the directory you will find a file called `exercise_sheet1.py`.
+It contains the skeleton functions of the Programming assignment.
+Open it with your favorite text editor or IDE and fill in the skeleton functions such that they return the expected result.
+
+You can now check the status of your repository again via:
+
+::: {#code .code}
+git status
+:::
+
+It will show you that you have `Changes not staged for commit`, namely the modified `exercise_sheet1.py`.
+The following commands will add the changes and commit them.
+
+::: {#code .code}
+git add exercise_sheet1.py
+
+git commit -m "solved sheet"
+:::
+
+Now that you set up everything locally you can push your changes to GitHub, thus triggering the **Autograding**
+
+::: {#code .code}
+git push origin main
+::: 
+
+
+::::: {#explaining .message-box }
+
+:::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+::::
+:::: {#note-exp .note-body}
+
+If you want to test locally whether you solved the Programming Task correctly you can use `pytest`.
+Just install it via:
+
+::: {#code .code}
+pip install pytest
+::: 
+
+`cd` into the directory where the `exercise_sheet1.py` lives and call:
+
+::: {#code .code}
+pytest
+:::
+
+::::
+:::::
+
+
+
+
 Once you have solved the programming task, you can push your changes to the repository, which will trigger the automatic testing of your code.
+
+In the following video it is shown how to check if the tests succeeded
+
+
+
+```{r, include=knitr::is_html_output(), echo=F}
+knitr::asis_output('
+<div class=extra-m>
+<div class=tutorial-video>
+<video width="100%" controls>
+  <source src="figures/howto/autograding.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+' 
+)
+```
+
+
+As you can see Programming Tasks a) and b) were solved perfectly. However the tests
+for part c) failed. In such a case you would have to check the part c) again and fix it.
+In some cases the autograding will also print hints about what was tested and 
+how your output differed from the expected result.
+
+
+:::: {#explaining .warning-box }
+
+::: {#note-exp .warning-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/warningicon.svg")
+```
+**Warning**
+:::
+::: {#note-exp .note-body}
+
+Autograding might contain errors. If you are sure that you solved the task
+correctly but the autograding fails, let us know either in the exercise session
+or in the ILIAS forum.
+
+:::
+
+
+::::
