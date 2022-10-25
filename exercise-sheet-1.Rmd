@@ -321,15 +321,26 @@ What is the combined percentage of adenine and thymine?
 
 ::: {.question data-latex=""}
 
-Decide which bases are pyrimidines and which are purines: A for adenine, C for cytosine, G for guanine, T for thymine, U for uracil.
+Decide which bases are pyrimidines and which are purines:
+
+- **A** - Adenine
+- **C** - Cytosine
+- **G** - Guanine 
+- **T** - Thymine
+- **U** - Uracil.
 
 :::
 
-##### Hint
-
-
 
 ##### Correct Answer
+
+- pyrimidines: 
+  + **C**
+  + **T**
+  + **U**
+- purines: 
+  + **A**
+  + **G**
 
 
 
@@ -353,14 +364,14 @@ Which of these statements concerning DNA and RNA are correct?
 
 :::
 
-##### Hint
-
-
-
 
 ##### Correct Answer
 
-
+- [x] Uracil is a standard base in RNA
+- [x] DNA is longer than RNA
+- [x] DNA and RNA have a different structure
+- [ ] RNA has an intermolecular double-helix structure
+- [x] RNA contains ribose sugar
 
 
 #### {-}
@@ -384,6 +395,8 @@ In what direction is an RNA sequence written?
 
 ##### Correct Answer
 
+- [ ] 3' end to 5' end
+- [x] 5' end to 3' end
 
 
 
@@ -409,6 +422,30 @@ Why is the RNA sequence written in that direction?
 
 
 ##### Correct Answer
+
+- [x] The order is based on the numbering of the carbons in the sugar of the nucleic acid
+- [ ] The order is based on the numbering of the carbons in the phosphate of the nucleic acid
+- [ ] The order was arbitrarily chosen by the discoverer of RNA
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+
+The carbon-atoms in the sugar of the nucleic acid are numbered from 1 to 5.
+In the phosphate-sugar backbone, C5 and C4 are the carbon atoms that connect
+to the phosphate group so that 5' denotes the end of the chain where C5 is the closest
+and 3' denotes the ed where C3 is the closest.
+
+:::
+::::
+
 
 
 
@@ -518,6 +555,7 @@ single-cell-organism
 ##### Hint
 
 DNA
+
 - [ ] Eukaryotes
 - [ ] Prokaryotes
 
@@ -616,5 +654,15 @@ Check whether the  following statements are True or False.
 
 #### {-}
 
+---------------------------------
 
+# Exercise 4 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 01](https://classroom.github.com/a/9cmcZ0xd).
+
+-------------------------------------------
 

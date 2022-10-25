@@ -90,7 +90,7 @@ pre {
 .code {
   width: 100%;
   margin: 1em auto 1em auto;
-  overflow-x: scroll;
+  overflow-x: auto;
   font-family: "SFMono-Regular",Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
   font-size: 14px;
   border: 1px solid #c9c9c9;
