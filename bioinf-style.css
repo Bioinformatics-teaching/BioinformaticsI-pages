@@ -161,6 +161,9 @@ pre {
   margin-bottom: 30px;
 }
 
+.extra-m p {
+    padding: 10px;
+}
 
 .warning-box {
   border-radius: 5px;
