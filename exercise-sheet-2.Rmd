@@ -4,13 +4,11 @@ title: "Exercise sheet 2: Edit operations and alignments"
 
 ---------------------------------
 
-# Exercise sheet 2 - Levenshtein Distance
+# Exercise 1 - Levenshtein Distance
 
 Compute the minimal Levenshtein edit distance for the following pairs of sequences.
 
-#### {.tabset}
-
-##### Question 1A
+### 1a)
 
 ::: {.question data-latex=""}
 
@@ -20,6 +18,12 @@ S_{2} = T
 \end{align}
 
 :::
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint
 
@@ -33,9 +37,7 @@ A `r knitr::asis_output("\U2192")` T = 1
 
 #### {-}
 
-#### {.tabset}
-
-##### Question 1B
+### 1b)
 
 ::: {.question data-latex=""}
 
@@ -45,6 +47,12 @@ S_{2} &= TATATATA
 \end{align}
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Hint
 
@@ -58,9 +66,7 @@ AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")
 #### {-}
 
 
-#### {.tabset}
-
-##### Question 1C
+### 1c)
 
 ::: {.question data-latex=""}
 
@@ -70,6 +76,13 @@ S_{2} = CGCTCA
 \end{align}
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint
 
@@ -84,10 +97,9 @@ AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` 
 #### {-}
 
 
-#### {.tabset} 
+### 1d)
 
 
-##### Question 1D
 
 ::: {.question data-latex=""}
 
@@ -97,6 +109,12 @@ S_{2} = ATCCGAT
 \end{align}
 
 :::
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint
 
@@ -111,10 +129,9 @@ TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")
 #### {-}
 
 
-#### {.tabset} 
+### 1e)
 
 
-##### Question 1E
 
 ::: {.question data-latex=""}
 
@@ -124,6 +141,12 @@ S_{2} = ACGTTATATAGCCGCGC
 \end{align}
 
 :::
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint
 
@@ -143,38 +166,78 @@ ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::
 
 Check if the corresponding functions are metric.
 
-#### {.tabset} 
+#### {.tabset}
 
 
-##### Question 2A
+##### Hide
 
-::: {.question data-latex=""}
+##### Formulae
+
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Definition Metric:
+
+\begin{align}
+  w(x,y) &= 0  \leftrightarrow x = y\ &\text{(identity)}\\
+  w(x, y) &= w(y, x)\ &\text{(symmetric)}\\
+  w (x, z) &\leq w (x, y ) + w (y , z) &\text{(triangle inequality)}
+\end{align}
+
+:::
+::::
+
+#### {-}
+
+
+### 2a)
 
 \begin{align}
 w(x,y) = x-y
 \end{align}
 
-:::
+#### {.tabset}
+
+
+##### Hide
 
 ##### Hint
 
-What if x = -5 and y = -5?
+What if $x = 1$ and $y = 2$?
 
 
 ##### Correct Answer
 
-Not metric
+Not a metric, violates identity constraint.
+
+$$
+x - y = 1 - 2 = -1 \neq 1 = 2 - 1 = y - x
+$$
 
 #### {-}
 
-#### {.tabset} 
 
 
-##### Question 2B
+### 2b)
 
 \begin{align}
 w(x,y) = |x-y|
 \end{align}
+
+
+
+#### {.tabset}
+
+
+##### Hide
+
 
 ##### Hint
 
@@ -188,30 +251,34 @@ Metric
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2C
+### 2c)
 
 \begin{align}
 w(x,y) = x+y
 \end{align}
 
+#### {.tabset}
+
+
+##### Hide
+
+
 ##### Hint
 
-What if x = -5 and y = -5?
+What if $x = 1$ and $y = 1$?
 
 ##### Correct Answer
 
-Not metric
+Not metric, violates symmetry constraint:
 
+$$
+x = y = 1\\
+x + y = x + x = 2 \neq 0 
+$$
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2D
+### 2d)
 
 \begin{align}
 w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
@@ -219,6 +286,14 @@ w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
 \end{cases}
 \end{align}
 
+
+#### {.tabset}
+
+
+##### Hide
+
+
+
 ##### Hint
 
 You need to check all the properties.
@@ -231,17 +306,6 @@ Metric
 #### {-}
 
 #### {.tabset} 
-
-
-
-# Exercise 3 - DNA and RNA
-
-
-
-#### {.tabset} 
-
-
-
 
 
 
