@@ -28,6 +28,9 @@ table th {border-bottom: 1px solid;}
 
 }
 
+
+
+
 a.fill-div {
   display: block;
   height: 100%;
@@ -143,6 +146,11 @@ pre {
     box-shadow: 0 .2rem .5rem #d8d8d8, 0 0 .0625rem #d8d8d8 !important;
     margin-top 40px;
     margin-bottom 40px;
+
+}
+.math.display{
+  font-size: 20px;
+  line-height: 155%;
 
 }
 

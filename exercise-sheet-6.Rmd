@@ -384,16 +384,3 @@ How many amino acids does this protein consist of?
 #### {-}
 
 
-
----------------------------------
-
-# Exercise 5 - Programming assignment
-
-Programming assignments are available via Github Classroom and contain automatic tests.
-
-We recommend doing these assignments since they will help you to further understand this topic.
-
-Access the Github Classroom link: [Programming Assignment: Sheet 06]().
-
--------------------------------------------
-
