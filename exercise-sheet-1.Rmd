@@ -7,11 +7,9 @@ title: "Exercise sheet 1: Biology Basics"
 # Exercise 1 - General
 
 Here are some general biology questions. Using the Possible Solutions tab will
-convert each question to multiple choice 
+convert each question to multiple choice. In the solution only correct answer sare ticked.
 
-#### {.tabset}
-
-##### Question 1A
+### 1a)
 
 ::: {.question data-latex=""}
 
@@ -19,20 +17,21 @@ Where is the genome stored in prokaryotes and eukaryotes?
 
 ::: 
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint : Possible Answers
 
 - [ ] Inside the nucleus in eukaryotes
-
 - [ ] Outside the cell in prokaryotes
-
 - [ ] Prokaryotes have no genome
-
 - [ ] Inside the nucleolus in prokaryotes
-
 - [ ] In chromatin in eukaryotes
-
 - [ ] Partially in mitochondria in prokaryotes
-
 - [ ] Directly inside the cell in prokaryotes
 
 
@@ -42,6 +41,11 @@ Where is the genome stored in prokaryotes and eukaryotes?
 ::: {.answer data-latex=""}
 
 - [x] Inside the nucleus in eukaryotes
+- [ ] Outside the cell in prokaryotes
+- [ ] Prokaryotes have no genome
+- [ ] Inside the nucleolus in prokaryotes
+- [ ] In chromatin in eukaryotes
+- [ ] Partially in mitochondria in prokaryotes
 - [x] Directly inside the cell in prokaryotes
 
 
@@ -49,9 +53,8 @@ Where is the genome stored in prokaryotes and eukaryotes?
 
 #### {-}
 
-#### {.tabset}
 
-##### Question 1B
+### 1b)
 
 ::: {.question data-latex=""}
 
@@ -59,20 +62,21 @@ Name two more differences between prokaryotes and eukaryotes?
 
 ::: 
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint : Possible Answers
 
 - [ ] Prokaryotes have compartmentation through membrane
-
 - [ ] Eukaryotes are not multi-cellular organisms
-
 - [ ] Prokaryotes have mitochondria
-
 - [ ] Eukaryotes have no nucleus
-
 - [ ] Prokaryotes have no ER
-
 - [ ] Eukaryotes are single cell organisms
-
 - [ ] Eukaryotes have no flagellum
 
 
@@ -81,7 +85,13 @@ Name two more differences between prokaryotes and eukaryotes?
 
 ::: {.answer data-latex=""}
 
+- [ ] Prokaryotes have compartmentation through membrane
+- [ ] Eukaryotes are not multi-cellular organisms
+- [ ] Prokaryotes have mitochondria
+- [ ] Eukaryotes have no nucleus
 - [x] Prokaryotes have no ER
+- [ ] Eukaryotes are single cell organisms
+- [ ] Eukaryotes have no flagellum
 
 
 ::: 
@@ -89,9 +99,8 @@ Name two more differences between prokaryotes and eukaryotes?
 #### {-}
 
 
-#### {.tabset}
 
-##### Question 1C
+### 1c)
 
 ::: {.question data-latex=""}
 
@@ -99,20 +108,21 @@ List examples of  prokaryotes and eukaryotes.
 
 ::: 
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint : Possible Answers
 
 - [ ] Escherichia coli is a prokaryote
-
 - [ ] Amoebas are prokaryotes
-
 - [ ] Fungi are eukaryotes
-
 - [ ] Archaea are eukaryotes
-
 - [ ] Insects are eukaryotes
-
 - [ ] Salmonella is a prokaryote
-
 - [ ] Plasmodium malariae is a prokaryote
 
 
@@ -122,20 +132,19 @@ List examples of  prokaryotes and eukaryotes.
 ::: {.answer data-latex=""}
 
 - [x] Escherichia coli is a prokaryote
+- [ ] Amoebas are prokaryotes
 - [x] Fungi are eukaryotes
+- [ ] Archaea are eukaryotes
 - [x] Insects are eukaryotes
 - [x] Salmonella is a prokaryote
-
+- [ ] Plasmodium malariae is a prokaryote
 
 ::: 
 
 #### {-}
 
 
-#### {.tabset} 
-
-
-##### Question 1D
+### 1d)
 
 ::: {.question data-latex=""}
 
@@ -143,20 +152,21 @@ What are the three information-carrying biopolymers?
 
 ::: 
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint : Possible Answers
 
 - [ ] Protein
-
 - [ ] Cellulose
-
 - [ ] DNA
-
 - [ ] Polysaccharides
-
 - [ ] RNA
-
 - [ ] amino acid
-
 - [ ] nucleotide
 
 
@@ -175,10 +185,7 @@ What are the three information-carrying biopolymers?
 #### {-}
 
 
-#### {.tabset} 
-
-
-##### Question 1E
+### 1e)
 
 ::: {.question data-latex=""}
 
@@ -186,20 +193,21 @@ What is denoted by the “Central Dogma” of molecular biology?
 
 ::: 
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint : Possible Answers
 
 - [ ] Protein can make Protein
-
 - [ ] DNA can make DNA
-
 - [ ] Protein can make RNA and then RNA makes DNA
-
 - [ ] DNA can make RNA and then RNA makes Protein
-
 - [ ] RNA can make RNA
-
 - [ ] DNA can make RNA and then RNA makes DNA
-
 - [ ] Protein can make DNA
 
 
@@ -208,10 +216,14 @@ What is denoted by the “Central Dogma” of molecular biology?
 
 ::: {.answer data-latex=""}
 
+- [ ] Protein can make Protein
 - [x] DNA can make DNA
+- [ ] Protein can make RNA and then RNA makes DNA
 - [x] DNA can make RNA and then RNA makes Protein
 - [x] RNA can make RNA
 - [x] DNA can make RNA and then RNA makes DNA
+- [ ] Protein can make DNA
+
 
 ::: 
 
@@ -232,10 +244,7 @@ AGTCGTAATTGGCCCCAATTGCAAAAA
 
 A single hereditary unit consists of a subsequence of DNA (called a gene), which contains the information to build a functional RNA or protein molecule.
 
-#### {.tabset} 
-
-
-##### Question 2A
+### 2a)
 
 ::: {.question data-latex=""}
 
@@ -246,6 +255,15 @@ Match these terms to the correct number in the figure below: adenine, thymine, c
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("figures/sheet-1/sheet1-q2.png")
 ```
+
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
 
 ##### Hint
 
@@ -280,16 +298,21 @@ knitr::include_graphics("figures/sheet-1/sheet1-q2.png")
 
 #### {-}
 
-#### {.tabset} 
+### 2b)
 
-
-##### Question 2B
 
 ::: {.question data-latex=""}
 
 A piece of DNA contains 33% guanine. What are the percentages of adenine, cytosine, and thymine in that piece of DNA?
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint
 
@@ -314,10 +337,7 @@ What is the combined percentage of adenine and thymine?
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2C
+### 2c)
 
 ::: {.question data-latex=""}
 
@@ -330,6 +350,14 @@ Decide which bases are pyrimidines and which are purines:
 - **U** - Uracil.
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
 
 
 ##### Correct Answer
@@ -347,22 +375,27 @@ Decide which bases are pyrimidines and which are purines:
 
 #### {-}
 
-#### {.tabset} 
+### 2d)
 
-
-##### Question 2D
 
 ::: {.question data-latex=""}
 
 Which of these statements concerning DNA and RNA are correct?
+
+
+
+:::
+
+
+#### {.tabset}
+
+##### Statements
 
 - [ ] Uracil is a standard base in RNA
 - [ ] DNA is longer than RNA
 - [ ] DNA and RNA have a different structure
 - [ ] RNA has an intermolecular double-helix structure
 - [ ] RNA contains ribose sugar
-
-:::
 
 
 ##### Correct Answer
@@ -376,16 +409,21 @@ Which of these statements concerning DNA and RNA are correct?
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2E
+### 2e)
 
 ::: {.question data-latex=""}
 
 In what direction is an RNA sequence written?
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
 
 ##### Hint
 
@@ -402,17 +440,21 @@ In what direction is an RNA sequence written?
 
 #### {-}
 
-
-#### {.tabset} 
-
-
-##### Question 2F
+### 2f)
 
 ::: {.question data-latex=""}
 
 Why is the RNA sequence written in that direction?
 
 :::
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
 
 ##### Hint: Possible Answers
 
@@ -451,16 +493,21 @@ and 3' denotes the ed where C3 is the closest.
 
 #### {-}
 
-#### {.tabset} 
+### 2g)
 
-
-##### Question 2G
 
 ::: {.question data-latex=""}
 
 Decide for the following RNAs whether they are coding or non-coding: mRNA, tRNA, rRNA, microRNA, siRNA, snoRNA
 
 :::
+
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint
 
 There is only one coding RNA
@@ -476,12 +523,7 @@ There is only one coding RNA
 
 
 
-#### {.tabset} 
-
-
-##### Question 3A
-
-
+### 3a)
 
 What do these acronyms stand for within this course?
 
@@ -492,6 +534,11 @@ What do these acronyms stand for within this course?
 - UTR
 - ORF
 - CDS
+
+
+#### {.tabset}
+
+##### Hide
 
 
 ##### Hint
@@ -520,12 +567,14 @@ What do these acronyms stand for within this course?
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 3B
+### 3b)
 
 Check whether the following terms belong to Eukaryotes, Prokaryotes or both.
+
+#### {.tabset}
+
+##### Terms
+
 
 DNA
 
@@ -610,46 +659,37 @@ single-cell-organism
 #### {-}
 
 
-#### {.tabset} 
-
-
-##### Question 3C
+### 3c)
 
 Check whether the  following statements are True or False.
 
 
+#### {.tabset}
+
+##### Statements
+
+
+
 - [ ] The genome is stored in the nucleus
-
 - [ ] FASTA files are used to store sequence information
-
 - [ ] A Watson-Crick base pair describes a pyrimidine pairing with a purine
-
 - [ ] A Watson-Crick base pair describes a purine pairing with a purine
-
 - [ ] RNA is a single stranded bio-polymer
 
 ##### Hint
 
 - [ ] The genome is stored in the nucleus
-
 - `r knitr::asis_output("\U2714")` FASTA files are used to store sequence information
-
 - [ ] A Watson-Crick base pair describes a pyrimidine pairing with a purine
-
 - `r knitr::asis_output("\U2716")` A Watson-Crick base pair describes a purine pairing with a purine
-
 - [ ] RNA is a single stranded bio-polymer
 
 ##### Correct Answer
 
 - [ ] The genome is stored in the nucleus
-
 - [x] FASTA files are used to store sequence information
-
 - [x] A Watson-Crick base pair describes a pyrimidine pairing with a purine
-
 - [ ] A Watson-Crick base pair describes a purine pairing with a purine
-
 - [ ] RNA is a single stranded bio-polymer
 
 #### {-}
