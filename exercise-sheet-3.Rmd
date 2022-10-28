@@ -17,14 +17,19 @@ title: "Exercise sheet 3: Sequence Alignment"
 For the given examples which ones can be called alignments:
 
 
-#### {.tabset}
-
-##### Question 1A
+### 1a)
 
 ```
 AGTTTTTT
 AGGTTTTT
 ``` 
+
+
+#### {.tabset}
+
+##### Hide
+
+
 
 
 ##### Solution
@@ -39,14 +44,19 @@ True
 #### {-}
 
 
-#### {.tabset}
-
-##### Question 1B
+### 1b)
 
 ```
 CCGTTTTTT
 -AGGTTTTT
 ``` 
+
+
+#### {.tabset}
+
+##### Hide
+
+
 
 
 ##### Solution
@@ -60,14 +70,19 @@ True
 
 #### 
 
-#### {.tabset}
-
-##### Question 1C
+### 1c)
 
 ```
 CCCGTTTTTTGC
 -CGGTTTTT
 ``` 
+
+
+
+#### {.tabset}
+
+##### Hide
+
 
 
 ##### Solution
@@ -81,14 +96,19 @@ False. In an alignment both strings must have the same length
 
 #### {-}
 
-#### {.tabset}
-
-##### Question 1D
+### 1d)
 
 ```
 AG--TTTTTT
 AG-GTTTTTT
 ``` 
+
+
+#### {.tabset}
+
+##### Hide
+
+
 
 
 ##### Solution
@@ -147,11 +167,16 @@ index_replace(zm_ft)
 ```
 
 
-#### {.tabset}
-
-##### Question 2A
+### 2a)
 
 Complete the provided table with the correct initialization step.
+
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Hint1: Formulae
 
@@ -185,10 +210,12 @@ index_replace(zm_ft)
 
 #### {-}
 
+### 2b)
+
+
 #### {.tabset}
 
-##### Question 2B
-
+##### Hide
 Using dynamic programming technique fill in all values in the matrix.
 
 ##### Hint1: Formulae
@@ -225,11 +252,15 @@ index_replace(zm_ft)
 
 #### {-}
 
-#### {.tabset}
-
-##### Question 2C
+### 2c)
 
 Using the matrix from 1B) find the optimal alignment of the given sequences.
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Solution
 
@@ -242,11 +273,16 @@ T-C-CGA
 #### {-}
 
 
-#### {.tabset}
-
-##### Question 2D
+### 2d)
 
 Find an optimal alignment of the given sequences, while assuming that the first G character in each sequence has to be matched/aligned.
+
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Hint1:
 You can split the alignment at the G and treat it as two separate alignments
@@ -266,9 +302,12 @@ TCCGA--   TCCG-A-   TCCG--A
 Which statements about Needleman-Wunsch and the Hirschberg recursion are True
 and which are False.
 
+### 3a)
+
+
 #### {.tabset}
 
-##### Question 3
+##### Statements
 
  - [ ] Hirschberg computes global alignment in O(n²) space.
  - [ ] Needleman-Wunsch computes global alignment in O(n²) time.
