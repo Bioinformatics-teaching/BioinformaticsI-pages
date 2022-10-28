@@ -37,15 +37,20 @@ e.g. the triplet `AUG` would translate to Methionine (the start codon).
 ::::
 
 
-#### {.tabset}
 
-##### Question 1A
+### 1a)
+
 
 ::: {.question data-latex=""}
 
 Which aminoacid is encoded by the codon **UAC**?
 
 ::: 
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Hint : Possible Answers
 
@@ -56,7 +61,7 @@ Which aminoacid is encoded by the codon **UAC**?
 
 
 
-##### Correct Answer
+##### Solution
 
 - [ ] Histidine
 - [ ] Proline
@@ -64,14 +69,18 @@ Which aminoacid is encoded by the codon **UAC**?
 
 #### {-}
 
-#### {.tabset}
-
-##### Question 1B
+### 1b)
 
 ::: {.question data-latex=""}
 
 How many codons encode the aminoacid Valine?
 ::: 
+
+#### {.tabset}
+
+##### Hide
+
+
 
 ##### Hint : Possible Answers
 
@@ -81,7 +90,7 @@ How many codons encode the aminoacid Valine?
 
 
 
-##### Correct Answer
+##### Solution
 
 ::: {.answer data-latex=""}
 
@@ -95,15 +104,19 @@ How many codons encode the aminoacid Valine?
 #### {-}
 
 
-#### {.tabset}
+### 1c)
 
-##### Question 1C
-
-Which aminoacid sequence encodes the following codons?
+Which aminoacid sequence is encoded by the following codons?
 
 ```
 AUG-UGC-CUU-ACU-AAA-AGU-CGU-CAU-GAC-GAG-CUG-UAC-GGG-UGA
 ```
+
+#### {.tabset}
+
+##### Hide
+
+
 
 
 ##### Hint : Possible Answers
@@ -114,7 +127,7 @@ AUG-UGC-CUU-ACU-AAA-AGU-CGU-CAU-GAC-GAG-CUG-UAC-GGG-UGA
 
 
 
-##### Correct Answer
+##### Solution
 
 
 - [ ] Met-Cys-Leu-Trp-Lys-Ser-Arg-His-Asp-Glu-Leu-Tyr-Gly
@@ -130,10 +143,7 @@ AUG-UGC-CUU-ACU-AAA-AGU-CGU-CAU-GAC-GAG-CUG-UAC-GGG-UGA
 # Exercise 2 - Protein structures
 
 
-#### {.tabset} 
-
-
-##### Question 2A
+### 2a)
 
 Name the parts corresponding to the figure below
 
@@ -145,6 +155,14 @@ knitr::include_graphics("figures/sheet-6/sheet6-exercise1-aminoacid.svg")
 :::
 ::::
 
+
+#### {.tabset}
+
+##### Hide
+
+
+
+
 ##### Hint
 
 The Names are:
@@ -152,7 +170,7 @@ The Names are:
  alpha carbon amino group, carboxyl group and side chain.
 
 
-##### Correct Answer
+##### Solution
 
 
 
@@ -165,10 +183,7 @@ D.  carboxyl group
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2B
+### 2b)
 
 Select the peptide bound in the following dipeptide.
 
@@ -180,21 +195,27 @@ knitr::include_graphics("figures/sheet-6/sheet6-exercise1-peptidebond.svg")
 :::
 ::::
 
+#### {.tabset}
+
+##### Hide
+
+
+
 ##### Hint
 
 A peptide bond is an amide type of covalent chemical bond linking two consecutive 
 alpha-amino acids via the carbon atom nr. 1 of the first  and the nitrogen atom nr 2 of the second amino acid.
 
-##### Correct Answer
+##### Solution
+
+A peptide bond is an amide type of covalent chemical bond linking two consecutive 
+alpha-amino acids via the carbon atom nr. 1 of the first  and the nitrogen atom nr 2 of the second amino acid.
 
 **B**
 
 #### {-}
 
-#### {.tabset} 
-
-
-##### Question 2C
+### 2c)
 
 The 3D structure of a protein is very important for its function.
 Name the structure types in the figure below. 
@@ -206,6 +227,12 @@ knitr::include_graphics("figures/sheet-6/sheet6-exercise1-structures.svg")
 ```
 :::
 ::::
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Hint
 
@@ -219,7 +246,7 @@ Match the names
 - beta-sheet. Note that can be multiple correct options.
 
 
-##### Correct Answer
+##### Solution
 
 A.  primary structure
 B.  secondary structure, beta sheet
@@ -247,75 +274,101 @@ prokaryotic translation or transcription
 #### {.tabset} 
 
 
-##### Question 3A
+### 3a)
 
 DNA Polymerase III
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 DNA Polymerase III is responsible for bacterial chromosomal DNA replication, along with the helicase and primase, at the replication fork. 
 
 #### {-}
 
-#### {.tabset} 
-
-##### Question 3B
+### 3b)
 
 DNA Ligase
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 The DNA Ligase catalyze the formation of a phosphodiester bond between the
 5'-P group of one single DNA strand with the adjacent 3'-OH group of another chain.
 
 #### {-}
 
-#### {.tabset} 
-
-##### Question 3C
+### 3c)
 
 RNA Polymerase
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 RNA Polymerases are enzymes responsible for copying a DNA sequence into an 
 RNA sequence, during the process of transcription.
 
 #### {-}
 
-#### {.tabset} 
-
-##### Question 3D
+### 3d)
 
 RNAse H
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 Ribonucleases H are enzymes that cleave the RNA of RNA/DNA hybrids that 
 form during replication and repair and which could lead to DNA instability if they were not processed.
 
 #### {-}
 
-#### {.tabset} 
-
-##### Question 3E
+### 3e)
 
 DNA Helicase
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 DNA Helicases are enzymes that are able to unwind DNA by the use of the 
 energy-equivalent ATP. They play essential roles in DNA replication, DNA repair, and DNA recombination in all organisms.
 
 #### {-}
 
-#### {.tabset} 
-
-##### Question 3F
+### 3f)
 
 DNA Primase
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 DNA primase catalyses the synthesis of short RNA molecules used as primers for the DNA polymerase during DNA replication
 
@@ -337,17 +390,21 @@ knitr::include_graphics("figures/sheet-6/sheet6-exercise7-protein.gif")
 :::
 ::::
 
-Access the protein information of the above shown protein SpCas9 with PDB-ID ABE8e and answer the following questions:
+Access the protein information of the above shown protein SpCas9 with PDB-ID 6VPC and answer the following questions:
 
 https://www.rcsb.org/
 
-#### {.tabset} 
-
-##### Question 4A
+### 4a)
 
 From which organism is this protein?
 
-##### Correct Answer
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
 
 *Streptococcus pyogenes* and *Escherichia coli*
 
@@ -371,15 +428,21 @@ from *Streptococcus pyogenes* and the t-RNA adenine deaminase A v8e (TadA-8e) fr
 #### {-}
 
 
-#### {.tabset} 
-
-##### Question 4B
+### 4b)
 
 How many amino acids does this protein consist of?
 
-##### Correct Answer
 
-1361
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
+The Cas9 subunit has $1361$ aminoacids, whilst the deaminase consists of $227$
+amino acids.
+
+$1361 + 227 = 1588$
 
 #### {-}
 
