@@ -20,11 +20,16 @@ g(k) &= -k
 \end{align}
 
 
-#### {.tabset}
-
-##### Question 1A
+### 1a)
 
 Compute the local alignment matrix $S_{i,j}$ for the given sequence.
+
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ```{r, include=FALSE}
 sij <- read.csv("tables/sheet5_e1.csv", check.names=FALSE, sep=";")
@@ -67,11 +72,15 @@ index_replace(sij_ft)
 
 #### {-}
 
-#### {.tabset}
-
-##### Question 1B
+### 1b)
 
 Give all optimal local alignments and the according score.
+
+
+#### {.tabset}
+
+##### Hide
+
 
 ##### Solution
 
@@ -89,11 +98,14 @@ TACG    TACGC   TACGCA    CAGA
 
 # Exercise 2 - Affine gap costs
 
-#### {.tabset}
-
-##### Question 2A
+### 2a)
 
 Which of these statements are correct?
+
+#### {.tabset}
+
+##### Statements
+
 
 - [ ] Distance and similarity scores are equally useful for local alignment scoring
 - [ ] Similarity scores are not suited for local alignment scoring
@@ -108,9 +120,7 @@ Which of these statements are correct?
 #### {-}
 
 
-#### {.tabset}
-
-##### Question 2B
+### 2b)
 
 You want to extend the Smith-Waterman algorithm for local alignment to more general gap scoring functions $g(k)$ (where $k$ denotes the gap length).
 
@@ -162,6 +172,14 @@ $$
   \end{cases}
 \end{align}
 
+
+#### {.tabset}
+
+
+##### Hide
+
+
+
 ##### Solution
 
 Only Formula $ii$ allows for an arbitrary gap scoring.
@@ -181,9 +199,8 @@ approaches are not suitable. Further $g(1)$ does not represent an affine scoring
 
 #### {-}
 
-#### {.tabset}
+### 2c)
 
-##### Question 2C
 
 The following recursions were created analogously to the Gotoh algorithm.
 Which of these (if any) represents a variant of the Smith-Waterman algorithm 
@@ -274,6 +291,12 @@ $$
     \end{cases}\\
   \end{aligned}
 \end{align}
+
+
+
+#### {.tabset}
+
+##### Hide
 
 
 ##### Solution
