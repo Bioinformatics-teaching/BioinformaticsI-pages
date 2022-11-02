@@ -1,0 +1,264 @@
+---
+title: "Exercise sheet 10: UPGMA"
+---
+
+---------------------------------
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+
+A phylogenetic tree (also phylogeny or evolutionary tree [3]) is a branching diagram or a tree showing the evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. All life on Earth is part of a single phylogenetic tree, indicating common ancestry.
+
+In a rooted phylogenetic tree, each node with descendants represents the inferred most recent common ancestor of those descendants,[citation needed] and the edge lengths in some trees may be interpreted as time estimates. Each node is called a taxonomic unit. Internal nodes are generally called hypothetical taxonomic units, as they cannot be directly observed. Trees are useful in fields of biology such as bioinformatics, systematics, and phylogenetics. Unrooted trees illustrate only the relatedness of the leaf nodes and do not require the ancestral root to be known or inferred. 
+
+*https://en.wikipedia.org/wiki/Phylogenetic_tree*
+
+:::
+::::
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+UPGMA (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UPGMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded method for inferring phylogenetic trees unless this assumption has been tested and justified for the data set being used.
+
+*https://en.wikipedia.org/wiki/UPGMA*
+
+:::
+::::
+
+
+# Exercise 1 - WPGMA
+
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Distances for a merged cluster $e$, where $e = c \cup d$:
+
+$$
+WPGMA: dist(x, e) = \dfrac{dist(x,c) + dist(x,d)}{2}
+$$
+
+:::
+::::
+
+In the following steps we calculate the evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
+
+!!! MATRIX MISSING !!!
+
+### 1a)
+
+Which leaves should be selected first?
+
+#### {.tabset }
+
+##### Hide
+
+##### Hint
+
+- [ ] c and d
+- [ ] a and b
+- [ ] d and e
+
+##### Solution
+
+- [ ] c and d
+- [x] a and b
+- [ ] d and e
+
+#### {-}
+
+### 1b)
+
+b) Calculate the corresponding distance for the set of leaves from *a)*.
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+**1.5**
+
+
+
+#### {-}
+
+### 1c)
+
+Fill in the distance matrix with the correct distances form the set of leaves 
+(aka. internal node) from *a)* to all other leaves.
+
+#### {.tabset}
+
+##### Hide
+
+##### Hint : Formulae
+
+
+##### Solution
+
+
+#### {-}
+
+
+### 1d)
+
+
+Which nodes are joined next given the correct distance matrix from c? 
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+- [ ] c and d
+- [ ] {a,b} and e
+- [ ] {c, d} and e
+- [ ] e and a
+
+##### Solution
+
+- [x] c and d
+- [ ] {a,b} and e
+- [ ] {c, d} and e
+- [ ] e and a
+
+#### {-}
+
+### 1e)
+
+Fill in a distance matrix with the remaining nodes and leaves.
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+##### Solution
+
+#### {-}
+
+### 1f)
+
+What does the **subpart** of the tree look like in Newick format after selecting and joining your answer from *e)*
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+- [ ] ((c : 3, d : 3) : 3.5, e : 3.5)
+- [ ] ((c : 3, d : 3) : 0.5, e : 3.5)
+- [ ] ((a : 1.5, b : 1.5) : 2.75, e : 4.25)
+
+- [ ] ((c : 3, d : 3) : 3.5, e : 3.5)
+- [x] ((c : 3, d : 3) : 0.5, e : 3.5)
+- [ ] ((a : 1.5, b : 1.5) : 2.75, e : 4.25)
+
+##### Solution
+
+#### {-}
+
+### 1f)
+
+Following the approach from the previous exercises, what does the **whole tree** look like.
+
+#### {.tabset}
+
+
+##### Hide
+
+
+##### Hint
+
+- [ ] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
+- [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
+- [ ] (((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);
+
+##### Solution
+
+- [x] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
+- [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
+- [ ] (((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);
+
+#### {-}
+
+
+
+# Exercise 2 - UPGMA
+
+
+### 2a)
+
+Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the following statements is True?
+
+#### {.tabset} 
+
+
+##### Statements
+
+- [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
+- [ ] The tree in Exercise 1 will not change
+- [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
+- [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.
+
+
+##### Solution
+
+- [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
+- [ ] The tree in Exercise 1 will not change
+- [x] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
+- [x] UPGMA can end up with wrong topologies when using non-ultrametric distances.
+
+
+#### {-}
+
+
+# Exercise 3 - Ultrametric
+
+
+
+
+### 3a)
+
+Which of the following distance matrices are ultrametric?
+
+!!MISSING!!
+
+#### {.tabset} 
+
+##### Hide
+
+
+##### Solution
+
+
+
+#### {-}
+
+---------------------------------
+
+# Exercise 4 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 10]().
+
+-------------------------------------------
+
+

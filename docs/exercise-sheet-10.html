@@ -11,7 +11,7 @@
 
 
 
-<title>Exercise sheet 2: Edit operations and alignments</title>
+<title>Exercise sheet 10: UPGMA</title>
 
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -364,23 +364,43 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Exercise sheet 2: Edit operations and alignments</h1>
+<h1 class="title toc-ignore">Exercise sheet 10: UPGMA</h1>
 
 </div>
 
 
 <hr />
-<div id="exercise-1---levenshtein-distance" class="section level1">
-<h1>Exercise 1 - Levenshtein Distance</h1>
-<p>Compute the minimal Levenshtein edit distance for the following pairs of sequences.</p>
+<div id="img1-p" class="extra-m">
+<div id="img3" class="tutorial-img">
+<p>A phylogenetic tree (also phylogeny or evolutionary tree [3]) is a branching diagram or a tree showing the evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. All life on Earth is part of a single phylogenetic tree, indicating common ancestry.</p>
+<p>In a rooted phylogenetic tree, each node with descendants represents the inferred most recent common ancestor of those descendants,[citation needed] and the edge lengths in some trees may be interpreted as time estimates. Each node is called a taxonomic unit. Internal nodes are generally called hypothetical taxonomic units, as they cannot be directly observed. Trees are useful in fields of biology such as bioinformatics, systematics, and phylogenetics. Unrooted trees illustrate only the relatedness of the leaf nodes and do not require the ancestral root to be known or inferred.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/Phylogenetic_tree" class="uri">https://en.wikipedia.org/wiki/Phylogenetic_tree</a></em></p>
+</div>
+</div>
+<div id="img1-p" class="extra-m">
+<div id="img3" class="tutorial-img">
+<p>UPGMA (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UPGMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded method for inferring phylogenetic trees unless this assumption has been tested and justified for the data set being used.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/UPGMA" class="uri">https://en.wikipedia.org/wiki/UPGMA</a></em></p>
+</div>
+</div>
+<div id="exercise-1---wpgma" class="section level1">
+<h1>Exercise 1 - WPGMA</h1>
+<div id="explaining" class="message-box">
+<div id="note-exp" class="note-header">
+<p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
+</div>
+<div id="note-exp" class="note-body">
+<p>Distances for a merged cluster <span class="math inline">\(e\)</span>, where <span class="math inline">\(e = c \cup d\)</span>:</p>
+<p><span class="math display">\[
+WPGMA: dist(x, e) = \dfrac{dist(x,c) + dist(x,d)}{2}
+\]</span></p>
+</div>
+</div>
+<p>In the following steps we calculate the evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.</p>
+<p>!!! MATRIX MISSING !!!</p>
 <div id="a" class="section level3">
 <h3>1a)</h3>
-<div class="question">
-<p><span class="math display">\[\begin{align}
-S_{1} = A\\
-S_{2} = T
-\end{align}\]</span></p>
-</div>
+<p>Which leaves should be selected first?</p>
 <div id="section" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide" class="section level5">
@@ -388,11 +408,25 @@ S_{2} = T
 </div>
 <div id="hint" class="section level5">
 <h5>Hint</h5>
-<p>A → T</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+c and d</li>
+<li><input type="checkbox" disabled="" />
+a and b</li>
+<li><input type="checkbox" disabled="" />
+d and e</li>
+</ul>
 </div>
-<div id="correct-answer" class="section level5">
-<h5>Correct Answer</h5>
-<p>A → T = 1</p>
+<div id="solution" class="section level5">
+<h5>Solution</h5>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+c and d</li>
+<li><input type="checkbox" disabled="" checked="" />
+a and b</li>
+<li><input type="checkbox" disabled="" />
+d and e</li>
+</ul>
 </div>
 </div>
 <div id="section-1" class="section level4 unnumbered">
@@ -401,24 +435,17 @@ S_{2} = T
 </div>
 <div id="b" class="section level3">
 <h3>1b)</h3>
-<div class="question">
-<p><span class="math display">\[\begin{align}
-S_{1} &amp;= AGATATA\\
-S_{2} &amp;= TATATATA
-\end{align}\]</span></p>
-</div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calculate the corresponding distance for the set of leaves from <em>a)</em>.</li>
+</ol>
 <div id="section-2" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-1" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-1" class="section level5">
-<h5>Hint</h5>
-<p>AGATATA → ATATATA → …</p>
-</div>
-<div id="correct-answer-1" class="section level5">
-<h5>Correct Answer</h5>
-<p>AGATATA → ATATATA → TATATATA = 3</p>
+<div id="solution-1" class="section level5">
+<h5>Solution</h5>
+<p><strong>1.5</strong></p>
 </div>
 </div>
 <div id="section-3" class="section level4 unnumbered">
@@ -427,24 +454,17 @@ S_{2} &amp;= TATATATA
 </div>
 <div id="c" class="section level3">
 <h3>1c)</h3>
-<div class="question">
-<p><span class="math display">\[\begin{align}
-S_{1} = AGTCCT\\
-S_{2} = CGCTCA
-\end{align}\]</span></p>
-</div>
+<p>Fill in the distance matrix with the correct distances form the set of leaves (aka. internal node) from <em>a)</em> to all other leaves.</p>
 <div id="section-4" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-2" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-2" class="section level5">
-<h5>Hint</h5>
-<p>AGTCCT → AGCTCA → …</p>
+<div id="hint-formulae" class="section level5">
+<h5>Hint : Formulae</h5>
 </div>
-<div id="correct-answer-2" class="section level5">
-<h5>Correct Answer</h5>
-<p>AGTCCT → CGTCCT → CGCCCT → CGCTCA = 4</p>
+<div id="solution-2" class="section level5">
+<h5>Solution</h5>
 </div>
 </div>
 <div id="section-5" class="section level4 unnumbered">
@@ -453,24 +473,37 @@ S_{2} = CGCTCA
 </div>
 <div id="d" class="section level3">
 <h3>1d)</h3>
-<div class="question">
-<p><span class="math display">\[\begin{align}
-S_{1} = TGCATAT\\
-S_{2} = ATCCGAT
-\end{align}\]</span></p>
-</div>
+<p>Which nodes are joined next given the correct distance matrix from c?</p>
 <div id="section-6" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-3" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-3" class="section level5">
+<div id="hint-1" class="section level5">
 <h5>Hint</h5>
-<p>TGCATAT → AGCATAT → …</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+c and d</li>
+<li><input type="checkbox" disabled="" />
+{a,b} and e</li>
+<li><input type="checkbox" disabled="" />
+{c, d} and e</li>
+<li><input type="checkbox" disabled="" />
+e and a</li>
+</ul>
 </div>
-<div id="correct-answer-3" class="section level5">
-<h5>Correct Answer</h5>
-<p>TGCATAT → AGCATAT → ATCATAT → ATCCGAT = 4</p>
+<div id="solution-3" class="section level5">
+<h5>Solution</h5>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+c and d</li>
+<li><input type="checkbox" disabled="" />
+{a,b} and e</li>
+<li><input type="checkbox" disabled="" />
+{c, d} and e</li>
+<li><input type="checkbox" disabled="" />
+e and a</li>
+</ul>
 </div>
 </div>
 <div id="section-7" class="section level4 unnumbered">
@@ -479,171 +512,157 @@ S_{2} = ATCCGAT
 </div>
 <div id="e" class="section level3">
 <h3>1e)</h3>
-<div class="question">
-<p><span class="math display">\[\begin{align}
-S_{1} = ACGTATATAGCCCCGCG\\
-S_{2} = ACGTTATATAGCCGCGC
-\end{align}\]</span></p>
-</div>
+<p>Fill in a distance matrix with the remaining nodes and leaves.</p>
 <div id="section-8" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-4" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-4" class="section level5">
+<div id="hint-2" class="section level5">
 <h5>Hint</h5>
-<p>You need to use all the possible operations</p>
-<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → …</p>
 </div>
-<div id="correct-answer-4" class="section level5">
-<h5>Correct Answer</h5>
-<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → ACGTTATATAGCCGCGCG → ACGTTATATAGCCGCGC = 4</p>
+<div id="solution-4" class="section level5">
+<h5>Solution</h5>
 </div>
 </div>
 <div id="section-9" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 </div>
 </div>
-</div>
-<div id="exercise-2---metric-function" class="section level1">
-<h1>Exercise 2 - Metric function</h1>
-<p>Check if the corresponding functions are metric.</p>
+<div id="f" class="section level3">
+<h3>1f)</h3>
+<p>What does the <strong>subpart</strong> of the tree look like in Newick format after selecting and joining your answer from <em>e)</em></p>
 <div id="section-10" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-5" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="formulae" class="section level5">
-<h5>Formulae</h5>
-<div id="explaining" class="message-box">
-<div id="note-exp" class="note-header">
-<p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
+<div id="hint-3" class="section level5">
+<h5>Hint</h5>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" />
+((c : 3, d : 3) : 3.5, e : 3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />
+((c : 3, d : 3) : 0.5, e : 3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />
+((a : 1.5, b : 1.5) : 2.75, e : 4.25)</p></li>
+<li><p><input type="checkbox" disabled="" />
+((c : 3, d : 3) : 3.5, e : 3.5)</p></li>
+<li><p><input type="checkbox" disabled="" checked="" />
+((c : 3, d : 3) : 0.5, e : 3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />
+((a : 1.5, b : 1.5) : 2.75, e : 4.25)</p></li>
+</ul>
 </div>
-<div id="note-exp" class="note-body">
-<p>Definition Metric:</p>
-<p><span class="math display">\[\begin{align}
-  w(x,y) &amp;= 0  \leftrightarrow x = y\ &amp;\text{(identity)}\\
-  w(x, y) &amp;= w(y, x)\ &amp;\text{(symmetric)}\\
-  w (x, z) &amp;\leq w (x, y ) + w (y , z) &amp;\text{(triangle inequality)}
-\end{align}\]</span></p>
-</div>
-</div>
+<div id="solution-5" class="section level5">
+<h5>Solution</h5>
 </div>
 </div>
 <div id="section-11" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 </div>
-<div id="a-1" class="section level3">
-<h3>2a)</h3>
-<p><span class="math display">\[\begin{align}
-w(x,y) = x-y
-\end{align}\]</span></p>
+</div>
+<div id="f-1" class="section level3">
+<h3>1f)</h3>
+<p>Following the approach from the previous exercises, what does the <strong>whole tree</strong> look like.</p>
 <div id="section-12" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-6" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-5" class="section level5">
+<div id="hint-4" class="section level5">
 <h5>Hint</h5>
-<p>What if <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>?</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);</li>
+<li><input type="checkbox" disabled="" />
+((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
+<li><input type="checkbox" disabled="" />
+(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
+</ul>
 </div>
-<div id="correct-answer-5" class="section level5">
-<h5>Correct Answer</h5>
-<p>Not a metric, violates identity constraint.</p>
-<p><span class="math display">\[
-x - y = 1 - 2 = -1 \neq 1 = 2 - 1 = y - x
-\]</span></p>
+<div id="solution-6" class="section level5">
+<h5>Solution</h5>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);</li>
+<li><input type="checkbox" disabled="" />
+((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
+<li><input type="checkbox" disabled="" />
+(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
+</ul>
 </div>
 </div>
 <div id="section-13" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 </div>
 </div>
-<div id="b-1" class="section level3">
-<h3>2b)</h3>
-<p><span class="math display">\[\begin{align}
-w(x,y) = |x-y|
-\end{align}\]</span></p>
+</div>
+<div id="exercise-2---upgma" class="section level1">
+<h1>Exercise 2 - UPGMA</h1>
+<div id="a-1" class="section level3">
+<h3>2a)</h3>
+<p>Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the following statements is True?</p>
 <div id="section-14" class="section level4 tabset">
 <h4 class="tabset"></h4>
-<div id="hide-7" class="section level5">
-<h5>Hide</h5>
+<div id="statements" class="section level5">
+<h5>Statements</h5>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+There will only be a difference in edge lengths. Overall topology will stay the same.</li>
+<li><input type="checkbox" disabled="" />
+The tree in Exercise 1 will not change</li>
+<li><input type="checkbox" disabled="" />
+UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.</li>
+<li><input type="checkbox" disabled="" />
+UPGMA can end up with wrong topologies when using non-ultrametric distances.</li>
+</ul>
 </div>
-<div id="hint-6" class="section level5">
-<h5>Hint</h5>
-<p>You need to check all the properties.</p>
-</div>
-<div id="correct-answer-6" class="section level5">
-<h5>Correct Answer</h5>
-<p>Metric</p>
+<div id="solution-7" class="section level5">
+<h5>Solution</h5>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+There will only be a difference in edge lengths. Overall topology will stay the same.</li>
+<li><input type="checkbox" disabled="" />
+The tree in Exercise 1 will not change</li>
+<li><input type="checkbox" disabled="" checked="" />
+UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.</li>
+<li><input type="checkbox" disabled="" checked="" />
+UPGMA can end up with wrong topologies when using non-ultrametric distances.</li>
+</ul>
 </div>
 </div>
 <div id="section-15" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
 </div>
 </div>
-<div id="c-1" class="section level3">
-<h3>2c)</h3>
-<p><span class="math display">\[\begin{align}
-w(x,y) = x+y
-\end{align}\]</span></p>
+</div>
+<div id="exercise-3---ultrametric" class="section level1">
+<h1>Exercise 3 - Ultrametric</h1>
+<div id="a-2" class="section level3">
+<h3>3a)</h3>
+<p>Which of the following distance matrices are ultrametric?</p>
+<p>!!MISSING!!</p>
 <div id="section-16" class="section level4 tabset">
 <h4 class="tabset"></h4>
-<div id="hide-8" class="section level5">
+<div id="hide-7" class="section level5">
 <h5>Hide</h5>
 </div>
-<div id="hint-7" class="section level5">
-<h5>Hint</h5>
-<p>What if <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 1\)</span>?</p>
-</div>
-<div id="correct-answer-7" class="section level5">
-<h5>Correct Answer</h5>
-<p>Not metric, violates symmetry constraint:</p>
-<p><span class="math display">\[
-x = y = 1\\
-x + y = x + x = 2 \neq 0 
-\]</span></p>
+<div id="solution-8" class="section level5">
+<h5>Solution</h5>
 </div>
 </div>
 <div id="section-17" class="section level4 unnumbered">
 <h4 class="unnumbered"></h4>
-</div>
-</div>
-<div id="d-1" class="section level3">
-<h3>2d)</h3>
-<p><span class="math display">\[\begin{align}
-w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
-\\0\ \text{else}
-\end{cases}
-\end{align}\]</span></p>
-<div id="section-18" class="section level4 tabset">
-<h4 class="tabset"></h4>
-<div id="hide-9" class="section level5">
-<h5>Hide</h5>
-</div>
-<div id="hint-8" class="section level5">
-<h5>Hint</h5>
-<p>You need to check all the properties.</p>
-</div>
-<div id="correct-answer-8" class="section level5">
-<h5>Correct Answer</h5>
-<p>Metric</p>
-</div>
-</div>
-<div id="section-19" class="section level4 unnumbered">
-<h4 class="unnumbered"></h4>
-</div>
-<div id="section-20" class="section level4 tabset">
-<h4 class="tabset"></h4>
 <hr />
 </div>
 </div>
 </div>
-<div id="exercise-3---programming-assignment" class="section level1">
-<h1>Exercise 3 - Programming assignment</h1>
+<div id="exercise-4---programming-assignment" class="section level1">
+<h1>Exercise 4 - Programming assignment</h1>
 <p>Programming assignments are available via Github Classroom and contain automatic tests.</p>
 <p>We recommend doing these assignments since they will help you to further understand this topic.</p>
-<p>Access the Github Classroom link: <a href="https://classroom.github.com/a/F-sdH7RI">Programming Assignment: Sheet 02</a>.</p>
+<p>Access the Github Classroom link: <a href="">Programming Assignment: Sheet 10</a>.</p>
 <hr />
 </div>
 
