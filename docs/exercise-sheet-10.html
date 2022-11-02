@@ -13,7 +13,7 @@
 
 <title>Exercise sheet 10: UPGMA</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -185,8 +185,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -194,16 +194,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -372,15 +365,35 @@ div.tocify {
 <hr />
 <div id="img1-p" class="extra-m">
 <div id="img3" class="tutorial-img">
-<p>A phylogenetic tree (also phylogeny or evolutionary tree [3]) is a branching diagram or a tree showing the evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. All life on Earth is part of a single phylogenetic tree, indicating common ancestry.</p>
-<p>In a rooted phylogenetic tree, each node with descendants represents the inferred most recent common ancestor of those descendants,[citation needed] and the edge lengths in some trees may be interpreted as time estimates. Each node is called a taxonomic unit. Internal nodes are generally called hypothetical taxonomic units, as they cannot be directly observed. Trees are useful in fields of biology such as bioinformatics, systematics, and phylogenetics. Unrooted trees illustrate only the relatedness of the leaf nodes and do not require the ancestral root to be known or inferred.</p>
-<p><em><a href="https://en.wikipedia.org/wiki/Phylogenetic_tree" class="uri">https://en.wikipedia.org/wiki/Phylogenetic_tree</a></em></p>
+<p>A phylogenetic tree (also phylogeny or evolutionary tree [3]) is a
+branching diagram or a tree showing the evolutionary relationships among
+various biological species or other entities based upon similarities and
+differences in their physical or genetic characteristics. All life on
+Earth is part of a single phylogenetic tree, indicating common
+ancestry.</p>
+<p>In a rooted phylogenetic tree, each node with descendants represents
+the inferred most recent common ancestor of those descendants,[citation
+needed] and the edge lengths in some trees may be interpreted as time
+estimates. Each node is called a taxonomic unit. Internal nodes are
+generally called hypothetical taxonomic units, as they cannot be
+directly observed. Trees are useful in fields of biology such as
+bioinformatics, systematics, and phylogenetics. Unrooted trees
+illustrate only the relatedness of the leaf nodes and do not require the
+ancestral root to be known or inferred.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/Phylogenetic_tree"
+class="uri">https://en.wikipedia.org/wiki/Phylogenetic_tree</a></em></p>
 </div>
 </div>
 <div id="img1-p" class="extra-m">
 <div id="img3" class="tutorial-img">
-<p>UPGMA (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UPGMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded method for inferring phylogenetic trees unless this assumption has been tested and justified for the data set being used.</p>
-<p><em><a href="https://en.wikipedia.org/wiki/UPGMA" class="uri">https://en.wikipedia.org/wiki/UPGMA</a></em></p>
+<p>UPGMA (Unweighted Pair Group Method with Arithmetic Mean) is a simple
+agglomerative or hierarchical clustering method used in bioinformatics
+for the creation of phylogenetic trees. UPGMA assumes a constant rate of
+evolution (molecular clock hypothesis), and is not a well-regarded
+method for inferring phylogenetic trees unless this assumption has been
+tested and justified for the data set being used.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/UPGMA"
+class="uri">https://en.wikipedia.org/wiki/UPGMA</a></em></p>
 </div>
 </div>
 <div id="exercise-1---wpgma" class="section level1">
@@ -390,13 +403,16 @@ div.tocify {
 <p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
 </div>
 <div id="note-exp" class="note-body">
-<p>Distances for a merged cluster <span class="math inline">\(e\)</span>, where <span class="math inline">\(e = c \cup d\)</span>:</p>
+<p>Distances for a merged cluster <span
+class="math inline">\(e\)</span>, where <span class="math inline">\(e =
+c \cup d\)</span>:</p>
 <p><span class="math display">\[
 WPGMA: dist(x, e) = \dfrac{dist(x,c) + dist(x,d)}{2}
 \]</span></p>
 </div>
 </div>
-<p>In the following steps we calculate the evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.</p>
+<p>In the following steps we calculate the evolutionary tree using WPGMA
+and the pairwise distances in the following distance matrix.</p>
 <p>!!! MATRIX MISSING !!!</p>
 <div id="a" class="section level3">
 <h3>1a)</h3>
@@ -409,23 +425,17 @@ WPGMA: dist(x, e) = \dfrac{dist(x,c) + dist(x,d)}{2}
 <div id="hint" class="section level5">
 <h5>Hint</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-c and d</li>
-<li><input type="checkbox" disabled="" />
-a and b</li>
-<li><input type="checkbox" disabled="" />
-d and e</li>
+<li><input type="checkbox" disabled="" />c and d</li>
+<li><input type="checkbox" disabled="" />a and b</li>
+<li><input type="checkbox" disabled="" />d and e</li>
 </ul>
 </div>
 <div id="solution" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-c and d</li>
-<li><input type="checkbox" disabled="" checked="" />
-a and b</li>
-<li><input type="checkbox" disabled="" />
-d and e</li>
+<li><input type="checkbox" disabled="" />c and d</li>
+<li><input type="checkbox" disabled="" checked="" />a and b</li>
+<li><input type="checkbox" disabled="" />d and e</li>
 </ul>
 </div>
 </div>
@@ -436,7 +446,8 @@ d and e</li>
 <div id="b" class="section level3">
 <h3>1b)</h3>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Calculate the corresponding distance for the set of leaves from <em>a)</em>.</li>
+<li>Calculate the corresponding distance for the set of leaves from
+<em>a)</em>.</li>
 </ol>
 <div id="section-2" class="section level4 tabset">
 <h4 class="tabset"></h4>
@@ -454,7 +465,8 @@ d and e</li>
 </div>
 <div id="c" class="section level3">
 <h3>1c)</h3>
-<p>Fill in the distance matrix with the correct distances form the set of leaves (aka. internal node) from <em>a)</em> to all other leaves.</p>
+<p>Fill in the distance matrix with the correct distances form the set
+of leaves (aka. internal node) from <em>a)</em> to all other leaves.</p>
 <div id="section-4" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-2" class="section level5">
@@ -473,7 +485,8 @@ d and e</li>
 </div>
 <div id="d" class="section level3">
 <h3>1d)</h3>
-<p>Which nodes are joined next given the correct distance matrix from c?</p>
+<p>Which nodes are joined next given the correct distance matrix from
+c?</p>
 <div id="section-6" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-3" class="section level5">
@@ -482,27 +495,19 @@ d and e</li>
 <div id="hint-1" class="section level5">
 <h5>Hint</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-c and d</li>
-<li><input type="checkbox" disabled="" />
-{a,b} and e</li>
-<li><input type="checkbox" disabled="" />
-{c, d} and e</li>
-<li><input type="checkbox" disabled="" />
-e and a</li>
+<li><input type="checkbox" disabled="" />c and d</li>
+<li><input type="checkbox" disabled="" />{a,b} and e</li>
+<li><input type="checkbox" disabled="" />{c, d} and e</li>
+<li><input type="checkbox" disabled="" />e and a</li>
 </ul>
 </div>
 <div id="solution-3" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-c and d</li>
-<li><input type="checkbox" disabled="" />
-{a,b} and e</li>
-<li><input type="checkbox" disabled="" />
-{c, d} and e</li>
-<li><input type="checkbox" disabled="" />
-e and a</li>
+<li><input type="checkbox" disabled="" checked="" />c and d</li>
+<li><input type="checkbox" disabled="" />{a,b} and e</li>
+<li><input type="checkbox" disabled="" />{c, d} and e</li>
+<li><input type="checkbox" disabled="" />e and a</li>
 </ul>
 </div>
 </div>
@@ -531,7 +536,9 @@ e and a</li>
 </div>
 <div id="f" class="section level3">
 <h3>1f)</h3>
-<p>What does the <strong>subpart</strong> of the tree look like in Newick format after selecting and joining your answer from <em>e)</em></p>
+<p>What does the <strong>subpart</strong> of the tree look like in
+Newick format after selecting and joining your answer from
+<em>e)</em></p>
 <div id="section-10" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-5" class="section level5">
@@ -540,18 +547,18 @@ e and a</li>
 <div id="hint-3" class="section level5">
 <h5>Hint</h5>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="" />
-((c : 3, d : 3) : 3.5, e : 3.5)</p></li>
-<li><p><input type="checkbox" disabled="" />
-((c : 3, d : 3) : 0.5, e : 3.5)</p></li>
-<li><p><input type="checkbox" disabled="" />
-((a : 1.5, b : 1.5) : 2.75, e : 4.25)</p></li>
-<li><p><input type="checkbox" disabled="" />
-((c : 3, d : 3) : 3.5, e : 3.5)</p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-((c : 3, d : 3) : 0.5, e : 3.5)</p></li>
-<li><p><input type="checkbox" disabled="" />
-((a : 1.5, b : 1.5) : 2.75, e : 4.25)</p></li>
+<li><p><input type="checkbox" disabled="" />((c : 3, d : 3) : 3.5, e :
+3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />((c : 3, d : 3) : 0.5, e :
+3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />((a : 1.5, b : 1.5) : 2.75,
+e : 4.25)</p></li>
+<li><p><input type="checkbox" disabled="" />((c : 3, d : 3) : 3.5, e :
+3.5)</p></li>
+<li><p><input type="checkbox" disabled="" checked="" />((c : 3, d : 3) :
+0.5, e : 3.5)</p></li>
+<li><p><input type="checkbox" disabled="" />((a : 1.5, b : 1.5) : 2.75,
+e : 4.25)</p></li>
 </ul>
 </div>
 <div id="solution-5" class="section level5">
@@ -564,7 +571,8 @@ e and a</li>
 </div>
 <div id="f-1" class="section level3">
 <h3>1f)</h3>
-<p>Following the approach from the previous exercises, what does the <strong>whole tree</strong> look like.</p>
+<p>Following the approach from the previous exercises, what does the
+<strong>whole tree</strong> look like.</p>
 <div id="section-12" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-6" class="section level5">
@@ -573,23 +581,23 @@ e and a</li>
 <div id="hint-4" class="section level5">
 <h5>Hint</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);</li>
-<li><input type="checkbox" disabled="" />
-((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
-<li><input type="checkbox" disabled="" />
-(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
+<li><input type="checkbox" disabled="" />((a : 1.5, b : 1.5) : 4, ((c :
+3, d : 3) : 0.5, e : 3.5) : 2);</li>
+<li><input type="checkbox" disabled="" />((a : 1.5, b : 1.5) : 4.25, ((c
+: 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
+<li><input type="checkbox" disabled="" />(((c : 3, d : 3) : 3.5, e :
+3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
 </ul>
 </div>
 <div id="solution-6" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);</li>
-<li><input type="checkbox" disabled="" />
-((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
-<li><input type="checkbox" disabled="" />
-(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
+<li><input type="checkbox" disabled="" checked="" />((a : 1.5, b : 1.5)
+: 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);</li>
+<li><input type="checkbox" disabled="" />((a : 1.5, b : 1.5) : 4.25, ((c
+: 3, d : 3) : 0.5, e : 3.5) : 2.25);</li>
+<li><input type="checkbox" disabled="" />(((c : 3, d : 3) : 3.5, e :
+3.5): 4, (a : 1.5, b : 1.5) : 2);</li>
 </ul>
 </div>
 </div>
@@ -602,33 +610,35 @@ e and a</li>
 <h1>Exercise 2 - UPGMA</h1>
 <div id="a-1" class="section level3">
 <h3>2a)</h3>
-<p>Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the following statements is True?</p>
+<p>Imagine using UPGMA instead of WPGMA for construction of a tree.
+Which of the following statements is True?</p>
 <div id="section-14" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="statements" class="section level5">
 <h5>Statements</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-There will only be a difference in edge lengths. Overall topology will stay the same.</li>
-<li><input type="checkbox" disabled="" />
-The tree in Exercise 1 will not change</li>
-<li><input type="checkbox" disabled="" />
-UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.</li>
-<li><input type="checkbox" disabled="" />
-UPGMA can end up with wrong topologies when using non-ultrametric distances.</li>
+<li><input type="checkbox" disabled="" />There will only be a difference
+in edge lengths. Overall topology will stay the same.</li>
+<li><input type="checkbox" disabled="" />The tree in Exercise 1 will not
+change</li>
+<li><input type="checkbox" disabled="" />UPGMA is equal to WPGMA if the
+number of leaves in the two clusters (|c| and |d|) is the same.</li>
+<li><input type="checkbox" disabled="" />UPGMA can end up with wrong
+topologies when using non-ultrametric distances.</li>
 </ul>
 </div>
 <div id="solution-7" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-There will only be a difference in edge lengths. Overall topology will stay the same.</li>
-<li><input type="checkbox" disabled="" />
-The tree in Exercise 1 will not change</li>
-<li><input type="checkbox" disabled="" checked="" />
-UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.</li>
-<li><input type="checkbox" disabled="" checked="" />
-UPGMA can end up with wrong topologies when using non-ultrametric distances.</li>
+<li><input type="checkbox" disabled="" />There will only be a difference
+in edge lengths. Overall topology will stay the same.</li>
+<li><input type="checkbox" disabled="" />The tree in Exercise 1 will not
+change</li>
+<li><input type="checkbox" disabled="" checked="" />UPGMA is equal to
+WPGMA if the number of leaves in the two clusters (|c| and |d|) is the
+same.</li>
+<li><input type="checkbox" disabled="" checked="" />UPGMA can end up
+with wrong topologies when using non-ultrametric distances.</li>
 </ul>
 </div>
 </div>
@@ -660,9 +670,12 @@ UPGMA can end up with wrong topologies when using non-ultrametric distances.</li
 </div>
 <div id="exercise-4---programming-assignment" class="section level1">
 <h1>Exercise 4 - Programming assignment</h1>
-<p>Programming assignments are available via Github Classroom and contain automatic tests.</p>
-<p>We recommend doing these assignments since they will help you to further understand this topic.</p>
-<p>Access the Github Classroom link: <a href="">Programming Assignment: Sheet 10</a>.</p>
+<p>Programming assignments are available via Github Classroom and
+contain automatic tests.</p>
+<p>We recommend doing these assignments since they will help you to
+further understand this topic.</p>
+<p>Access the Github Classroom link: <a href="">Programming Assignment:
+Sheet 10</a>.</p>
 <hr />
 </div>
 
