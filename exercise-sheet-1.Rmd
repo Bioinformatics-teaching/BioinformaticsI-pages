@@ -58,7 +58,7 @@ Where is the genome stored in prokaryotes and eukaryotes?
 
 ::: {.question data-latex=""}
 
-Name two more differences between prokaryotes and eukaryotes?
+Name more differences between prokaryotes and eukaryotes?
 
 ::: 
 

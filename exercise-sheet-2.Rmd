@@ -61,7 +61,7 @@ AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")
 
 ##### Correct Answer
 
-AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` TATATATA = 3
+AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` TATATATA = 2
 
 #### {-}
 
@@ -92,7 +92,7 @@ AGTCCT `r knitr::asis_output("\U2192")` AGCTCA `r knitr::asis_output("\U2192")` 
 
 ##### Correct Answer
 
-AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCA = 4
+AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCA = 3
 
 #### {-}
 
@@ -124,7 +124,7 @@ TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")
 
 ##### Correct Answer
 
-TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCCGAT = 4
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCCGAT = 3
 
 #### {-}
 
@@ -156,7 +156,7 @@ ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::
 
 ##### Correct Answer
 
-ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGC = 4
+ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGC = 3
 
 #### {-}
 
