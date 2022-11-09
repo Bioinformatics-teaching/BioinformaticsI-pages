@@ -182,8 +182,8 @@ Complete the provided table with the correct initialization step.
 
 \begin{align}
   D_{0,0} &= 0\\
-  \forall i \leq |S1|:  D_{i,0} &= \sum_{k=0}^{i} w(S1_i, -) \\
-  \forall j \leq |S2|: D_{0,j} &= \sum_{k=0}^{j} w(-, S2_j) 
+  \forall i \leq |S1|:  D_{i,0} &= \sum_{k=1}^{i} w(S1_i, -) \\
+  \forall j \leq |S2|: D_{0,j} &= \sum_{k=1}^{j} w(-, S2_j) 
 \end{align}
 
 
@@ -331,7 +331,7 @@ Programming assignments are available via Github Classroom and contain automatic
 
 We recommend doing these assignments since they will help you to further understand this topic.
 
-Access the Github Classroom link: [Programming Assignment: Sheet 03]().
+Access the Github Classroom link: [Programming Assignment: Sheet 03](https://classroom.github.com/a/hqqmrvBX).
 
 -------------------------------------------
 
