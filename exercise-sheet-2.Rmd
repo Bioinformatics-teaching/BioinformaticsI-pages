@@ -92,7 +92,7 @@ AGTCCT `r knitr::asis_output("\U2192")` AGCTCA `r knitr::asis_output("\U2192")` 
 
 ##### Correct Answer
 
-AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCA = 3
+AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCT `r knitr::asis_output("\U2192")` CGCTCA = 4
 
 #### {-}
 
@@ -124,7 +124,7 @@ TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")
 
 ##### Correct Answer
 
-TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCCGAT = 3
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCAGAT `r knitr::asis_output("\U2192")` ATCCGAT = 4
 
 #### {-}
 
