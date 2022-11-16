@@ -101,6 +101,10 @@ pre {
   line-height: 155%;
   background-color: rgb(250, 250, 250);
 }
+.MathJax_Display {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
 
 .code p::before{
   content: "$ ";
@@ -152,6 +156,12 @@ pre {
   font-size: 20px;
   line-height: 155%;
 
+}
+
+ @media only screen and (max-width: 600px) {
+  .math.display {
+    font-size: 16px;
+  }
 }
 
 .tutorial-img {
