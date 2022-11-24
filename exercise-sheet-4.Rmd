@@ -142,116 +142,26 @@ $$
 a_i \in A,\ with\ 1 \leq i \leq n \\
 b_j \in B,\ with\ 1 \leq j \leq m
 $$
-\begin{align}
-D_{i, 0} = D_{0, j} &= 0  &(a)\\
-D_{i, j} &= min
-  \begin{cases}
-    D_{i-1, j-1} + s(a_i, b_j) &(b)\\
-    \min_{i \leq k < j} D_{i, j-k} + g(k) &(c)\\
-    \min_{i \leq k < i} D_{i-k, j} + g(k) &(d)\\
-    D_{i, 0} + 0 &(e)\\
-    D_{0, j} + 0 &(f)\\
-    \min_{1 \leq k \leq j} D_{i, j-k} + 0 &(g)\\
-    \min_{i \leq k \leq i} D_{i-k, j} + 0 &(h)
-  \end{cases}
-\end{align}
 
-### 2a)
+:::: {#explaining .warning-box }
 
-Describe the recursion parts (labels $a$ - $h$)
-
-(Use the hint to match descriptions to the correct parts)
-
-
-#### {.tabset}
-
-##### Hide
-
-
-
-##### Hint: Descriptions
-
-- [ ] if (i = n), k trailing gaps in A
-- [ ] k normal gaps in B
-- [ ] j leading gaps in A (inner block of gaps)
-- [ ] match/missmatch case
-- [ ] i leading gaps in B (inner block of gaps)
-- [ ] outer block of gaps in one sequence
-- [ ] if (j = m), k trailing gaps in B
-- [ ] k normal gaps in A
-
-##### Solution
-
-a. outer block of gaps in one sequence
-b. match/missmatch case
-c. k normal gaps in A
-d. k normal gaps in B
-e. j leading gaps in A (inner block of gaps)
-f. i leading gaps in B (inner block of gaps)
-g. if (i = n), k trailing gaps in A
-h. if (j = m), k trailing gaps in B
-
-#### {-}
-
-### 2b)
-
-Why is the scoring function $s(x,y)$ not a metric.
-
-
-
-#### {.tabset}
-
-##### Hide
-
-
-##### Hint: Multiple Choice
-
- - [ ] The identity clause is violated
- - [ ] The symetry clause is violated
- - [ ] The triangle inequality clause is violated
- - [ ] It is possible to create a metric scoring function leading to the same optimal alignments where end gaps are free
- - [ ] For the given scoring function a match case is as favorable as a the leading end gap case
-
-##### Solution
-
- - [x] The identity clause is violated 
- - [ ] The symetry clause is violated
- - [x] The triangle inequality clause is violated
- - [ ] It is possible to create a metric scoring function leading to the same optimal alignments where end gaps are free
- - [ ] For the given scoring function a match case is as favorable as a the leading end gap case
- 
-
-:::: {#explaining .message-box }
-::: {#note-exp .note-header}
+::: {#note-exp .warning-header}
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("figures/infoicon.svg")
+knitr::include_graphics("figures/warningicon.svg")
 ```
-**Note**
+**Warning**
 :::
 ::: {#note-exp .note-body}
 
-Definition Metric:
+The previously uploaded recursion schema was wrong. We will either try to fix
+this exercise or remove it completely. Sorry for any inconvenience.
 
-\begin{align}
-  w(x,y) &= 0  \leftrightarrow x = y\ &\text{(identity)}\\
-  w(x, y) &= w(y, x)\ &\text{(symmetric)}\\
-  w (x, z) &\leq w (x, y ) + w (y , z) &\text{(triangle inequality)}
-\end{align}
+(Also let us know if you can provide a correct recursion schema)
 
 :::
+
+
 ::::
- 
-The identity clause is violated: for x = y, s(x,y) = -1, which is not 0.
-
-The triangle inequality clause is violated: s(x,x) > s(x,x) + s(x,x), when x=y=z
-
-
-It is not possible to create a metric. To create a metric we need to ensure the indentity clause is fulfilled,
-by setting s(x,y) = 0, when x=y. Thereby, we would cause the match case to be as favorable as the leading/trailing
-end gap case. Setting s(x,y) = 0 leads to more optimal alignments, including an alignment
-where both sequences are aligned to gaps.
-
-#### {-}
 
 # Exercise 3 - Gotoh Algorithm
 
