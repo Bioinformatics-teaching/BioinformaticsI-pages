@@ -324,8 +324,8 @@ Which of these statements about Markov Chains are valid?
 ##### Statements
 
 - [ ] In the graph representation of Markov chains, a single state cannot have more than 3 outgoing edges.
-- [ ] In the matrix representation of Markov chains, rows have to add up to 1.
-- [ ] In the matrix representation of Markov chains, columns have to add up to 1.
+- [ ] In the matrix representation of Markov chains, values in each row have to add up to 1.
+- [ ] In the matrix representation of Markov chains, values in each column have to add up to 1.
 - [ ] The diagonal entries of the Markov chain matrix represent the transition probability of remaining in the current state.
 - [ ] In the graph representation of Markov chains, a single state cannot have more than 3 ingoing edges.
 - [ ] The graph representation of Markov chains is directed and acyclic by definition.
@@ -334,8 +334,8 @@ Which of these statements about Markov Chains are valid?
 ##### Solution
 
 - [ ] In the graph representation of Markov chains, a single state cannot have more than 3 outgoing edges.
-- [x] In the matrix representation of Markov chains, rows have to add up to 1.
-- [ ] In the matrix representation of Markov chains, columns have to add up to 1.
+- [x] In the matrix representation of Markov chains, values in each row have to add up to 1.
+- [ ] In the matrix representation of Markov chains, values in each column have to add up to 1.
 - [x] The diagonal entries of the Markov chain matrix represent the transition probability of remaining in the current state.
 - [ ] In the graph representation of Markov chains, a single state cannot have more than 3 ingoing edges.
 - [ ] The graph representation of Markov chains is directed and acyclic by definition.
