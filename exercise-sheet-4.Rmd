@@ -216,20 +216,20 @@ Fill the dynamic programming matrices $D_{i,j}$, $Q_{i,j}$ and $P_{i,j}$ using t
 \begin{align}
 g(k) &= \alpha + k * \beta \\
 \\
-D_{i,j} &= min
+D_{i,j} &= max
   \begin{cases}
      D_{i-1, j-1} + s(a_i, b_i)\\
      P_{i, j}\\
      Q_{i,j}
   \end{cases}\\
 \\
-Q_{i,j} &= min
+Q_{i,j} &= max
   \begin{cases}
      D_{i, j-1} + g(1)\\
      Q_{i, j-1} + \beta\\
   \end{cases}\\
 \\
-P_{i,j} &= min
+P_{i,j} &= max
   \begin{cases}
      D_{i-1, j} + g(1)\\
      P_{i-1, j} + \beta\\
@@ -246,7 +246,7 @@ dij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
                   c = c(" ", " ",  " ",   -5,   -6, -7 ),
                   d = c(" ", " ",  " ",   -4,   -5, -5 ),
                   e = c(" ", " ",  " ",    2,   -3, -4 ),
-                  f = c(" ", " ",  " ",   -3,   -3, -2 ),
+                  f = c(" ", " ",  " ",   -3,   3, -2 ),
                   g = c(" ", -7, -5,  -4,  " " ,   " "),
                   h = c(" ", -8, -7,  -5,  " " ,   " "),
                   i = c(" ", -9, -8,  -6,  " " ,   " "),
@@ -311,7 +311,7 @@ dij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
                   c = c(-5, 1,  -4,   -5,   -6, -7 ),
                   d = c(-6, -4,  1,   -4,   -5, -5 ),
                   e = c(-7, -5,  -3,    2,   -3, -4 ),
-                  f = c(-8, -6,  -5,   -3,   -3, -2 ),
+                  f = c(-8, -6,  -5,   -3,   3, -2 ),
                   g = c(-9, -7, -5,  -4,  -2 ,   3),
                   h = c(-10, -8, -7,  -5,  -3 ,   -1),
                   i = c(-11, -9, -8,  -6,  -4 ,   -3),
