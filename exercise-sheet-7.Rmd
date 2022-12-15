@@ -95,7 +95,7 @@ What is the expected probability that he is behind after an infinitely long seme
 \begin{align}
   \pi(0) &: initial\ probabilities\\
   P&: transition\ matrix\\
-  \lim \limits_{x \to \infty} \pi(t) &= \pi(0) * P^{t}
+  \lim \limits_{t \to \infty} \pi(t) &= \pi(0) * P^{t}
 \end{align}
 
 
