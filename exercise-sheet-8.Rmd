@@ -1,0 +1,350 @@
+---
+title: "Exercise sheet 8: Substitution Scoring"
+---
+
+---------------------------------
+
+# Exercise 1 - Point Accepted Mutation (PAM)
+
+We want to calculate the $PAM_1$ matrix based on the following two sequence alignments of the DNA sequences a, b, c and d.
+
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="100%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-sequences.svg")
+```
+:::
+::::
+
+Tip: In order to solve a) and b) create a combined alignment comprised of two combined sequences a' and b' (based on the two initial alignments and their symmetric counterparts)
+
+a' = a + c + b + d
+
+b' = b + d + a + c
+
+The order does not matter, as the frequency identification is position-insensitive.
+
+Unless otherwise stated round all results to 4 decimal places.
+
+
+### 1a)
+
+Calculate the nucleotide frequencies  $r_x$
+
+
+#### {.tabset }
+
+##### Hide
+
+##### Hint : Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-r.svg")
+```
+:::
+::::
+
+
+##### Answer
+\begin{align}
+  r_A = 0.3333 \\
+  r_C = 0.1667 \\
+  r_T = 0.3333 \\
+  r_G = 0.1667 \\
+\end{align}
+
+
+#### {-}
+
+### 1b)
+
+Calculate the symmetric mutation matrix $E(x,y)$.
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Hint : Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-E.svg")
+```
+:::
+::::
+  
+  
+
+##### Answer
+
+
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/b_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+
+#### {-}
+
+### 1c)
+
+Calculate the non-normalized PAM matrix S with $10*log_{10} (odds)$, using the previously determined $r$ values and $E$ matrix. (round to integers)
+
+#### {.tabset}
+
+##### Hide
+
+##### Hint : Formulae
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-S.svg")
+```
+:::
+::::
+  
+
+
+
+##### Answer
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/c_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+
+### 1d)
+
+ Given the sequences $a = ACC$ and $b = ATT$, compute the optimal Needleman-Wunsch alignments using:
+ 
+ 1. The general similarity scoring function.
+ 
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="100%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-D-general.svg")
+```
+:::
+::::
+
+2. The PAM1-based similarity scoring function.
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="100%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-D-PAM1.svg")
+```
+:::
+::::
+ 
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Possible Answers
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="100%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-D-result.svg")
+```
+:::
+::::
+
+##### Answer
+
+B
+
+#### {-}
+
+### 1e)
+
+Calculate the normalization factor $\gamma$ based on $E$ .
+ 
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="40%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-gamma.svg")
+```
+:::
+::::
+
+##### Answer
+
+$\gamma = 0.027$
+
+#### {-}
+
+### 1f)
+
+Calculate the mutation rate matrix $P$.
+ 
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-P.svg")
+```
+:::
+::::
+
+##### Answer
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/f_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+### 1g)
+
+Calculate the normalized mutation rate matrix $P'$ using $P$ and the normalization factor $\gamma$.
+ 
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-pprime.svg")
+```
+:::
+::::
+
+##### Answer
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/g_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+### 1h)
+
+Determine $PAM_1$ based on the normalized mutation rate matrix $P'$ with $10*log_{10}(odds)$ (round to integer)
+ 
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-PAM1.svg")
+```
+:::
+::::
+
+##### Answer
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/h_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+
+### 1i)
+
+Determine $PAM_2$. (round to integer)
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint: Formulae
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+```{r, echo=FALSE, out.width="50%", fig.align='center', include=knitr::is_html_output()}
+knitr::include_graphics("figures/sheet-8/sheet8-exercise1-PAMX.svg")
+```
+:::
+::::
+
+##### Answer
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/i_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+
+# Exercise 2 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 08](https://classroom.github.com/a/7DiYavfD).
+
+
+
+
+
