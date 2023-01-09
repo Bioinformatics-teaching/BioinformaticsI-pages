@@ -43,17 +43,18 @@ J) phylogenetic
 
 # Exercise 2 - Progressive Alignment by Feng and Doolittle
 
-Given the sequences S<sub>1</sub> = CTCACA, S<sub>2</sub> = CAC, S<sub>3</sub> = GTAC and the following scoring function:
+Given the sequences $S_1 = CTCACA$, $S_2 = CAC$, $S_3 = GTAC$ and the following scoring function:
 
 
-::::{#img1-p .extra-m}
-::: {#img3 .tutorial-img}
-```{r, echo=FALSE, out.width="80%", fig.align='center', include=knitr::is_html_output()}
-knitr::include_graphics("figures/sheet-9/sheet9-exercise2-score.svg")
-```
-:::
-::::
 
+\begin{align}
+  s(S_i,S_j) &=
+  \begin{cases}
+      +1 & if\ S_i = S_j \\
+      0 & if\ (S_i \neq S_j) \lor ((S_i = \blacklozenge \lor S_j = \blacklozenge) \land (S_i = \blacklozenge \lor S_j = \blacklozenge))\\
+      -1 & else\\
+  \end{cases}\\
+\end{align}
 
 
 We want to do progressive alignment following Feng and Doolittle. The needed pairwise alignments are calculated using the Needleman-Wunsch and are as follows:
