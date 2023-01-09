@@ -211,3 +211,17 @@ pre {
   height: 1em;
   margin-right: 0.2em;
 }
+
+.half {
+  margin: 0px 10px 20px 10px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+ @media only screen and (max-width: 600px) {
+  .flex-container {
+    display: block;
+  }
+}

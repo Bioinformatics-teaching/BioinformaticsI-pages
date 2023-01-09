@@ -4,6 +4,12 @@ title: "Exercise sheet 10: UPGMA"
 
 ---------------------------------
 
+```{r, include=FALSE}
+source("custom_functions.R")
+library(flextable)
+library(officer)
+```
+
 ::::{#img1-p .extra-m}
 ::: {#img3 .tutorial-img}
 
@@ -50,7 +56,12 @@ $$
 
 In the following steps we calculate the evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
 
-!!! MATRIX MISSING !!!
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
 
 ### 1a)
 
@@ -99,10 +110,15 @@ Fill in the distance matrix with the correct distances form the set of leaves
 
 ##### Hide
 
-##### Hint : Formulae
-
 
 ##### Solution
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1c.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
 
 
 #### {-}
@@ -143,9 +159,15 @@ Fill in a distance matrix with the remaining nodes and leaves.
 
 ##### Hide
 
-##### Hint
 
 ##### Solution
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1e.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
 
 #### {-}
 
@@ -153,6 +175,22 @@ Fill in a distance matrix with the remaining nodes and leaves.
 
 What does the **subpart** of the tree look like in Newick format after selecting and joining your answer from *e)*
 
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+The following answers will be given in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
+Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex).
+
+:::
+::::
+
 #### {.tabset}
 
 
@@ -160,21 +198,23 @@ What does the **subpart** of the tree look like in Newick format after selecting
 
 ##### Hint
 
-- [ ] ((c : 3, d : 3) : 3.5, e : 3.5)
-- [ ] ((c : 3, d : 3) : 0.5, e : 3.5)
-- [ ] ((a : 1.5, b : 1.5) : 2.75, e : 4.25)
+- [ ] `((c : 3, d : 3) : 3.5, e : 3.5);`
+- [ ] `((c : 3, d : 3) : 0.5, e : 3.5);`
+- [ ] `((a : 1.5, b : 1.5) : 2.75, e : 4.25);`
 
-- [ ] ((c : 3, d : 3) : 3.5, e : 3.5)
-- [x] ((c : 3, d : 3) : 0.5, e : 3.5)
-- [ ] ((a : 1.5, b : 1.5) : 2.75, e : 4.25)
 
 ##### Solution
+
+- [ ] `((c : 3, d : 3) : 3.5, e : 3.5);`
+- [x] `((c : 3, d : 3) : 0.5, e : 3.5);`
+- [ ] `((a : 1.5, b : 1.5) : 2.75, e : 4.25);`
 
 #### {-}
 
-### 1f)
+### 1g)
 
 Following the approach from the previous exercises, what does the **whole tree** look like.
+
 
 #### {.tabset}
 
@@ -184,15 +224,16 @@ Following the approach from the previous exercises, what does the **whole tree**
 
 ##### Hint
 
-- [ ] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
-- [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
-- [ ] (((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);
+- [ ] `((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);`
+- [ ] `((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);`
+- [ ] `(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);`
 
 ##### Solution
 
-- [x] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
-- [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
-- [ ] (((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);
+- [x] `((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);`
+- [ ] `((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);`
+- [ ] `(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);`
+
 
 #### {-}
 
@@ -215,6 +256,12 @@ Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the fo
 - [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
 - [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.
 
+##### Hint: Formula
+
+$$
+UPGMA: dist(x, e) = \dfrac{|c|dist(x,c) + |d|dist(x,d)}{|c| + |d|}
+$$
+
 
 ##### Solution
 
@@ -236,15 +283,94 @@ Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the fo
 
 Which of the following distance matrices are ultrametric?
 
-!!MISSING!!
+
+:::: {.flex-container}
+
+::: {#half .half}
+
+1)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::: {#half .half}
+
+2)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_2.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::::
+
+:::: {.flex-container}
+
+
+::: {#half .half}
+
+3)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_3.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::: {#half .half}
+
+4)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_4.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+:::: 
 
 #### {.tabset} 
 
 ##### Hide
 
+##### Hint
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Definition Ultra-Metric:
+
+\begin{align}
+  w(x,y) &= 0  \leftrightarrow x = y\ &\text{(identity)}\\
+  w(x, y) &= w(y, x)\ &\text{(symmetric)}\\
+  w (x, z) &\leq w (x, y ) + w (y , z) &\text{(triangle inequality)}\\
+  w (x, z) &\leq max\{ w (x, y ), w (y , z)\} &\text{(strong triangle inequality)}
+\end{align}
+
+:::
+::::
 
 ##### Solution
 
+**2)**
 
 
 #### {-}
