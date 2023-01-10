@@ -51,7 +51,7 @@ Given the sequences $S_1 = CTCACA$, $S_2 = CAC$, $S_3 = GTAC$ and the following 
   s(S_i,S_j) &=
   \begin{cases}
       +1 & if\ S_i = S_j \\
-      0 & if\ (S_i \neq S_j) \lor ((S_i = \blacklozenge \lor S_j = \blacklozenge) \land (S_i = \blacklozenge \lor S_j = \blacklozenge))\\
+      0 & if\ (S_i \neq S_j) \lor (S_i = \blacklozenge \land S_j = -) \lor (S_i = - \land S_j = \blacklozenge)\\
       -1 & else\\
   \end{cases}\\
 \end{align}
@@ -70,7 +70,7 @@ knitr::include_graphics("figures/sheet-9/sheet9-exercise2-alignments.svg")
 We want to follow one step of the algorithm introduced in the lecture.
 The following guide trees are given in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
 
-### 1a) 
+### 2a) 
 
 Starting with the guide tree **(($S_1$, $S_3$), $S_2$)**, what would be the starting **$group_1$**?
 
@@ -100,7 +100,7 @@ GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
 
 
 
-### 1b) 
+### 2b) 
 
 Use the Needleman-Wunsch algorithm to generate all pairwise alignments against **$group_1$** and calculate their respective **similarity score**.
 
@@ -175,7 +175,7 @@ $ss_4$ = 1
 
 
 
-### 1c) 
+### 2c) 
 
 Based on the previously calculated pairwise alignments what are the possible choices for **$group_2$**?
 
@@ -219,7 +219,7 @@ GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
 
 
 
-### 1d) 
+### 2d) 
 
 Calculate the sum-of-pairs scores for each of the possible **$group_2$** choices.
 
@@ -266,7 +266,7 @@ $sp_2$ = 2
 
 
 
-### 1e) 
+### 2e) 
 
 Which alignment will be chosen as **$group_2$** for the next step?
 
@@ -296,7 +296,7 @@ GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
 
 
 
-### 1f)
+### 2f)
 
 Based on what you have learned, what are the alignments and sum-of-pairs scores for the guide tree **(($S_2$, $S_3$), $S_1$)**?
 

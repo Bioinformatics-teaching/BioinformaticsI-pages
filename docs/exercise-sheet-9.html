@@ -410,7 +410,7 @@ div.tocify {
   s(S_i,S_j) &amp;=
   \begin{cases}
       +1 &amp; if\ S_i = S_j \\
-      0 &amp; if\ (S_i \neq S_j) \lor ((S_i = \blacklozenge \lor S_j = \blacklozenge) \land (S_i = \blacklozenge \lor S_j = \blacklozenge))\\
+      0 &amp; if\ (S_i \neq S_j) \lor (S_i = \blacklozenge \land S_j = -) \lor (S_i = - \land S_j = \blacklozenge)\\
       -1 &amp; else\\
   \end{cases}\\
 \end{align}\]</span></p>
