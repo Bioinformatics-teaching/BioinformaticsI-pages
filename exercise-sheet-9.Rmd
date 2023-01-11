@@ -51,7 +51,7 @@ Given the sequences $S_1 = CTCACA$, $S_2 = CAC$, $S_3 = GTAC$ and the following 
   s(S_i,S_j) &=
   \begin{cases}
       +1 & if\ S_i = S_j \\
-      0 & if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor S_j = \blacklozenge)\\
+      0 & if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor  S_j = \blacklozenge) \lor (S_i = -  \land  S_j = -)\\
       -1 & else\\
   \end{cases}\\
 \end{align}
@@ -228,6 +228,22 @@ Calculate the sum-of-pairs scores for each of the possible **$group_2$** choices
 ##### Hide
 
 
+##### Hint: Important Step
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Don't forget to replace the `r knitr::asis_output("\U25C6")` symbol with the $-$
+
+:::
+::::
 
 
 ##### Solution
@@ -238,10 +254,10 @@ $group_2$ (1)
 ```
 CTCACA
 -C-AC-
-GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
+GT-AC-
 ```
 
-$sp_1$ = 3
+$sp_1$ = 1
 
 \
 
@@ -250,9 +266,9 @@ $group_2$ (2)
 ```
 CTCACA
 C--AC-
-GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
+GT-AC-
 ```
-$sp_2$ = 4
+$sp_2$ = 2
 
 #### {-}
 
@@ -268,7 +284,7 @@ $sp_2$ = 4
 
 ### 2e) 
 
-Which alignment will be chosen as **$group_2$** for the next step?
+Which final alignment would be picked regarding its sum of pairs score.
 
 #### {.tabset }
 
@@ -282,7 +298,7 @@ Which alignment will be chosen as **$group_2$** for the next step?
 ```
 CTCACA
 C--AC-
-GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
+GT-AC-
 ```
 
 #### {-}
@@ -313,7 +329,7 @@ Based on what you have learned, what are the alignments and sum-of-pairs scores 
 $group_2$ (1) 
 ```
 CTCACA
--`r knitr::asis_output("\U25C6")`CAC-
+--CAC-
 -GTAC-
 ```               
                
@@ -325,7 +341,7 @@ $group_2$ (2)
 
 ```
 CTCACA
-`r knitr::asis_output("\U25C6")`-CAC-
+--CAC-
 G-TAC-
                
 ```
@@ -337,7 +353,7 @@ $sp_2$ = 1
 $group_2$(3) 
 ```
 CTCACA
-`r knitr::asis_output("\U25C6")`C-AC-
+-C-AC-
 GT-AC-
 ```
 $sp_3$ = 1

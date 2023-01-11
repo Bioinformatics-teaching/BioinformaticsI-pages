@@ -410,7 +410,7 @@ div.tocify {
   s(S_i,S_j) &amp;=
   \begin{cases}
       +1 &amp; if\ S_i = S_j \\
-      0 &amp; if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor S_j = \blacklozenge)\\
+      0 &amp; if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor  S_j = \blacklozenge) \lor (S_i = -  \land  S_j = -)\\
       -1 &amp; else\\
   \end{cases}\\
 \end{align}\]</span></p>
@@ -514,20 +514,31 @@ GT◆AC◆</code></pre>
 <div id="hide-4" class="section level5">
 <h5>Hide</h5>
 </div>
+<div id="hint-important-step" class="section level5">
+<h5>Hint: Important Step</h5>
+<div id="explaining" class="message-box">
+<div id="note-exp" class="note-header">
+<p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
+</div>
+<div id="note-exp" class="note-body">
+<p>Don’t forget to replace the ◆ symbol with the <span class="math inline">\(-\)</span></p>
+</div>
+</div>
+</div>
 <div id="solution-4" class="section level5">
 <h5>Solution</h5>
 <p><span class="math inline">\(group_2\)</span> (1)</p>
 <pre><code>CTCACA
 -C-AC-
-GT◆AC◆</code></pre>
-<p><span class="math inline">\(sp_1\)</span> = 3</p>
+GT-AC-</code></pre>
+<p><span class="math inline">\(sp_1\)</span> = 1</p>
 <p><br />
 </p>
 <p><span class="math inline">\(group_2\)</span> (2)</p>
 <pre><code>CTCACA
 C--AC-
-GT◆AC◆</code></pre>
-<p><span class="math inline">\(sp_2\)</span> = 4</p>
+GT-AC-</code></pre>
+<p><span class="math inline">\(sp_2\)</span> = 2</p>
 </div>
 </div>
 <div id="section-9" class="section level4 unnumbered">
@@ -536,7 +547,7 @@ GT◆AC◆</code></pre>
 </div>
 <div id="e" class="section level3">
 <h3>2e)</h3>
-<p>Which alignment will be chosen as <strong><span class="math inline">\(group_2\)</span></strong> for the next step?</p>
+<p>Which final alignment would be picked regarding its sum of pairs score.</p>
 <div id="section-10" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-5" class="section level5">
@@ -546,7 +557,7 @@ GT◆AC◆</code></pre>
 <h5>Solution</h5>
 <pre><code>CTCACA
 C--AC-
-GT◆AC◆</code></pre>
+GT-AC-</code></pre>
 </div>
 </div>
 <div id="section-11" class="section level4 unnumbered">
@@ -565,14 +576,14 @@ GT◆AC◆</code></pre>
 <h5>Solution</h5>
 <p><span class="math inline">\(group_2\)</span> (1)</p>
 <pre><code>CTCACA
--◆CAC-
+--CAC-
 -GTAC-</code></pre>
 <p><span class="math inline">\(sp_1\)</span> = 1</p>
 <p><br />
 </p>
 <p><span class="math inline">\(group_2\)</span> (2)</p>
 <pre><code>CTCACA
-◆-CAC-
+--CAC-
 G-TAC-
                </code></pre>
 <p><span class="math inline">\(sp_2\)</span> = 1</p>
@@ -580,7 +591,7 @@ G-TAC-
 </p>
 <p><span class="math inline">\(group_2\)</span>(3)</p>
 <pre><code>CTCACA
-◆C-AC-
+-C-AC-
 GT-AC-</code></pre>
 <p><span class="math inline">\(sp_3\)</span> = 1</p>
 </div>
