@@ -51,7 +51,7 @@ Given the sequences $S_1 = CTCACA$, $S_2 = CAC$, $S_3 = GTAC$ and the following 
   s(S_i,S_j) &=
   \begin{cases}
       +1 & if\ S_i = S_j \\
-      0 & if\ (S_i \neq S_j) \lor (S_i = \blacklozenge \land S_j = -) \lor (S_i = - \land S_j = \blacklozenge)\\
+      0 & if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor S_j = \blacklozenge)\\
       -1 & else\\
   \end{cases}\\
 \end{align}
@@ -241,7 +241,7 @@ CTCACA
 GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
 ```
 
-$sp_1$ = 1
+$sp_1$ = 3
 
 \
 
@@ -252,7 +252,7 @@ CTCACA
 C--AC-
 GT`r knitr::asis_output("\U25C6")`AC`r knitr::asis_output("\U25C6")`
 ```
-$sp_2$ = 2
+$sp_2$ = 4
 
 #### {-}
 
