@@ -86,7 +86,7 @@ Which leaves should be selected first?
 
 ### 1b)
 
-b) Calculate the corresponding distance for the set of leaves from *a)*.
+Calculate the corresponding distance for the set of leaves from *a)*.
 
 #### {.tabset}
 
@@ -126,7 +126,7 @@ index_replace(sij_ft)
 ### 1d)
 
 
-Which nodes are joined next given the correct distance matrix from c? 
+Which nodes are joined next given the correct distance matrix from *c)*? 
 
 #### {.tabset}
 
