@@ -11,7 +11,7 @@
 
 
 
-<title>Admin</title>
+<title>Exercise sheet 2: Edit operations and alignments</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -366,52 +366,300 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Admin</h1>
+<h1 class="title toc-ignore">Exercise sheet 2: Edit operations and
+alignments</h1>
 
 </div>
 
 
 <hr />
-<div id="ingo" class="ingo">
-<p><img src="figures/ingo.svg" /><!-- --> <img
-src="figures/alex.svg" /><!-- --></p>
+<div id="exercise-1---levenshtein-distance" class="section level1">
+<h1>Exercise 1 - Levenshtein Distance</h1>
+<p>Compute the minimal Levenshtein edit distance for the following pairs
+of sequences.</p>
+<div id="a" class="section level3">
+<h3>1a)</h3>
+<div class="question">
+<p><span class="math display">\[\begin{align}
+S_{1} = A\\
+S_{2} = T
+\end{align}\]</span></p>
 </div>
-<h2>
-<a href="exercise-sheet-1.html"> Sheet1 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-2.html"> Sheet2 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-3.html"> Sheet3 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-4.html"> Sheet4 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-5.html"> Sheet5 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-6.html"> Sheet6 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-7.html"> Sheet7 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-8.html"> Sheet8 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-9.html"> Sheet9 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-10.html"> Sheet10 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-11.html"> Sheet11 </a>
-</h2>
-<h2>
-<a href="exercise-sheet-12.html"> Sheet12 </a>
-</h2>
+<div id="section" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint" class="section level5">
+<h5>Hint</h5>
+<p>A → T</p>
+</div>
+<div id="correct-answer" class="section level5">
+<h5>Correct Answer</h5>
+<p>A → T = 1</p>
+</div>
+</div>
+<div id="section-1" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="b" class="section level3">
+<h3>1b)</h3>
+<div class="question">
+<p><span class="math display">\[\begin{align}
+S_{1} &amp;= AGATATA\\
+S_{2} &amp;= TATATATA
+\end{align}\]</span></p>
+</div>
+<div id="section-2" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-1" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-1" class="section level5">
+<h5>Hint</h5>
+<p>AGATATA → ATATATA → …</p>
+</div>
+<div id="correct-answer-1" class="section level5">
+<h5>Correct Answer</h5>
+<p>AGATATA → ATATATA → TATATATA = 2</p>
+</div>
+</div>
+<div id="section-3" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="c" class="section level3">
+<h3>1c)</h3>
+<div class="question">
+<p><span class="math display">\[\begin{align}
+S_{1} = AGTCCT\\
+S_{2} = CGCTCA
+\end{align}\]</span></p>
+</div>
+<div id="section-4" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-2" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-2" class="section level5">
+<h5>Hint</h5>
+<p>AGTCCT → AGCTCA → …</p>
+</div>
+<div id="correct-answer-2" class="section level5">
+<h5>Correct Answer</h5>
+<p>AGTCCT → CGTCCT → CGCCCT → CGCTCT → CGCTCA = 4</p>
+</div>
+</div>
+<div id="section-5" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="d" class="section level3">
+<h3>1d)</h3>
+<div class="question">
+<p><span class="math display">\[\begin{align}
+S_{1} = TGCATAT\\
+S_{2} = ATCCGAT
+\end{align}\]</span></p>
+</div>
+<div id="section-6" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-3" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-3" class="section level5">
+<h5>Hint</h5>
+<p>TGCATAT → AGCATAT → …</p>
+</div>
+<div id="correct-answer-3" class="section level5">
+<h5>Correct Answer</h5>
+<p>TGCATAT → AGCATAT → ATCATAT → ATCAGAT → ATCCGAT = 4</p>
+</div>
+</div>
+<div id="section-7" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="e" class="section level3">
+<h3>1e)</h3>
+<div class="question">
+<p><span class="math display">\[\begin{align}
+S_{1} = ACGTATATAGCCCCGCG\\
+S_{2} = ACGTTATATAGCCGCGC
+\end{align}\]</span></p>
+</div>
+<div id="section-8" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-4" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-4" class="section level5">
+<h5>Hint</h5>
+<p>You need to use all the possible operations</p>
+<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → …</p>
+</div>
+<div id="correct-answer-4" class="section level5">
+<h5>Correct Answer</h5>
+<p>ACGTATATAGCCCCGCG → ACGTTATATAGCCCCGCG → ACGTTATATAGCCGCGCG →
+ACGTTATATAGCCGCGC = 3</p>
+</div>
+</div>
+<div id="section-9" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+</div>
+<div id="exercise-2---metric-function" class="section level1">
+<h1>Exercise 2 - Metric function</h1>
+<p>Check if the corresponding functions are metric.</p>
+<div id="section-10" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-5" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="formulae" class="section level5">
+<h5>Formulae</h5>
+<div id="explaining" class="message-box">
+<div id="note-exp" class="note-header">
+<p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
+</div>
+<div id="note-exp" class="note-body">
+<p>Definition Metric:</p>
+<p><span class="math display">\[\begin{align}
+  w(x,y) &amp;= 0  \leftrightarrow x = y\ &amp;\text{(identity)}\\
+  w(x, y) &amp;= w(y, x)\ &amp;\text{(symmetric)}\\
+  w (x, z) &amp;\leq w (x, y ) + w (y , z) &amp;\text{(triangle
+inequality)}
+\end{align}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="section-11" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+<div id="a-1" class="section level3">
+<h3>2a)</h3>
+<p><span class="math display">\[\begin{align}
+w(x,y) = x-y
+\end{align}\]</span></p>
+<div id="section-12" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-6" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-5" class="section level5">
+<h5>Hint</h5>
+<p>What if <span class="math inline">\(x = 1\)</span> and <span
+class="math inline">\(y = 2\)</span>?</p>
+</div>
+<div id="correct-answer-5" class="section level5">
+<h5>Correct Answer</h5>
+<p>Not a metric, violates symmetry constraint.</p>
+<p><span class="math display">\[
+x = 1\\
+y = 2\\
+x - y = 1 - 2 = -1 \neq 1 = 2 - 1 = y - x
+\]</span></p>
+</div>
+</div>
+<div id="section-13" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="b-1" class="section level3">
+<h3>2b)</h3>
+<p><span class="math display">\[\begin{align}
+w(x,y) = |x-y|
+\end{align}\]</span></p>
+<div id="section-14" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-7" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-6" class="section level5">
+<h5>Hint</h5>
+<p>You need to check all the properties.</p>
+</div>
+<div id="correct-answer-6" class="section level5">
+<h5>Correct Answer</h5>
+<p>Metric</p>
+</div>
+</div>
+<div id="section-15" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="c-1" class="section level3">
+<h3>2c)</h3>
+<p><span class="math display">\[\begin{align}
+w(x,y) = x+y
+\end{align}\]</span></p>
+<div id="section-16" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-8" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-7" class="section level5">
+<h5>Hint</h5>
+<p>What if <span class="math inline">\(x = 1\)</span> and <span
+class="math inline">\(y = 1\)</span>?</p>
+</div>
+<div id="correct-answer-7" class="section level5">
+<h5>Correct Answer</h5>
+<p>Not metric, violates identity constraint:</p>
+<p><span class="math display">\[
+x = y = 1\\
+x + y = x + x = 2 \neq 0
+\]</span></p>
+</div>
+</div>
+<div id="section-17" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+</div>
+<div id="d-1" class="section level3">
+<h3>2d)</h3>
+<p><span class="math display">\[\begin{align}
+w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
+\\0\ \text{else}
+\end{cases}
+\end{align}\]</span></p>
+<div id="section-18" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<div id="hide-9" class="section level5">
+<h5>Hide</h5>
+</div>
+<div id="hint-8" class="section level5">
+<h5>Hint</h5>
+<p>You need to check all the properties.</p>
+</div>
+<div id="correct-answer-8" class="section level5">
+<h5>Correct Answer</h5>
+<p>Metric</p>
+</div>
+</div>
+<div id="section-19" class="section level4 unnumbered">
+<h4 class="unnumbered"></h4>
+</div>
+<div id="section-20" class="section level4 tabset">
+<h4 class="tabset"></h4>
+<hr />
+</div>
+</div>
+</div>
+<div id="exercise-3---programming-assignment" class="section level1">
+<h1>Exercise 3 - Programming assignment</h1>
+<p>Programming assignments are available via Github Classroom and
+contain automatic tests.</p>
+<p>We recommend doing these assignments since they will help you to
+further understand this topic.</p>
+<p>Access the Github Classroom link: <a
+href="https://classroom.github.com/a/F-sdH7RI">Programming Assignment:
+Sheet 02</a>.</p>
+<hr />
+</div>
 
 
 
