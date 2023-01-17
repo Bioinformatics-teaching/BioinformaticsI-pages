@@ -13,7 +13,7 @@
 
 <title>Exercise sheet 7: Markov chains</title>
 
-<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -350,6 +350,7 @@ div.tocify {
         <li><a href="exercise-sheet-8.html">ES 8</a></li>
         <li><a href="exercise-sheet-9.html">ES 9</a></li>
         <li><a href="exercise-sheet-10.html">ES 10</a></li>
+        <li><a href="exercise-sheet-12.html">ES 12</a></li>
 
 
         <!--<li><a href="exercise-sheet-10.html">Sheet 10</a></li>-->
@@ -373,11 +374,18 @@ div.tocify {
 <hr />
 <div id="exercise-1---up-to-date-or-behind" class="section level1">
 <h1>Exercise 1 - Up-to-date or Behind</h1>
-<p>Alex is taking a bioinformatics class and in each week he can be either up-to-date or he may have fallen behind. If he is up-to-date in a given week, the probability that he will be up-to-date in the next week is 0.75. If he is behind in the given week, the probability that he will be up-to-date in the next week is 0.5.</p>
-<p>If we assume that these probabilities do not depend on whether he was up-to-date or behind in previous weeks, we can model the problem using a Markov chain.</p>
+<p>Alex is taking a bioinformatics class and in each week he can be
+either up-to-date or he may have fallen behind. If he is up-to-date in a
+given week, the probability that he will be up-to-date in the next week
+is 0.75. If he is behind in the given week, the probability that he will
+be up-to-date in the next week is 0.5.</p>
+<p>If we assume that these probabilities do not depend on whether he was
+up-to-date or behind in previous weeks, we can model the problem using a
+Markov chain.</p>
 <div id="a" class="section level3">
 <h3>1a)</h3>
-<p>Draw a Markov chain that models the states of being Up-to-date or behind</p>
+<p>Draw a Markov chain that models the states of being Up-to-date or
+behind</p>
 <div id="section" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide" class="section level5">
@@ -398,7 +406,8 @@ div.tocify {
 </div>
 <div id="b" class="section level3">
 <h3>1b)</h3>
-<p>Assume Alex is up-to-date in the first class; what is the probability that he is up-to-date two classes later?</p>
+<p>Assume Alex is up-to-date in the first class; what is the probability
+that he is up-to-date two classes later?</p>
 <div id="section-2" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-1" class="section level5">
@@ -416,12 +425,12 @@ div.tocify {
 <h5>Solution</h5>
 <p>The Probability is 0.6875</p>
 <p><span class="math display">\[\begin{align}
-  \pi(0) &amp;= 
+  \pi(0) &amp;=
   \begin{pmatrix}
     1 &amp; 0
   \end{pmatrix}\\
   \\
-  P &amp;= 
+  P &amp;=
   \begin{pmatrix}
     0.75 &amp; 0.25\\
     0.5 &amp; 0.5
@@ -441,7 +450,8 @@ div.tocify {
 </div>
 <div id="c" class="section level3">
 <h3>1c)</h3>
-<p>What is the expected probability that he is behind after an infinitely long semester?</p>
+<p>What is the expected probability that he is behind after an
+infinitely long semester?</p>
 <div id="section-4" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-2" class="section level5">
@@ -459,7 +469,7 @@ div.tocify {
 <h5>Solution</h5>
 <p>The Probability is 2/3</p>
 <p><span class="math display">\[
-\lim \limits_{t \to \infty} \pi(t) = \pi(0) * P^{t} = 
+\lim \limits_{t \to \infty} \pi(t) = \pi(0) * P^{t} =
   \begin{pmatrix}
     2/3 &amp; 1/3
   \end{pmatrix}
@@ -472,7 +482,9 @@ div.tocify {
 </div>
 <div id="d" class="section level3">
 <h3>1d)</h3>
-<p>What is the transition probability matrix product for limit of <span class="math inline">\(P^{t}\)</span> as <span class="math inline">\(t\)</span> approaches infinity?</p>
+<p>What is the transition probability matrix product for limit of <span
+class="math inline">\(P^{t}\)</span> as <span
+class="math inline">\(t\)</span> approaches infinity?</p>
 <div id="section-6" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-3" class="section level5">
@@ -481,7 +493,7 @@ div.tocify {
 <div id="solution-3" class="section level5">
 <h5>Solution</h5>
 <p><span class="math display">\[\begin{align}
-  \lim \limits_{t \to \infty} P^t &amp;= 
+  \lim \limits_{t \to \infty} P^t &amp;=
   \begin{pmatrix}
     2/3 &amp; 1/3 \\
     2/3 &amp; 1/3
@@ -496,7 +508,8 @@ div.tocify {
 </div>
 <div id="exercise-2---stationary-distribution" class="section level1">
 <h1>Exercise 2 - Stationary distribution</h1>
-<p>Consider a three-state Markov chain having the following transition probability matrix:</p>
+<p>Consider a three-state Markov chain having the following transition
+probability matrix:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
   0.5 &amp; 0.4 &amp; 0.1\\
@@ -506,7 +519,8 @@ div.tocify {
 \]</span></p>
 <div id="a-1" class="section level3">
 <h3>2a)</h3>
-<p>In the long run, what proportion of time is the process in each of the three states?</p>
+<p>In the long run, what proportion of time is the process in each of
+the three states?</p>
 <div id="section-8" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-4" class="section level5">
@@ -519,7 +533,7 @@ div.tocify {
 <div id="correct-answer" class="section level5">
 <h5>Correct Answer</h5>
 <p><span class="math display">\[\begin{align}
-  \lim \limits_{t \to \infty} P^t &amp;= 
+  \lim \limits_{t \to \infty} P^t &amp;=
   \begin{pmatrix}
     0.339 &amp; 0.371 &amp; 0.290\\
     0.339 &amp; 0.371 &amp; 0.290\\
@@ -530,7 +544,7 @@ div.tocify {
   \begin{pmatrix}
     0.339 &amp; 0.371 &amp; 0.290
   \end{pmatrix}
-\end{align}\]</span></p>
+\end{align}\]</span>rix} \end{align}</p>
 <div id="explaining" class="message-box">
 <div id="note-exp" class="note-header">
 <p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
@@ -539,7 +553,9 @@ div.tocify {
 <p><span class="math display">\[
   \lim \limits_{t \to \infty} \pi(t)
 \]</span></p>
-<p>is independent of <span class="math inline">\(\pi(0)\)</span> as long as <span class="math inline">\(P\)</span> does not contain disconnected subgraphs and only if the limit exists.</p>
+<p>is independent of <span class="math inline">\(\pi(0)\)</span> as long
+as <span class="math inline">\(P\)</span> does not contain disconnected
+subgraphs and only if the limit exists.</p>
 </div>
 </div>
 </div>
@@ -554,7 +570,8 @@ div.tocify {
 </div>
 <div id="exercise-3---reversibility" class="section level1">
 <h1>Exercise 3 - Reversibility</h1>
-<p>Consider a three-state Markov chain having the following transition probability matrix</p>
+<p>Consider a three-state Markov chain having the following transition
+probability matrix</p>
 <p><span class="math display">\[
 \begin{pmatrix}
   0 &amp; 1 &amp; 0 \\
@@ -585,7 +602,10 @@ div.tocify {
 </div>
 <div id="b-1" class="section level3">
 <h3>3b)</h3>
-<p>Given the stationary distribution <span class="math inline">\(\begin{pmatrix} \dfrac{1}{6} &amp; \dfrac{1}{2} &amp; \dfrac{1}{3} \end{pmatrix}\)</span>, is this Markov chain reversible and what does this property tell you?</p>
+<p>Given the stationary distribution <span
+class="math inline">\(\begin{pmatrix} \dfrac{1}{6} &amp; \dfrac{1}{2}
+&amp; \dfrac{1}{3} \end{pmatrix}\)</span>, is this Markov chain
+reversible and what does this property tell you?</p>
 <div id="section-13" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-6" class="section level5">
@@ -597,15 +617,24 @@ div.tocify {
 <p><span class="math display">\[
 \pi_i^{*}P_{i,j} = \pi_j^{*}P_{j,i}
 \]</span></p>
-<p>Easiest way is to calculate it for all pairs of <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span></p>
+<p>Easiest way is to calculate it for all pairs of <span
+class="math inline">\(i\)</span> and <span
+class="math inline">\(j\)</span></p>
 </div>
 <div id="solution-5" class="section level5">
 <h5>Solution</h5>
-<p>Because <span class="math inline">\(\pi_i^{*}P_{i,j} = \pi_j^{*}P_{j,i}\ \forall\ i,j\)</span> the Markov chain is reversible</p>
+<p>Because <span class="math inline">\(\pi_i^{*}P_{i,j} =
+\pi_j^{*}P_{j,i}\ \forall\ i,j\)</span> the Markov chain is
+reversible</p>
 <p><span class="math display">\[\begin{align}
-  \pi^{ * }_1 P_{1,2} &amp;=&amp; \dfrac{1}{6} \times 1 &amp;=&amp; \dfrac{1}{6} &amp;=&amp; \dfrac{1}{2} \times \dfrac{1}{3} &amp;=&amp; \pi^{ * }_2 P_{2,1}\\
-  \pi^{ * }_1 P_{1,3} &amp;=&amp; \dfrac{1}{6} \times 0 &amp;=&amp; 0 &amp;=&amp; \dfrac{1}{3} \times 0 &amp;=&amp; \pi^{ * }_3 P_{3,1}\\
-  \pi^{ * }_2 P_{2,3} &amp;=&amp; \dfrac{1}{2} \times \dfrac{2}{3}  &amp;=&amp; \dfrac{1}{3} &amp;=&amp; \dfrac{1}{3} \times 1 &amp;=&amp; \pi^{ * }_3 P_{3,2}
+  \pi^{ * }_1 P_{1,2} &amp;=&amp; \dfrac{1}{6} \times 1 &amp;=&amp;
+\dfrac{1}{6} &amp;=&amp; \dfrac{1}{2} \times \dfrac{1}{3} &amp;=&amp;
+\pi^{ * }_2 P_{2,1}\\
+  \pi^{ * }_1 P_{1,3} &amp;=&amp; \dfrac{1}{6} \times 0 &amp;=&amp; 0
+&amp;=&amp; \dfrac{1}{3} \times 0 &amp;=&amp; \pi^{ * }_3 P_{3,1}\\
+  \pi^{ * }_2 P_{2,3} &amp;=&amp; \dfrac{1}{2} \times
+\dfrac{2}{3}  &amp;=&amp; \dfrac{1}{3} &amp;=&amp; \dfrac{1}{3} \times 1
+&amp;=&amp; \pi^{ * }_3 P_{3,2}
 \end{align}\]</span></p>
 </div>
 </div>
@@ -614,11 +643,13 @@ div.tocify {
 </div>
 </div>
 </div>
-<div id="exercise-4---markov-chain-representation" class="section level1">
+<div id="exercise-4---markov-chain-representation"
+class="section level1">
 <h1>Exercise 4 - Markov chain representation</h1>
 <div id="a-3" class="section level3">
 <h3>4a)</h3>
-<p>Decide which of the following figures represents a valid Markov Chain</p>
+<p>Decide which of the following figures represents a valid Markov
+Chain</p>
 <div id="img1-p" class="extra-m">
 <div id="img3" class="tutorial-img">
 <p><img src="figures/sheet-7/sheet7-exercise4-markov-chains.svg" width="100%" style="display: block; margin: auto;" /></p>
@@ -632,20 +663,17 @@ div.tocify {
 <div id="solution-6" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-i</li>
-<li><input type="checkbox" disabled="" />
-ii - initial probabilities add up to 0.2</li>
-<li><input type="checkbox" disabled="" />
-iii - transition probabilities for states A and B do not add up to 1</li>
-<li><input type="checkbox" disabled="" />
-iv - duplicate state A</li>
-<li><input type="checkbox" disabled="" />
-v - initial probabilities add up to 1.1</li>
-<li><input type="checkbox" disabled="" checked="" />
-vi</li>
-<li><input type="checkbox" disabled="" />
-vii missing transition probabilites (0.1) for state C</li>
+<li><input type="checkbox" disabled="" checked="" />i</li>
+<li><input type="checkbox" disabled="" />ii - initial probabilities add
+up to 0.2</li>
+<li><input type="checkbox" disabled="" />iii - transition probabilities
+for states A and B do not add up to 1</li>
+<li><input type="checkbox" disabled="" />iv - duplicate state A</li>
+<li><input type="checkbox" disabled="" />v - initial probabilities add
+up to 1.1</li>
+<li><input type="checkbox" disabled="" checked="" />vi</li>
+<li><input type="checkbox" disabled="" />vii missing transition
+probabilites (0.1) for state C</li>
 </ul>
 </div>
 </div>
@@ -661,35 +689,42 @@ vii missing transition probabilites (0.1) for state C</li>
 <div id="statements" class="section level5">
 <h5>Statements</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-In the graph representation of Markov chains, a single state cannot have more than 3 outgoing edges.</li>
-<li><input type="checkbox" disabled="" />
-In the matrix representation of Markov chains, values in each row have to add up to 1.</li>
-<li><input type="checkbox" disabled="" />
-In the matrix representation of Markov chains, values in each column have to add up to 1.</li>
-<li><input type="checkbox" disabled="" />
-The diagonal entries of the Markov chain matrix represent the transition probability of remaining in the current state.</li>
-<li><input type="checkbox" disabled="" />
-In the graph representation of Markov chains, a single state cannot have more than 3 ingoing edges.</li>
-<li><input type="checkbox" disabled="" />
-The graph representation of Markov chains is directed and acyclic by definition.</li>
+<li><input type="checkbox" disabled="" />In the graph representation of
+Markov chains, a single state cannot have more than 3 outgoing
+edges.</li>
+<li><input type="checkbox" disabled="" />In the matrix representation of
+Markov chains, values in each row have to add up to 1.</li>
+<li><input type="checkbox" disabled="" />In the matrix representation of
+Markov chains, values in each column have to add up to 1.</li>
+<li><input type="checkbox" disabled="" />The diagonal entries of the
+Markov chain matrix represent the transition probability of remaining in
+the current state.</li>
+<li><input type="checkbox" disabled="" />In the graph representation of
+Markov chains, a single state cannot have more than 3 ingoing
+edges.</li>
+<li><input type="checkbox" disabled="" />The graph representation of
+Markov chains is directed and acyclic by definition.</li>
 </ul>
 </div>
 <div id="solution-7" class="section level5">
 <h5>Solution</h5>
 <ul class="task-list">
-<li><input type="checkbox" disabled="" />
-In the graph representation of Markov chains, a single state cannot have more than 3 outgoing edges.</li>
-<li><input type="checkbox" disabled="" checked="" />
-In the matrix representation of Markov chains, values in each row have to add up to 1.</li>
-<li><input type="checkbox" disabled="" />
-In the matrix representation of Markov chains, values in each column have to add up to 1.</li>
-<li><input type="checkbox" disabled="" checked="" />
-The diagonal entries of the Markov chain matrix represent the transition probability of remaining in the current state.</li>
-<li><input type="checkbox" disabled="" />
-In the graph representation of Markov chains, a single state cannot have more than 3 ingoing edges.</li>
-<li><input type="checkbox" disabled="" />
-The graph representation of Markov chains is directed and acyclic by definition.</li>
+<li><input type="checkbox" disabled="" />In the graph representation of
+Markov chains, a single state cannot have more than 3 outgoing
+edges.</li>
+<li><input type="checkbox" disabled="" checked="" />In the matrix
+representation of Markov chains, values in each row have to add up to
+1.</li>
+<li><input type="checkbox" disabled="" />In the matrix representation of
+Markov chains, values in each column have to add up to 1.</li>
+<li><input type="checkbox" disabled="" checked="" />The diagonal entries
+of the Markov chain matrix represent the transition probability of
+remaining in the current state.</li>
+<li><input type="checkbox" disabled="" />In the graph representation of
+Markov chains, a single state cannot have more than 3 ingoing
+edges.</li>
+<li><input type="checkbox" disabled="" />The graph representation of
+Markov chains is directed and acyclic by definition.</li>
 </ul>
 </div>
 </div>
