@@ -13,7 +13,7 @@
 
 <title>Exercise sheet 11: Tree Max Likelihood</title>
 
-<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -350,7 +350,8 @@ div.tocify {
         <li><a href="exercise-sheet-8.html">ES 8</a></li>
         <li><a href="exercise-sheet-9.html">ES 9</a></li>
         <li><a href="exercise-sheet-10.html">ES 10</a></li>
-        <li><a href="exercise-sheet-12.html">ES 12</a></li>
+        <li><a href="exercise-sheet-11.html">ES 11</a></li>
+         <li><a href="exercise-sheet-12.html">ES 12</a></li>
 
 
         <!--<li><a href="exercise-sheet-10.html">Sheet 10</a></li>-->
@@ -374,21 +375,15 @@ div.tocify {
 <hr />
 <div id="exercise-1---tree-max-likelihood" class="section level1">
 <h1>Exercise 1 - Tree Max Likelihood</h1>
-<p>Thomas H. Jukes and Charles Cantor (1969) found the differences in
-the evolutionary mutation rates between different nucleotides in DNA to
-be too small for reasonable modelling. Thus, they introduced the
-Jukes-Cantor model that assumes equal mutation rate <span
-class="math inline">\(\alpha\)</span> for each non-preserving nucleotide
-mutation.</p>
-<p>As introduced in the lecture this results in the following
-formulae:</p>
+<p>Thomas H. Jukes and Charles Cantor (1969) found the differences in the evolutionary mutation rates between different nucleotides in DNA to be too small for reasonable modelling. Thus, they introduced the Jukes-Cantor model that assumes equal mutation rate <span class="math inline">\(\alpha\)</span> for each non-preserving nucleotide mutation.</p>
+<p>As introduced in the lecture this results in the following formulae:</p>
 <p><span class="math display">\[
-\lambda =
+\lambda = 
   \begin{pmatrix}
     -3 \alpha &amp; \alpha &amp; \alpha &amp; \alpha \\
     \alpha &amp; -3 \alpha &amp; \alpha &amp; \alpha \\
     \alpha &amp; \alpha &amp; -3 \alpha &amp; \alpha \\
-    \alpha &amp; \alpha &amp; \alpha &amp; -3 \alpha
+    \alpha &amp; \alpha &amp; \alpha &amp; -3 \alpha 
   \end{pmatrix}
 \]</span> <span class="math display">\[\begin{align}
   p_{ii}(t) &amp;= \dfrac{1}{4}(1+3e^{-4\alpha t})\\
@@ -402,19 +397,12 @@ L_{i,s} =   \begin{cases}
   \end{cases}\\
 \]</span> For inner nodes:</p>
 <p><span class="math display">\[
-L_{k,s_{k}} =
-(\sum_{s_i}p_{s_k,s_i}(d_i)L_{i,s_i})(\sum_{s_j}p_{s_k,s_j}(d_j)L_{j,s_j})
-\]</span> Where <span class="math inline">\(s_x\)</span> represents the
-current nucleotide for node x</p>
+L_{k,s_{k}} = (\sum_{s_i}p_{s_k,s_i}(d_i)L_{i,s_i})(\sum_{s_j}p_{s_k,s_j}(d_j)L_{j,s_j})
+\]</span> Where <span class="math inline">\(s_x\)</span> represents the current nucleotide for node x</p>
 <p><span class="math display">\[
 L = \sum_{s_0} \pi_{s_0} \times L_{0,s_0}\\
 \pi = \dfrac{1}{4}
-\]</span> Given the transition rate matrix from above for <span
-class="math inline">\(\alpha = 1/100\)</span> and the evolutionary tree
-from below, calculate the conditional likelihood <span
-class="math inline">\(L_{k,s_{k}}\)</span> of the nodes 5, 6 and 0, in
-order to calculate the total tree likelihood using the maximum
-likelihood approach introduced by Felsenstein.</p>
+\]</span> Given the transition rate matrix from above for <span class="math inline">\(\alpha = 1/100\)</span> and the evolutionary tree from below, calculate the conditional likelihood <span class="math inline">\(L_{k,s_{k}}\)</span> of the nodes 5, 6 and 0, in order to calculate the total tree likelihood using the maximum likelihood approach introduced by Felsenstein.</p>
 <div id="img1-p" class="extra-m">
 <div id="img3" class="tutorial-img">
 <p><img src="figures/sheet-11/sheet11-exercise1-tree.svg" width="80%" style="display: block; margin: auto;" /></p>
@@ -422,9 +410,7 @@ likelihood approach introduced by Felsenstein.</p>
 </div>
 <div id="a" class="section level3">
 <h3>1a)</h3>
-<p>Calculate the required values for <span
-class="math inline">\(p_{ii}\)</span> and <span
-class="math inline">\(p_{ij}\)</span> given the depicted tree.</p>
+<p>Calculate the required values for <span class="math inline">\(p_{ii}\)</span> and <span class="math inline">\(p_{ij}\)</span> given the depicted tree.</p>
 <div id="section" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide" class="section level5">
@@ -433,13 +419,10 @@ class="math inline">\(p_{ij}\)</span> given the depicted tree.</p>
 <div id="hint-formulae" class="section level5">
 <h5>Hint: Formulae</h5>
 <p><span class="math display">\[\begin{align}
-  p_{ii}(1) &amp;= \frac{1}{4} * (1 + 3\times
-e^{-4\times\frac{1}{100}})\\
+  p_{ii}(1) &amp;= \frac{1}{4} * (1 + 3\times e^{-4\times\frac{1}{100}})\\
   p_{ij}(1) &amp;= \frac{1}{4} * (1 - e^{-4\times\frac{1}{100}})\\
-  p_{ii}(2) &amp;= \frac{1}{4} * (1 + 3\times e^{-4\times
-2\times\frac{1}{100}})\\
-  p_{ij}(2) &amp;= \frac{1}{4} * (1 - e^{-4\times 2 \times
-\frac{1}{100}})
+  p_{ii}(2) &amp;= \frac{1}{4} * (1 + 3\times e^{-4\times 2\times\frac{1}{100}})\\
+  p_{ij}(2) &amp;= \frac{1}{4} * (1 - e^{-4\times 2 \times \frac{1}{100}})
 \end{align}\]</span></p>
 </div>
 <div id="solution" class="section level5">
@@ -458,9 +441,7 @@ e^{-4\times\frac{1}{100}})\\
 </div>
 <div id="b" class="section level3">
 <h3>1b)</h3>
-<p>Calculate the conditional likelihood for node 5, <span
-class="math inline">\(L_{5,s_5}\)</span> , using the information of node
-1 and 2.</p>
+<p>Calculate the conditional likelihood for node 5, <span class="math inline">\(L_{5,s_5}\)</span> , using the information of node 1 and 2.</p>
 <div id="section-2" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-1" class="section level5">
@@ -469,46 +450,30 @@ class="math inline">\(L_{5,s_5}\)</span> , using the information of node
 <div id="hint-formulae-1" class="section level5">
 <h5>Hint: Formulae</h5>
 <p><span class="math display">\[\begin{align*}
-L_{5,A} = &amp;\:(p_{A,A}(1) \times L_{1,A} + p_{A,C}(1) \times L_{1,C}
-+ p_{A,G}(1) \times L_{1,G} + p_{A,T}(1) \times L_{1,T}) \\
-\times &amp;\:(p_{A,A}(1) \times L_{2,A} + p_{A,C}(1) \times L_{2,C} +
-p_{A,G}(1) \times L_{2,G} + p_{A,T}(1) \times L_{2,T}) \\
-L_{5,C} = &amp;\:(p_{C,A}(1) \times L_{1,A} + p_{C,C}(1) \times L_{1,C}
-+ p_{C,G}(1) \times L_{1,G} + p_{C,T}(1) \times L_{1,T}) \\
-\times &amp;\:(p_{C,A}(1) \times L_{2,A} + p_{C,C}(1) \times L_{2,C} +
-p_{C,G}(1) \times L_{2,G} + p_{C,T}(1) \times L_{2,T}) \\
-L_{5,G} = &amp;\:(p_{G,A}(1) \times L_{1,A} + p_{G,C}(1) \times L_{1,C}
-+ p_{G,G}(1) \times L_{1,G} + p_{G,T}(1) \times L_{1,T}) \\
-\times &amp;\:(p_{G,A}(1) \times L_{2,A} + p_{G,C}(1) \times L_{2,C} +
-p_{G,G}(1) \times L_{2,G} + p_{G,T}(1) \times L_{2,T}) \\
-L_{5,T} = &amp;\:(p_{T,A}(1) \times L_{1,A} + p_{T,C}(1) \times L_{1,C}
-+ p_{T,G}(1) \times L_{1,G} + p_{T,T}(1) \times L_{1,T}) \\
-\times &amp;\:(p_{T,A}(1) \times L_{2,A} + p_{T,C}(1) \times L_{2,C} +
-p_{T,G}(1) \times L_{2,G} + p_{T,T}(1) \times L_{2,T})
+L_{5,A} = &amp;\:(p_{A,A}(1) \times L_{1,A} + p_{A,C}(1) \times L_{1,C} + p_{A,G}(1) \times L_{1,G} + p_{A,T}(1) \times L_{1,T}) \\ 
+ \times &amp;\:(p_{A,A}(1) \times L_{2,A} + p_{A,C}(1) \times L_{2,C} + p_{A,G}(1) \times L_{2,G} + p_{A,T}(1) \times L_{2,T}) \\ 
+L_{5,C} = &amp;\:(p_{C,A}(1) \times L_{1,A} + p_{C,C}(1) \times L_{1,C} + p_{C,G}(1) \times L_{1,G} + p_{C,T}(1) \times L_{1,T}) \\ 
+ \times &amp;\:(p_{C,A}(1) \times L_{2,A} + p_{C,C}(1) \times L_{2,C} + p_{C,G}(1) \times L_{2,G} + p_{C,T}(1) \times L_{2,T}) \\ 
+L_{5,G} = &amp;\:(p_{G,A}(1) \times L_{1,A} + p_{G,C}(1) \times L_{1,C} + p_{G,G}(1) \times L_{1,G} + p_{G,T}(1) \times L_{1,T}) \\ 
+ \times &amp;\:(p_{G,A}(1) \times L_{2,A} + p_{G,C}(1) \times L_{2,C} + p_{G,G}(1) \times L_{2,G} + p_{G,T}(1) \times L_{2,T}) \\ 
+L_{5,T} = &amp;\:(p_{T,A}(1) \times L_{1,A} + p_{T,C}(1) \times L_{1,C} + p_{T,G}(1) \times L_{1,G} + p_{T,T}(1) \times L_{1,T}) \\ 
+ \times &amp;\:(p_{T,A}(1) \times L_{2,A} + p_{T,C}(1) \times L_{2,C} + p_{T,G}(1) \times L_{2,G} + p_{T,T}(1) \times L_{2,T})
 \end{align*}\]</span></p>
 </div>
 <div id="solution-1" class="section level5">
 <h5>Solution</h5>
 <p><span class="math display">\[\begin{align*}
-L_{5,A} = &amp;\:(0.970592 \times 1.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 0.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.970592 \times 1.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 0.000000 + 0.009803 \times 0.000000)\\
-L_{5,A} = &amp;\: 0.942049 \\
-L_{5,C} = &amp;\:(0.009803 \times 1.000000 + 0.970592 \times 0.000000 +
-0.009803 \times 0.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.009803 \times 1.000000 + 0.970592 \times 0.000000 +
-0.009803 \times 0.000000 + 0.009803 \times 0.000000)  \\
+L_{5,A} = &amp;\:(0.970592 \times 1.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.970592 \times 1.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000)\\ 
+L_{5,A} = &amp;\: 0.942049 \\ 
+L_{5,C} = &amp;\:(0.009803 \times 1.000000 + 0.970592 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.009803 \times 1.000000 + 0.970592 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000)  \\ 
 L_{5,C} = &amp;\: 0.000096 \\  
-L_{5,G} = &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 +
-0.970592 \times 0.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 +
-0.970592 \times 0.000000 + 0.009803 \times 0.000000) \\
+L_{5,G} = &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 + 0.970592 \times 0.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 + 0.970592 \times 0.000000 + 0.009803 \times 0.000000) \\ 
 L_{5,G} = &amp;\: 0.000096 \\
-L_{5,T} = &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 0.000000 + 0.970592 \times 0.000000) \\
-\times &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 0.000000 + 0.970592 \times 0.000000) \\
+L_{5,T} = &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.970592 \times 0.000000) \\ 
+ \times &amp;\:(0.009803 \times 1.000000 + 0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.970592 \times 0.000000) \\ 
 L_{5,T} = &amp;\: 0.000096
 \end{align*}\]</span></p>
 </div>
@@ -519,9 +484,7 @@ L_{5,T} = &amp;\: 0.000096
 </div>
 <div id="c" class="section level3">
 <h3>1c)</h3>
-<p>Calculate the conditional likelihood for node 6, <span
-class="math inline">\(L_{6,s_6}\)</span> , using the information of node
-3 and 4.</p>
+<p>Calculate the conditional likelihood for node 6, <span class="math inline">\(L_{6,s_6}\)</span> , using the information of node 3 and 4.</p>
 <div id="section-4" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-2" class="section level5">
@@ -530,47 +493,31 @@ class="math inline">\(L_{6,s_6}\)</span> , using the information of node
 <div id="hint-formulae-2" class="section level5">
 <h5>Hint: Formulae</h5>
 <p><span class="math display">\[\begin{align*}
-L_{6,A} = &amp;\:(p_{A,A}(1) \times L_{3,A} + p_{A,C}(1) \times L_{3,C}
-+ p_{A,G}(1) \times L_{3,G} + p_{A,T}(1) \times L_{3,T}) \\
-\times &amp;\:(p_{A,A}(2) \times L_{4,A} + p_{A,C}(2) \times L_{4,C} +
-p_{A,G}(2) \times L_{4,G} + p_{A,T}(2) \times L_{4,T}) \\
-L_{6,C} = &amp;\:(p_{C,A}(1) \times L_{3,A} + p_{C,C}(1) \times L_{3,C}
-+ p_{C,G}(1) \times L_{3,G} + p_{C,T}(1) \times L_{3,T}) \\
-\times &amp;\:(p_{C,A}(2) \times L_{4,A} + p_{C,C}(2) \times L_{4,C} +
-p_{C,G}(2) \times L_{4,G} + p_{C,T}(2) \times L_{4,T}) \\
-L_{6,G} = &amp;\:(p_{G,A}(1) \times L_{3,A} + p_{G,C}(1) \times L_{3,C}
-+ p_{G,G}(1) \times L_{3,G} + p_{G,T}(1) \times L_{3,T}) \\
-\times &amp;\:(p_{G,A}(2) \times L_{4,A} + p_{G,C}(2) \times L_{4,C} +
-p_{G,G}(2) \times L_{4,G} + p_{G,T}(2) \times L_{4,T}) \\  
-L_{6,T} = &amp;\:(p_{T,A}(1) \times L_{3,A} + p_{T,C}(1) \times L_{3,C}
-+ p_{T,G}(1) \times L_{3,G} + p_{T,T}(1) \times L_{3,T}) \\
-\times &amp;\:(p_{T,A}(2) \times L_{4,A} + p_{T,C}(2) \times L_{4,C} +
-p_{T,G}(2) \times L_{4,G} + p_{T,T}(2) \times L_{4,T}) \\
+L_{6,A} = &amp;\:(p_{A,A}(1) \times L_{3,A} + p_{A,C}(1) \times L_{3,C} + p_{A,G}(1) \times L_{3,G} + p_{A,T}(1) \times L_{3,T}) \\ 
+ \times &amp;\:(p_{A,A}(2) \times L_{4,A} + p_{A,C}(2) \times L_{4,C} + p_{A,G}(2) \times L_{4,G} + p_{A,T}(2) \times L_{4,T}) \\
+L_{6,C} = &amp;\:(p_{C,A}(1) \times L_{3,A} + p_{C,C}(1) \times L_{3,C} + p_{C,G}(1) \times L_{3,G} + p_{C,T}(1) \times L_{3,T}) \\ 
+ \times &amp;\:(p_{C,A}(2) \times L_{4,A} + p_{C,C}(2) \times L_{4,C} + p_{C,G}(2) \times L_{4,G} + p_{C,T}(2) \times L_{4,T}) \\
+L_{6,G} = &amp;\:(p_{G,A}(1) \times L_{3,A} + p_{G,C}(1) \times L_{3,C} + p_{G,G}(1) \times L_{3,G} + p_{G,T}(1) \times L_{3,T}) \\ 
+ \times &amp;\:(p_{G,A}(2) \times L_{4,A} + p_{G,C}(2) \times L_{4,C} + p_{G,G}(2) \times L_{4,G} + p_{G,T}(2) \times L_{4,T}) \\  
+L_{6,T} = &amp;\:(p_{T,A}(1) \times L_{3,A} + p_{T,C}(1) \times L_{3,C} + p_{T,G}(1) \times L_{3,G} + p_{T,T}(1) \times L_{3,T}) \\ 
+ \times &amp;\:(p_{T,A}(2) \times L_{4,A} + p_{T,C}(2) \times L_{4,C} + p_{T,G}(2) \times L_{4,G} + p_{T,T}(2) \times L_{4,T}) \\
 \end{align*}\]</span></p>
 </div>
 <div id="solution-2" class="section level5">
 <h5>Solution</h5>
 <p><span class="math display">\[\begin{align*}
-L_{6,A} = &amp;\:(0.970592 \times 0.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 1.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.942337 \times 0.000000 + 0.019221 \times 1.000000 +
-0.019221 \times 0.000000 + 0.019221 \times 0.000000) \\
-L_{6,A} = &amp;\: 0.000188 \\
-L_{6,C} = &amp;\:(0.009803 \times 0.000000 + 0.970592 \times 0.000000 +
-0.009803 \times 1.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.019221 \times 0.000000 + 0.942337 \times 1.000000 +
-0.019221 \times 0.000000 + 0.019221 \times 0.000000) \\
-L_{6,C} = &amp;\: 0.009237 \\
-L_{6,G} = &amp;\:(0.009803 \times 0.000000 + 0.009803 \times 0.000000 +
-0.970592 \times 1.000000 + 0.009803 \times 0.000000) \\
-\times &amp;\:(0.019221 \times 0.000000 + 0.019221 \times 1.000000 +
-0.942337 \times 0.000000 + 0.019221 \times 0.000000) \\
-L_{6,C} = &amp;\: 0.018656 \\
-L_{6,T} = &amp;\:(0.009803 \times 0.000000 + 0.009803 \times 0.000000 +
-0.009803 \times 1.000000 + 0.970592 \times 0.000000) \\
-\times &amp;\:(0.019221 \times 0.000000 + 0.019221 \times 1.000000 +
-0.019221 \times 0.000000 + 0.942337 \times 0.000000) \\
-L_{6,T} = &amp;\: 0.000188 \\
+L_{6,A} = &amp;\:(0.970592 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 1.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.942337 \times 0.000000 + 0.019221 \times 1.000000 + 0.019221 \times 0.000000 + 0.019221 \times 0.000000) \\
+L_{6,A} = &amp;\: 0.000188 \\ 
+L_{6,C} = &amp;\:(0.009803 \times 0.000000 + 0.970592 \times 0.000000 + 0.009803 \times 1.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.019221 \times 0.000000 + 0.942337 \times 1.000000 + 0.019221 \times 0.000000 + 0.019221 \times 0.000000) \\
+L_{6,C} = &amp;\: 0.009237 \\ 
+L_{6,G} = &amp;\:(0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.970592 \times 1.000000 + 0.009803 \times 0.000000) \\ 
+ \times &amp;\:(0.019221 \times 0.000000 + 0.019221 \times 1.000000 + 0.942337 \times 0.000000 + 0.019221 \times 0.000000) \\
+L_{6,C} = &amp;\: 0.018656 \\ 
+L_{6,T} = &amp;\:(0.009803 \times 0.000000 + 0.009803 \times 0.000000 + 0.009803 \times 1.000000 + 0.970592 \times 0.000000) \\ 
+ \times &amp;\:(0.019221 \times 0.000000 + 0.019221 \times 1.000000 + 0.019221 \times 0.000000 + 0.942337 \times 0.000000) \\
+L_{6,T} = &amp;\: 0.000188 \\ 
 \end{align*}\]</span></p>
 </div>
 </div>
@@ -580,9 +527,7 @@ L_{6,T} = &amp;\: 0.000188 \\
 </div>
 <div id="d" class="section level3">
 <h3>1d)</h3>
-<p>Calculate the conditional likelihood for node 0, <span
-class="math inline">\(L_{0,s_0}\)</span> , using the information of node
-5 and 6.</p>
+<p>Calculate the conditional likelihood for node 0, <span class="math inline">\(L_{0,s_0}\)</span> , using the information of node 5 and 6.</p>
 <div id="section-6" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-3" class="section level5">
@@ -590,47 +535,31 @@ class="math inline">\(L_{0,s_0}\)</span> , using the information of node
 </div>
 <div id="hint-formulae-3" class="section level5">
 <h5>Hint: Formulae</h5>
-<p><span class="math display">\[\begin{align*}
-L_{0,A} = &amp;\:(p_{A,A}(1) \times L_{5,A} + p_{A,C}(1) \times L_{5,C}
-+ p_{A,G}(1) \times L_{5,G} + p_{A,T}(1) \times L_{5,T}) \\
-\times &amp;\:(p_{A,A}(2) \times L_{6,A} + p_{A,C}(2) \times L_{6,C} +
-p_{A,G}(2) \times L_{6,G} + p_{A,T}(2) \times L_{6,T}) \\
-L_{0,C} = &amp;\:(p_{C,A}(1) \times L_{5,A} + p_{C,C}(1) \times L_{5,C}
-+ p_{C,G}(1) \times L_{5,G} + p_{C,T}(1) \times L_{5,T}) \\
-\times &amp;\:(p_{C,A}(2) \times L_{6,A} + p_{C,C}(2) \times L_{6,C} +
-p_{C,G}(2) \times L_{6,G} + p_{C,T}(2) \times L_{6,T}) \\
-L_{0,G} = &amp;\:(p_{G,A}(1) \times L_{5,A} + p_{G,C}(1) \times L_{5,C}
-+ p_{G,G}(1) \times L_{5,G} + p_{G,T}(1) \times L_{5,T}) \\
-\times &amp;\:(p_{G,A}(2) \times L_{6,A} + p_{G,C}(2) \times L_{6,C} +
-p_{G,G}(2) \times L_{6,G} + p_{G,T}(2) \times L_{6,T}) \\
-L_{0,T} = &amp;\:(p_{T,A}(1) \times L_{5,A} + p_{T,C}(1) \times L_{5,C}
-+ p_{T,G}(1) \times L_{5,G} + p_{T,T}(1) \times L_{5,T}) \\
-\times &amp;\:(p_{T,A}(2) \times L_{6,A} + p_{T,C}(2) \times L_{6,C} +
-p_{T,G}(2) \times L_{6,G} + p_{T,T}(2) \times L_{6,T})
+<p><span class="math display">\[\begin{align*} 
+L_{0,A} = &amp;\:(p_{A,A}(1) \times L_{5,A} + p_{A,C}(1) \times L_{5,C} + p_{A,G}(1) \times L_{5,G} + p_{A,T}(1) \times L_{5,T}) \\ 
+ \times &amp;\:(p_{A,A}(2) \times L_{6,A} + p_{A,C}(2) \times L_{6,C} + p_{A,G}(2) \times L_{6,G} + p_{A,T}(2) \times L_{6,T}) \\ 
+L_{0,C} = &amp;\:(p_{C,A}(1) \times L_{5,A} + p_{C,C}(1) \times L_{5,C} + p_{C,G}(1) \times L_{5,G} + p_{C,T}(1) \times L_{5,T}) \\ 
+ \times &amp;\:(p_{C,A}(2) \times L_{6,A} + p_{C,C}(2) \times L_{6,C} + p_{C,G}(2) \times L_{6,G} + p_{C,T}(2) \times L_{6,T}) \\ 
+L_{0,G} = &amp;\:(p_{G,A}(1) \times L_{5,A} + p_{G,C}(1) \times L_{5,C} + p_{G,G}(1) \times L_{5,G} + p_{G,T}(1) \times L_{5,T}) \\ 
+ \times &amp;\:(p_{G,A}(2) \times L_{6,A} + p_{G,C}(2) \times L_{6,C} + p_{G,G}(2) \times L_{6,G} + p_{G,T}(2) \times L_{6,T}) \\ 
+L_{0,T} = &amp;\:(p_{T,A}(1) \times L_{5,A} + p_{T,C}(1) \times L_{5,C} + p_{T,G}(1) \times L_{5,G} + p_{T,T}(1) \times L_{5,T}) \\ 
+ \times &amp;\:(p_{T,A}(2) \times L_{6,A} + p_{T,C}(2) \times L_{6,C} + p_{T,G}(2) \times L_{6,G} + p_{T,T}(2) \times L_{6,T})
 \end{align*}\]</span></p>
 </div>
 <div id="solution-3" class="section level5">
 <h5>Solution</h5>
 <p><span class="math display">\[\begin{align*}
-L_{0,A} = &amp;\:(0.970592 \times 0.942049 + 0.009803 \times 0.000096 +
-0.009803 \times 0.000096 + 0.009803 \times 0.000096) \\
-\times &amp;\:(0.942337 \times 0.000188 + 0.019221 \times 0.009237 +
-0.019221 \times 0.018656 + 0.019221 \times 0.000188) \\
-L_{0,A} = &amp;\: 0.000656 \\
-L_{0,C} = &amp;\:(0.009803 \times 0.942049 + 0.970592 \times 0.000096 +
-0.009803 \times 0.000096 + 0.009803 \times 0.000096) \\
-\times &amp;\:(0.019221 \times 0.000188 + 0.942337 \times 0.009237 +
-0.019221 \times 0.018656 + 0.019221 \times 0.000188) \\
+L_{0,A} = &amp;\:(0.970592 \times 0.942049 + 0.009803 \times 0.000096 + 0.009803 \times 0.000096 + 0.009803 \times 0.000096) \\ 
+ \times &amp;\:(0.942337 \times 0.000188 + 0.019221 \times 0.009237 + 0.019221 \times 0.018656 + 0.019221 \times 0.000188) \\
+L_{0,A} = &amp;\: 0.000656 \\ 
+L_{0,C} = &amp;\:(0.009803 \times 0.942049 + 0.970592 \times 0.000096 + 0.009803 \times 0.000096 + 0.009803 \times 0.000096) \\ 
+ \times &amp;\:(0.019221 \times 0.000188 + 0.942337 \times 0.009237 + 0.019221 \times 0.018656 + 0.019221 \times 0.000188) \\
 L_{0,C} = &amp;\: 0.000085 \\
-L_{0,G} = &amp;\:(0.009803 \times 0.942049 + 0.009803 \times 0.000096 +
-0.970592 \times 0.000096 + 0.009803 \times 0.000096) \\
-\times &amp;\:(0.019221 \times 0.000188 + 0.019221 \times 0.009237 +
-0.942337 \times 0.018656 + 0.019221 \times 0.000188) \\
+L_{0,G} = &amp;\:(0.009803 \times 0.942049 + 0.009803 \times 0.000096 + 0.970592 \times 0.000096 + 0.009803 \times 0.000096) \\ 
+ \times &amp;\:(0.019221 \times 0.000188 + 0.019221 \times 0.009237 + 0.942337 \times 0.018656 + 0.019221 \times 0.000188) \\ 
 L_{0,G} = &amp;\: 0.000166 \\
-L_{0,T} = &amp;\:(0.009803 \times 0.942049 + 0.009803 \times 0.000096 +
-0.009803 \times 0.000096 + 0.970592 \times 0.000096) \\
-\times &amp;\:(0.019221 \times 0.000188 + 0.019221 \times 0.009237 +
-0.019221 \times 0.018656 + 0.942337 \times 0.000188) \\
+L_{0,T} = &amp;\:(0.009803 \times 0.942049 + 0.009803 \times 0.000096 + 0.009803 \times 0.000096 + 0.970592 \times 0.000096) \\ 
+ \times &amp;\:(0.019221 \times 0.000188 + 0.019221 \times 0.009237 + 0.019221 \times 0.018656 + 0.942337 \times 0.000188) \\ 
 L_{0,T} = &amp;\: 0.000007
 \end{align*}\]</span></p>
 </div>
@@ -650,14 +579,13 @@ L_{0,T} = &amp;\: 0.000007
 <div id="hint-formulae-4" class="section level5">
 <h5>Hint: Formulae</h5>
 <p><span class="math display">\[\begin{align*}
-L = (\pi \times L_{0,A}) + (\pi \times L_{0,C}) + (\pi \times L_{0,G}) +
-(\pi \times L_{0,T})
+L = (\pi \times L_{0,A}) + (\pi \times L_{0,C}) + (\pi \times L_{0,G}) + (\pi \times L_{0,T})
 \end{align*}\]</span></p>
 </div>
 <div id="solution-4" class="section level5">
 <h5>Solution</h5>
 <p><span class="math display">\[\begin{align*}
-L &amp;= \frac{1}{4} * 0.000656 + \frac{1}{4} * 0.000085 \\
+L &amp;= \frac{1}{4} * 0.000656 + \frac{1}{4} * 0.000085 \\ 
   &amp;+ \frac{1}{4} * 0.000166 + \frac{1}{4} * 0.000007 \\
 L &amp;= 0.000228
 \end{align*}\]</span></p>
@@ -671,12 +599,9 @@ L &amp;= 0.000228
 </div>
 <div id="exercise-2---programming-assignment" class="section level1">
 <h1>Exercise 2 - Programming assignment</h1>
-<p>Programming assignments are available via Github Classroom and
-contain automatic tests.</p>
-<p>We recommend doing these assignments since they will help you to
-further understand this topic.</p>
-<p>Access the Github Classroom link: <a href="">Programming Assignment:
-Sheet 11</a>.</p>
+<p>Programming assignments are available via Github Classroom and contain automatic tests.</p>
+<p>We recommend doing these assignments since they will help you to further understand this topic.</p>
+<p>Access the Github Classroom link: <a href="https://classroom.github.com/a/jD1LT7d3">Programming Assignment: Sheet 11</a>.</p>
 </div>
 
 
