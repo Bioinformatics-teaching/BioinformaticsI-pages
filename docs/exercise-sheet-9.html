@@ -367,7 +367,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Exercise sheet 9: Progressive Alignment by Feng and Doolittle</h1>
+<h1 class="title toc-ignore">Exercise sheet 9: Progressive Alignment by
+Feng and Doolittle</h1>
 
 </div>
 
@@ -376,15 +377,42 @@ div.tocify {
 <div id="exercise-1---scoring-matrices" class="section level1">
 <h1>Exercise 1 - Scoring Matrices</h1>
 <p>Lets warm up your brain a bit after a long break.</p>
-<p>Determine the correct text by replacing the highlighted words with the correct anagrams:</p>
+<p>Determine the correct text by replacing the highlighted words with
+the correct anagrams:</p>
 <div id="section" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide" class="section level5">
 <h5>Hide</h5>
-<p>Scoring matrices reflect the fact that amino acids with similar <strong>(A) isehcayhilccpmo</strong> properties can be more easily substituted than those without similar characteristics, since they are more likely to cause <strong>(B) rsistnupoid</strong> to the structure and function. This type of disruptive <strong>(C) uuttotsbnisi</strong> is less likely to be selected in evolution because it renders <strong>(D) iouanctfnlonn</strong> proteins.</p>
-<p>PAM matrices, except PAM1, are derived from an <strong>(E) raniyeooutvl</strong> model. The increasing PAM numbers correlate with increasing PAM units and thus evolutionary <strong>(F) tsnascedi</strong> of protein sequences. For example, PAM250, which corresponds to about 20% amino acid <strong>(G) tyedniti</strong>, represents 250 mutations per 100 residues (a position could mutate several times). In theory, the number of <strong>(E) raniyeooutvl</strong> changes approximately corresponds to an expected <strong>(E) raniyeooutvl</strong> span of 2,500 million years. Thus, the PAM250 matrix is normally used for <strong>(H) neirtdgve</strong> sequences.</p>
-<p>BLOSUM matrices are derived based on direct observation for every possible amino acid <strong>(C) uuttotsbnisi</strong> in multiple sequence alignments. Instead of using the <strong>(I) earoopatitnlx function</strong>, the BLOSUM matrices are actual percentage identity values of sequences selected for construction of the matrices. For example, BLOSUM62 indicates that the sequences selected for constructing the matrix share an average identity value of 62%.</p>
-<p>This is why the PAM matrices are used most often for reconstructing <strong>(J) ogctnihpyele</strong> trees. However, because of the mathematical <strong>(I) earoopatitnlx</strong> procedure used, the PAM values may be less realistic for <strong>(H) neirtdgve</strong> sequences.</p>
+<p>Scoring matrices reflect the fact that amino acids with similar
+<strong>(A) isehcayhilccpmo</strong> properties can be more easily
+substituted than those without similar characteristics, since they are
+more likely to cause <strong>(B) rsistnupoid</strong> to the structure
+and function. This type of disruptive <strong>(C) uuttotsbnisi</strong>
+is less likely to be selected in evolution because it renders
+<strong>(D) iouanctfnlonn</strong> proteins.</p>
+<p>PAM matrices, except PAM1, are derived from an <strong>(E)
+raniyeooutvl</strong> model. The increasing PAM numbers correlate with
+increasing PAM units and thus evolutionary <strong>(F)
+tsnascedi</strong> of protein sequences. For example, PAM250, which
+corresponds to about 20% amino acid <strong>(G) tyedniti</strong>,
+represents 250 mutations per 100 residues (a position could mutate
+several times). In theory, the number of <strong>(E)
+raniyeooutvl</strong> changes approximately corresponds to an expected
+<strong>(E) raniyeooutvl</strong> span of 2,500 million years. Thus, the
+PAM250 matrix is normally used for <strong>(H) neirtdgve</strong>
+sequences.</p>
+<p>BLOSUM matrices are derived based on direct observation for every
+possible amino acid <strong>(C) uuttotsbnisi</strong> in multiple
+sequence alignments. Instead of using the <strong>(I) earoopatitnlx
+function</strong>, the BLOSUM matrices are actual percentage identity
+values of sequences selected for construction of the matrices. For
+example, BLOSUM62 indicates that the sequences selected for constructing
+the matrix share an average identity value of 62%.</p>
+<p>This is why the PAM matrices are used most often for reconstructing
+<strong>(J) ogctnihpyele</strong> trees. However, because of the
+mathematical <strong>(I) earoopatitnlx</strong> procedure used, the PAM
+values may be less realistic for <strong>(H) neirtdgve</strong>
+sequences.</p>
 </div>
 <div id="solution" class="section level5">
 <h5>Solution</h5>
@@ -406,27 +434,41 @@ div.tocify {
 <h4 class="unnumbered"></h4>
 </div>
 </div>
-<div id="exercise-2---progressive-alignment-by-feng-and-doolittle" class="section level1">
+<div id="exercise-2---progressive-alignment-by-feng-and-doolittle"
+class="section level1">
 <h1>Exercise 2 - Progressive Alignment by Feng and Doolittle</h1>
-<p>Given the sequences <span class="math inline">\(S_1 = CTCACA\)</span>, <span class="math inline">\(S_2 = CAC\)</span>, <span class="math inline">\(S_3 = GTAC\)</span> and the following scoring function:</p>
+<p>Given the sequences <span class="math inline">\(S_1 =
+CTCACA\)</span>, <span class="math inline">\(S_2 = CAC\)</span>, <span
+class="math inline">\(S_3 = GTAC\)</span> and the following scoring
+function:</p>
 <p><span class="math display">\[\begin{align}
   s(S_i,S_j) &amp;=
   \begin{cases}
       +1 &amp; if\ S_i = S_j \\
-      0 &amp; if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor  S_j = \blacklozenge) \lor (S_i = -  \land  S_j = -)\\
+      0 &amp; if\ (S_i \neq S_j) \lor (S_i = \blacklozenge  \lor  S_j =
+\blacklozenge) \lor (S_i = -  \land  S_j = -)\\
       -1 &amp; else\\
   \end{cases}\\
 \end{align}\]</span></p>
-<p>We want to do progressive alignment following Feng and Doolittle. The needed pairwise alignments are calculated using the Needleman-Wunsch and are as follows:</p>
+<p>We want to do progressive alignment following Feng and Doolittle. The
+needed pairwise alignments are calculated using the Needleman-Wunsch and
+are as follows:</p>
 <div id="img1-p" class="extra-m">
 <div id="img3" class="tutorial-img">
 <p><img src="figures/sheet-9/sheet9-exercise2-alignments.svg" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<p>We want to follow one step of the algorithm introduced in the lecture. The following guide trees are given in <a href="https://en.wikipedia.org/wiki/Newick_format">Newick format</a>.</p>
+<p>We want to follow one step of the algorithm introduced in the
+lecture. The following guide trees are given in <a
+href="https://en.wikipedia.org/wiki/Newick_format">Newick
+format</a>.</p>
 <div id="a" class="section level3">
 <h3>2a)</h3>
-<p>Starting with the guide tree <strong>((<span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_3\)</span>), <span class="math inline">\(S_2\)</span>)</strong>, what would be the starting <strong><span class="math inline">\(group_1\)</span></strong>?</p>
+<p>Starting with the guide tree <strong>((<span
+class="math inline">\(S_1\)</span>, <span
+class="math inline">\(S_3\)</span>), <span
+class="math inline">\(S_2\)</span>)</strong>, what would be the starting
+<strong><span class="math inline">\(group_1\)</span></strong>?</p>
 <div id="section-2" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-1" class="section level5">
@@ -445,7 +487,10 @@ GT◆AC◆</code></pre>
 </div>
 <div id="b" class="section level3">
 <h3>2b)</h3>
-<p>Use the Needleman-Wunsch algorithm to generate all pairwise alignments against <strong><span class="math inline">\(group_1\)</span></strong> and calculate their respective <strong>similarity score</strong>.</p>
+<p>Use the Needleman-Wunsch algorithm to generate all pairwise
+alignments against <strong><span
+class="math inline">\(group_1\)</span></strong> and calculate their
+respective <strong>similarity score</strong>.</p>
 <div id="section-4" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-2" class="section level5">
@@ -485,7 +530,9 @@ GT◆AC◆</code></pre>
 </div>
 <div id="c" class="section level3">
 <h3>2c)</h3>
-<p>Based on the previously calculated pairwise alignments what are the possible choices for <strong><span class="math inline">\(group_2\)</span></strong>?</p>
+<p>Based on the previously calculated pairwise alignments what are the
+possible choices for <strong><span
+class="math inline">\(group_2\)</span></strong>?</p>
 <div id="section-6" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-3" class="section level5">
@@ -511,7 +558,9 @@ GT◆AC◆</code></pre>
 </div>
 <div id="d" class="section level3">
 <h3>2d)</h3>
-<p>Calculate the sum-of-pairs scores for each of the possible <strong><span class="math inline">\(group_2\)</span></strong> choices.</p>
+<p>Calculate the sum-of-pairs scores for each of the possible
+<strong><span class="math inline">\(group_2\)</span></strong>
+choices.</p>
 <div id="section-8" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-4" class="section level5">
@@ -524,7 +573,8 @@ GT◆AC◆</code></pre>
 <p><img src="figures/infoicon.svg" /><!-- --> <strong>Note</strong></p>
 </div>
 <div id="note-exp" class="note-body">
-<p>Don’t forget to replace the ◆ symbol with the <span class="math inline">\(-\)</span></p>
+<p>Don’t forget to replace the ◆ symbol with the <span
+class="math inline">\(-\)</span></p>
 </div>
 </div>
 </div>
@@ -550,7 +600,8 @@ GT-AC-</code></pre>
 </div>
 <div id="e" class="section level3">
 <h3>2e)</h3>
-<p>Which final alignment would be picked regarding its sum of pairs score.</p>
+<p>Which final alignment would be picked regarding its sum of pairs
+score.</p>
 <div id="section-10" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-5" class="section level5">
@@ -569,7 +620,11 @@ GT-AC-</code></pre>
 </div>
 <div id="f" class="section level3">
 <h3>2f)</h3>
-<p>Based on what you have learned, what are the alignments and sum-of-pairs scores for the guide tree <strong>((<span class="math inline">\(S_2\)</span>, <span class="math inline">\(S_3\)</span>), <span class="math inline">\(S_1\)</span>)</strong>?</p>
+<p>Based on what you have learned, what are the alignments and
+sum-of-pairs scores for the guide tree <strong>((<span
+class="math inline">\(S_2\)</span>, <span
+class="math inline">\(S_3\)</span>), <span
+class="math inline">\(S_1\)</span>)</strong>?</p>
 <div id="section-12" class="section level4 tabset">
 <h4 class="tabset"></h4>
 <div id="hide-6" class="section level5">

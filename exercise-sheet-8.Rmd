@@ -80,12 +80,25 @@ knitr::include_graphics("figures/sheet-8/sheet8-exercise1-E.svg")
   
   
 
-##### Answer
+##### Intermediate Values
 
-
+Non normalized values. Further multiplied by $|a'|$
 
 ```{r, include=FALSE}
 sij <- read.csv("tables/sheet-8/b_1.csv", check.names=FALSE, sep=",")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+##### Answer
+
+
+```{r, include=FALSE}
+sij <- read.csv("tables/sheet-8/b_1_final.csv", check.names=FALSE, sep=",")
 ```
 
 ```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
