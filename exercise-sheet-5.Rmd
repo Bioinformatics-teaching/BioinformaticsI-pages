@@ -312,7 +312,10 @@ knitr::include_graphics("figures/infoicon.svg")
 :::
 ::: {#note-exp .note-body}
 Distance scores are not suited for local alignment scoring, thus all minimization 
-approaches are not suitable. Further $g(1)$ does not represent an affine scoring.
+approaches are not suitable. Therefore $iii$ and $iv$ don't represent the recursion.
+
+According to the algorithm we only need to put gap introduction score into the $D$ matrix.
+Thus $ii$ is also wrong.
 :::
 ::::
 
