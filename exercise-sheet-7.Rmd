@@ -102,7 +102,7 @@ What is the expected probability that he is behind after an infinitely long seme
 
 ##### Solution
 
-The Probability is 2/3
+The Probability is 1/3
 
 
 $$
