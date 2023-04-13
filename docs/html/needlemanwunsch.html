@@ -1,0 +1,15 @@
+    <label for="seqA">Sequence A:</label>
+    <input type="text" id="seqA" name="fname" value="AATGAGT"><br><br>
+    <label for="seqB">Sequence B:</label>
+    <input type="text" id="seqB" name="fname" value="TGGGT"><br><br>
+
+    <label for="match">match:</label>
+    <input type="number" id="match" name="match" value="1" min="0" required="true" step="1" inputmode="numeric" oninput="wipeTable()"><br><br>
+    <label for="mismatch">mismatch:</label>
+    <input type="number" id="mismatch" name="mismatch" value="-1" step="1" oninput="wipeTable()" max="0"><br><br>
+    <label for="gap">gap:</label>
+    <input type="number" id="gap" name="mismatch" value="-2" oninput="wipeTable()" max="0"><br><br>
+    <button onclick="checkTable()">Check Matrix</button>
+<div name="nwtablediv" class="nwtablediv">
+  <table id="table1">
+</div>

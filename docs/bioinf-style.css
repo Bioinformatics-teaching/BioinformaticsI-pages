@@ -225,3 +225,41 @@ pre {
     display: block;
   }
 }
+
+
+.nwtablediv input[type="number"] {
+     width: 100%;
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+    -moz-appearance: textfield;
+    border-style: hidden;
+    text-align: center;
+
+}
+
+.nwtablediv td {
+  border: 1px solid;
+}
+
+.nwtablediv th {
+  border: 2px solid;
+}
+
+.nwtablediv {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.nwtablediv input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
