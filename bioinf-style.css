@@ -258,8 +258,72 @@ pre {
       margin: 0;
   }
 
-label {
+.nwselector label {
         display: inline-block;
-        width: 150px;
+        width: 30%;
         text-align: right;
+        color: white;
+
+
+
       }
+
+.nwselector input {
+  display: inline-block;
+
+  width: 69%;
+  border: 1px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+label, input, button {
+    font-size: inherit;
+    padding: 0.2em;
+    margin: 0em;
+    /* the following ensures they're all using the same box-model for rendering */
+    box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+    -moz-appearance: textfield;
+}
+
+.nwselector {
+  margin: 10px auto;
+  width: 90%;
+  align-items: right;
+  background-color: #2780e3;
+  border: 0px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 .2rem .5rem grey, 0 0 .0625rem grey !important;
+}
+
+.nwselector label {
+    color: white;
+
+}
+
+.selectordiv {
+  background-color:  #ebf5fb ;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 .2rem .5rem #d8d8d8, 0 0 .0625rem #d8d8d8 !important;
+
+}
+
+.checker {
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  padding: 0px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
