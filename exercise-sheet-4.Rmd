@@ -183,7 +183,7 @@ Consider the following sequences $S1$ , $S2$ and the similarity scoring via $s(x
 ### 3a)
 
 Which optimization scheme (minimization/maximization) needs to be applied to generate
-an useful sequence alignment.
+a useful sequence alignment.
 
 #### {.tabset}
 
@@ -409,7 +409,7 @@ Calculate the alignments using the Waterman-Smith-Beyer algorithm instead.
 
 ##### Solution
 
-The same alignments as in 3C, since the same scoring function is optimized.
+The same alignments as in (3c), since the same scoring function is optimized.
 Calculation is just less efficient.
 
 #### {-}
