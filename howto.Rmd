@@ -44,14 +44,14 @@ knitr::include_graphics("figures/howto/navbar.png")
 All exercise sheets are made for self-learning and provide questions, hints and a master-solution.
 
 There are no deadlines when exercises should be finished.
-Keep in mind though that exercise discussions will be held every week for a certain exercise sheet. We advise you to do one exercise-sheet every week to not lose track of the discussions.
+Keep in mind though that exercise discussions will be held every week for a certain exercise sheet. We advise you to do one exercise sheet every week to not lose track of the discussions.
 
-A detailed schedule is available on our Ilias page.
+A detailed schedule is available on our ILIAS page.
 
 
 # Programming Tasks
 
-Some exercise-sheets have programming tasks.
+Some exercise sheets have programming tasks.
 
 :::: {#explaining .message-box }
 
@@ -81,7 +81,7 @@ knitr::include_graphics("figures/howto/programming.png")
 :::
 ::::
 
-In Github Classroom we provide automated testing for solutions written in python. You are of course welcome to use whatever language you prefer, but the automatic tests will not work for other languages.
+In Github Classroom we provide automated testing for solutions written in Python. You are of course welcome to use whatever language you prefer, but the automatic tests will not work for other languages.
 
 The link provided will lead you to the specific assignment.
 
