@@ -7,7 +7,7 @@ title: "Exercise sheet 1: Biology Basics"
 # Exercise 1 - General
 
 Here are some general biology questions. Using the Possible Solutions tab will
-convert each question to multiple choice. In the solution only correct answer sare ticked.
+convert each question to multiple choice. In the solution only correct answers are ticked.
 
 ### 1a)
 
@@ -237,7 +237,7 @@ What is denoted by the “Central Dogma” of molecular biology?
 
 
 # Exercise 2 - DNA and RNA
-The genetic information of an organism is stored in the DNA in the form of a code. This code consists of four building blocks or bases (A for adenine, C for cytosine, G for guanine, T for thymine). These bases or nucleotides follow each other in a certain sequence, e.g.:
+The genetic information of an organism is stored in the DNA in the form of a code. This code consists of four building blocks or bases (`A` for adenine, `C` for cytosine, `G` for guanine, `T` for thymine). These bases or nucleotides follow each other in a certain sequence, e.g.:
 ```
 AGTCGTAATTGGCCCCAATTGCAAAAA
 ```
