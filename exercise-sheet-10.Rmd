@@ -1,0 +1,388 @@
+---
+title: "Exercise sheet 10: UPGMA"
+---
+
+---------------------------------
+
+```{r, include=FALSE}
+source("custom_functions.R")
+library(flextable)
+library(officer)
+```
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+
+A phylogenetic tree (also phylogeny or evolutionary tree [^1]) is a branching diagram or a tree showing the evolutionary relationships among various biological species or other entities based upon similarities and differences in their physical or genetic characteristics. All life on Earth is part of a single phylogenetic tree, indicating common ancestry.
+
+
+*https://en.wikipedia.org/wiki/Phylogenetic_tree*
+
+:::
+::::
+
+::::{#img1-p .extra-m}
+::: {#img3 .tutorial-img}
+UPGMA (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UPGMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded method for inferring phylogenetic trees unless this assumption has been tested and justified for the data set being used.
+
+*https://en.wikipedia.org/wiki/UPGMA*
+
+:::
+::::
+
+
+# Exercise 1 - WPGMA
+
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Distances for a merged cluster $e$, where $e = c \cup d$:
+
+$$
+WPGMA: dist(x, e) = \dfrac{dist(x,c) + dist(x,d)}{2}
+$$
+
+:::
+::::
+
+In the following steps we calculate the evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+### 1a)
+
+Which leaves should be selected first?
+
+#### {.tabset }
+
+##### Hide
+
+##### Hint
+
+- [ ] c and d
+- [ ] a and b
+- [ ] d and e
+
+##### Solution
+
+- [ ] c and d
+- [x] a and b
+- [ ] d and e
+
+#### {-}
+
+### 1b)
+
+Calculate the corresponding distance for the set of leaves from *a)*.
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+**1.5**
+
+
+
+#### {-}
+
+### 1c)
+
+Fill in the distance matrix with the correct distances form the set of leaves 
+(aka. internal node) from *a)* to all other leaves.
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1c.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+
+#### {-}
+
+
+### 1d)
+
+
+Which nodes are joined next given the correct distance matrix from *c)*? 
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+- [ ] c and d
+- [ ] {a,b} and e
+- [ ] {c, d} and e
+- [ ] e and a
+
+##### Solution
+
+- [x] c and d
+- [ ] {a,b} and e
+- [ ] {c, d} and e
+- [ ] e and a
+
+#### {-}
+
+### 1e)
+
+Fill in a distance matrix with the remaining nodes and leaves.
+
+#### {.tabset}
+
+
+##### Hide
+
+
+##### Solution
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e1e.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+#### {-}
+
+### 1f)
+
+What does the **subpart** of the tree look like in Newick format after selecting and joining your answer from *e)*
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+The following answers will be given in [Newick format](https://en.wikipedia.org/wiki/Newick_format).
+Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex).
+
+:::
+::::
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+- [ ] `((c : 3, d : 3) : 3.5, e : 3.5);`
+- [ ] `((c : 3, d : 3) : 0.5, e : 3.5);`
+- [ ] `((a : 1.5, b : 1.5) : 2.75, e : 4.25);`
+
+
+##### Solution
+
+- [ ] `((c : 3, d : 3) : 3.5, e : 3.5);`
+- [x] `((c : 3, d : 3) : 0.5, e : 3.5);`
+- [ ] `((a : 1.5, b : 1.5) : 2.75, e : 4.25);`
+
+#### {-}
+
+### 1g)
+
+Following the approach from the previous exercises, what does the **whole tree** look like.
+
+
+#### {.tabset}
+
+
+##### Hide
+
+
+##### Hint
+
+- [ ] `((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);`
+- [ ] `((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);`
+- [ ] `(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);`
+
+##### Solution
+
+- [x] `((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);`
+- [ ] `((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);`
+- [ ] `(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);`
+
+
+#### {-}
+
+
+
+# Exercise 2 - UPGMA
+
+
+### 2a)
+
+Imagine using UPGMA instead of WPGMA for construction of a tree. Which of the following statements is True?
+
+#### {.tabset} 
+
+
+##### Statements
+
+- [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
+- [ ] The tree in Exercise 1 will not change
+- [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
+- [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.
+
+##### Hint: Formula
+
+$$
+UPGMA: dist(x, e) = \dfrac{|c|dist(x,c) + |d|dist(x,d)}{|c| + |d|}
+$$
+
+
+##### Solution
+
+- [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
+- [ ] The tree in Exercise 1 will not change
+- [x] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
+- [x] UPGMA can end up with wrong topologies when using non-ultrametric distances.
+
+
+#### {-}
+
+
+# Exercise 3 - Ultrametric
+
+
+
+
+### 3a)
+
+Which of the following distance matrices are ultrametric?
+
+
+:::: {.flex-container}
+
+::: {#half .half}
+
+1)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::: {#half .half}
+
+2)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_2.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::::
+
+:::: {.flex-container}
+
+
+::: {#half .half}
+
+3)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_3.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+::: {#half .half}
+
+4)
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("tables/sheet10_e3_4.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+::: 
+
+:::: 
+
+#### {.tabset} 
+
+##### Hide
+
+##### Hint
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Definition Ultra-Metric:
+
+\begin{align}
+  w(x,y) &= 0  \leftrightarrow x = y\ &\text{(identity)}\\
+  w(x, y) &= w(y, x)\ &\text{(symmetric)}\\
+  w (x, z) &\leq w (x, y ) + w (y , z) &\text{(triangle inequality)}\\
+  w (x, z) &\leq max\{ w (x, y ), w (y , z)\} &\text{(strong triangle inequality)}
+\end{align}
+
+:::
+::::
+
+##### Solution
+
+**2)**
+
+
+#### {-}
+
+---------------------------------
+
+# Exercise 4 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 10](https://classroom.github.com/a/xHt2U5xf).
+
+
+[^1]: Felsenstein, Joseph, and Joseph Felenstein. Inferring phylogenies. Vol. 2. Sunderland, MA: Sinauer associates, 2004.

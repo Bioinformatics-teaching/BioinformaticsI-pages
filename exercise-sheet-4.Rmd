@@ -1,0 +1,438 @@
+
+
+```{r, include=FALSE}
+source("custom_functions.R")
+library(flextable)
+library(officer)
+```
+
+---
+title: "Exercise sheet 4: Sequence Alignment - affine gap costs"
+---
+
+---------------------------------
+
+# Exercise 1 - Waterman-Smith-Beyer traceback
+
+Within the algorithm of Waterman, Smith and Beyer arbitrarily large gaps are considered. 
+Thus, also the traceback has to investigate all gap sizes. This can be done following two strategies:
+
+- check in increasing gap length (start with smallest gap)
+- check in decreasing gap length (start with largest gap)
+
+
+### 1a)
+
+Given a gap function, are the strategies 
+(measured in absolute runtime or number operations) expected to be equally
+performant or is one of them better than the other?
+
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Possible Answers
+
+::: {.answer data-latex=""}
+
+- [ ] both are equally performant.
+- [ ] checking in increasing direction performs better
+- [ ] checking in decreasing direction performs better
+
+
+::: 
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+- [x] both are equally performant. 
+- [ ] checking in increasing direction performs better
+- [ ] checking in decreasing direction performs better
+
+(You still have to check all possible gap sizes)
+
+::: 
+
+#### {-}
+
+### 1b)
+
+Does the order of checking insertion and deletions change the runtime?
+
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Possible Answers
+
+::: {.answer data-latex=""}
+
+
+ - [ ] yes, checking insertions first will perform better
+ - [ ] yes, checking deletions first will perform better
+ - [ ] no, the order doesn't affect performance
+ - [ ] checking in an alternating way might improve performance
+
+
+::: 
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+
+ - [ ] yes, checking insertions first will perform better
+ - [ ] yes, checking deletions first will perform better
+ - [x] no, the order doesn't affect performance
+ - [ ] checking in an alternating way might improve performance
+
+(You still have to check all possible gaps and sizes)
+
+::: 
+
+#### {-}
+
+# Exercise 2 - Waterman-Smith-Beyer traceback
+
+Given the Waterman-Smith-Beyer algorithm with the following scoring function:
+
+\begin{align}
+s(x,y)&=
+\begin{cases}
+  -1 & if\ x = y \\
+  +1 & else\\ 
+\end{cases}\\
+g(k) &= 1 + k
+\end{align}
+
+When aligning sequences of very different lengths the penalizing of leading and trailing gaps, i.e unaligned sequence ends, dominates the alignment score.
+
+We distinguish between leading and trailing gaps (example):
+
+```
+A-CC-CC-G
+-TCCGCCT-
+``` 
+
+In this case the leading gaps are:
+
+```
+A-
+-T
+``` 
+
+The trailing gaps are:
+
+```
+-G
+T-
+```
+
+The algorithm by Waterman, Smith and Beyer can be adapted to treat end gaps with a score of 0.
+The adapted recursion formula is defined here, where n and m are the lengths of the respective sequences:
+
+Let $A$ and $B$ be sequences of length $n$ and $m$ respectively 
+
+$$
+a_i \in A,\ with\ 1 \leq i \leq n \\
+b_j \in B,\ with\ 1 \leq j \leq m
+$$
+
+:::: {#explaining .warning-box }
+
+::: {#note-exp .warning-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/warningicon.svg")
+```
+**Warning**
+:::
+::: {#note-exp .note-body}
+
+The previously uploaded recursion schema was wrong. We will either try to fix
+this exercise or remove it completely. Sorry for any inconvenience.
+
+(Also let us know if you can provide a correct recursion schema)
+
+:::
+
+
+::::
+
+# Exercise 3 - Gotoh Algorithm
+
+Consider the following sequences $S1$ , $S2$ and the similarity scoring via $s(x, y)$ and $g(k)$.
+
+\begin{align}
+  S1 &= TCCGA\\
+  S2 &= TACGCAGA\\
+  s(x,y) &=
+  \begin{cases}
+      +1 & if\ x = y \\
+      0 & else\\ 
+  \end{cases}\\
+  g(k) &= -4 - 1 * k
+\end{align}
+
+
+
+### 3a)
+
+Which optimization scheme (minimization/maximization) needs to be applied to generate
+a useful sequence alignment.
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Solution
+
+Maximization since we are scoring a similarity and not a distance.
+
+
+#### {-}
+
+### 3b)
+
+Fill the dynamic programming matrices $D_{i,j}$, $Q_{i,j}$ and $P_{i,j}$ using the Gotoh algorithm! 
+
+(Remember: $D_{i,j}$ is the match/mismatch matrix. $Q_{i,j}$ corresponds to gaps in $S1$ whilst $P_{i,j}$ corresponds to gaps in $S2$)
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Hint1: Formulae
+
+\begin{align}
+g(k) &= \alpha + k * \beta \\
+\\
+D_{i,j} &= max
+  \begin{cases}
+     D_{i-1, j-1} + s(a_i, b_i)\\
+     P_{i, j}\\
+     Q_{i,j}
+  \end{cases}\\
+\\
+Q_{i,j} &= max
+  \begin{cases}
+     D_{i, j-1} + g(1)\\
+     Q_{i, j-1} + \beta\\
+  \end{cases}\\
+\\
+P_{i,j} &= max
+  \begin{cases}
+     D_{i-1, j} + g(1)\\
+     P_{i-1, j} + \beta\\
+  \end{cases}
+\end{align}
+
+
+##### Hint2: Add the missing values
+
+
+```{r, include=FALSE}
+dij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(" ", " ",  " ",   " ",   " ", " " ),
+                  c = c(" ", " ",  " ",   -5,   -6, -7 ),
+                  d = c(" ", " ",  " ",   -4,   -5, -5 ),
+                  e = c(" ", " ",  " ",    2,   -3, -4 ),
+                  f = c(" ", " ",  " ",   -3,   3, -2 ),
+                  g = c(" ", -7, -5,  -4,  " " ,   " "),
+                  h = c(" ", -8, -7,  -5,  " " ,   " "),
+                  i = c(" ", -9, -8,  -6,  " " ,   " "),
+                  j = c(" ", -10, -9,  -7,  " " ,   " ")
+                  )
+names(dij) <- c("D_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, include=FALSE}
+qij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(" ", " ",  " ",   " ",   " ", " " ),
+                  c = c(" ", " ",  " ",   -12,   -13, -14 ),
+                  d = c(" ", " ",  " ",   -10,   -11, -12 ),
+                  e = c(" ", " ",  " ",    -9,   -10, -10 ),
+                  f = c(" ", -6, -5,  -3,  " " ,   " "),
+                  g = c(" ", -7, -6,  -4,  " " ,   " "),
+                  h = c(" ", -8, -7,  -5,  " " ,   " "),
+                  i = c(" ", -9, -8,  -6,  " " ,   " "),
+                  j = c(" ", -10, -9,  -7,  " " ,   " ")
+                  )
+names(qij) <- c("Q_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, include=FALSE}
+pij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(" ", " ",  " ",   " ",   " ", " " ),
+                  c = c(" ", " ",  " ",   -5,   -6, -7 ),
+                  d = c(" ", " ",  " ",   -4,   -5, -6 ),
+                  e = c(" ", " ",  " ",    -8,   -3, -4 ),
+                  f = c(" ", -13, -11,  -10,  " " ,   " "),
+                  g = c(" ", -14, -12,  -10,  " " ,   " "),
+                  h = c(" ", -15, -13,  -12,  " " ,   " "),
+                  i = c(" ", -16, -14,  -13,  " " ,   " "),
+                  j = c(" ", -17, -15,  -14,  " " ,   " ")
+                  )
+names(pij) <- c("P_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+dij_ft <- flextable(dij)
+dij_ft <- custom_theme(dij_ft)
+index_replace(dij_ft)
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+qij_ft <- flextable(qij)
+qij_ft <- custom_theme(qij_ft)
+index_replace(qij_ft)
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+pij_ft <- flextable(pij)
+pij_ft <- custom_theme(pij_ft)
+index_replace(pij_ft)
+```
+
+##### Solution
+
+```{r, include=FALSE}
+dij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(0, -5,  -6,   -7,   -8, -9 ),
+                  c = c(-5, 1,  -4,   -5,   -6, -7 ),
+                  d = c(-6, -4,  1,   -4,   -5, -5 ),
+                  e = c(-7, -5,  -3,    2,   -3, -4 ),
+                  f = c(-8, -6,  -5,   -3,   3, -2 ),
+                  g = c(-9, -7, -5,  -4,  -2 ,   3),
+                  h = c(-10, -8, -7,  -5,  -3 ,   -1),
+                  i = c(-11, -9, -8,  -6,  -4 ,   -3),
+                  j = c(-12, -10, -9,  -7,  -5 ,   -3)
+                  )
+names(dij) <- c("D_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, include=FALSE}
+qij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(0, "-inf",  "-inf",   "-inf",   "-inf", "-inf" ),
+                  c = c(0, -10,  -11,   -12,   -13, -14 ),
+                  d = c(0, -4,  -9,   -10,   -11, -12 ),
+                  e = c(0, -5,  -4,    -9,   -10, -10 ),
+                  f = c(0, -6, -5,  -3,  -8 ,   -9),
+                  g = c(0, -7, -6,  -4,  -2 ,   -7),
+                  h = c(0, -8, -7,  -5,  -3 ,   -2),
+                  i = c(0, -9, -8,  -6,  -4,   -3),
+                  j = c(0, -10, -9,  -7,  -5,   -4)
+                  )
+names(qij) <- c("Q_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, include=FALSE}
+pij <- data.frame(a = c("-", "T",  "C",   "C",   "G", "A" ),
+                  b = c(0, 0,  0,   0,   0, 0 ),
+                  c = c("-inf", -10,  -4,   -5,   -6, -7 ),
+                  d = c("-inf", -11,  -9,   -4,   -5, -6 ),
+                  e = c("-inf", -12,  -10,    -8,   -3, -4 ),
+                  f = c("-inf", -13, -11,  -10,  -8 ,   -2),
+                  g = c("-inf", -14, -12,  -10,  -9 ,   -7),
+                  h = c("-inf", -15, -13,  -12,  -10 ,   -8),
+                  i = c("-inf", -16, -14,  -13,  -11 ,   -9),
+                  j = c("-inf", -17, -15,  -14,  -12 ,   -10)
+                  )
+names(pij) <- c("P_{i,j}", "-", "T1", "A1", "C1", "G1", "C2", "A2", "G2", "A3")
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+dij_ft <- flextable(dij)
+dij_ft <- custom_theme(dij_ft)
+index_replace(dij_ft)
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+qij_ft <- flextable(qij)
+qij_ft <- custom_theme(qij_ft)
+index_replace(qij_ft)
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+pij_ft <- flextable(pij)
+pij_ft <- custom_theme(pij_ft)
+index_replace(pij_ft)
+```
+
+#### {-}
+
+
+### 3c)
+
+Calculate all optimal alignments and the corresponding score!
+
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Solution
+
+Score: -3
+
+```   
+T---CCGA    TCC---GA    TCCG---A
+|   |:||    |:|   ||    |:||   |
+TACGCAGA    TACGCAGA    TACGCAGA
+```
+
+
+#### {-}
+
+### 3d)
+
+Calculate the alignments using the Waterman-Smith-Beyer algorithm instead.
+
+
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
+
+The same alignments as in (3c), since the same scoring function is optimized.
+Calculation is just less efficient.
+
+#### {-}
+
+
+
+---------------------------------
+
+# Exercise 4 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 04](https://classroom.github.com/a/qvHvwhcf).
+
+-------------------------------------------
+
+
+
+
+
+
+
+
+

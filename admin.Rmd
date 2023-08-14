@@ -1,0 +1,87 @@
+---
+title: "Admin"
+---
+
+---------------------------------
+
+::: {#ingo .ingo}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/ingo.svg")
+```
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/alex.svg")
+```
+::: 
+
+
+<h2>
+  <a href="exercise-sheet-1.html">
+    Sheet1
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-2.html">
+    Sheet2
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-3.html">
+    Sheet3
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-4.html">
+    Sheet4
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-5.html">
+    Sheet5
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-6.html">
+    Sheet6
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-7.html">
+    Sheet7
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-8.html">
+    Sheet8
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-9.html">
+    Sheet9
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-10.html">
+    Sheet10
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-11.html">
+    Sheet11
+  </a>
+</h2>
+
+<h2>
+  <a href="exercise-sheet-12.html">
+    Sheet12
+  </a>
+</h2>

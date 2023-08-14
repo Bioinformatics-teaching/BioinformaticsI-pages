@@ -12,6 +12,8 @@ output:
       collapsed: false
     theme: "cosmo"
     css: "bioinf-style.css"
+    includes:
+       in_header: header.html
   pdf_document:
     includes:
       in_header: "_tex/latex_commands.tex"

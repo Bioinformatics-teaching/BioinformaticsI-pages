@@ -1,0 +1,324 @@
+---
+title: "Exercise sheet 2: Edit operations and alignments"
+---
+
+---------------------------------
+
+# Exercise 1 - Levenshtein Distance
+
+Compute the minimal Levenshtein edit distance for the following pairs of sequences.
+
+### 1a)
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = A\\
+S_{2} = T
+\end{align}
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Hint
+
+A `r knitr::asis_output("\U2192")` T
+
+
+
+##### Correct Answer
+
+A `r knitr::asis_output("\U2192")` T = 1
+
+#### {-}
+
+### 1b)
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} &= AGATATA\\
+S_{2} &= TATATATA
+\end{align}
+
+:::
+
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Hint
+
+AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` ...
+
+
+##### Correct Answer
+
+AGATATA `r knitr::asis_output("\U2192")` ATATATA `r knitr::asis_output("\U2192")` TATATATA = 2
+
+#### {-}
+
+
+### 1c)
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = AGTCCT\\
+S_{2} = CGCTCA
+\end{align}
+
+:::
+
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Hint
+
+AGTCCT `r knitr::asis_output("\U2192")` AGCTCA `r knitr::asis_output("\U2192")` ...
+
+
+
+##### Correct Answer
+
+AGTCCT `r knitr::asis_output("\U2192")` CGTCCT `r knitr::asis_output("\U2192")` CGCCCT `r knitr::asis_output("\U2192")` CGCTCT `r knitr::asis_output("\U2192")` CGCTCA = 4
+
+#### {-}
+
+
+### 1d)
+
+
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = TGCATAT\\
+S_{2} = ATCCGAT
+\end{align}
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Hint
+
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ...
+
+
+
+##### Correct Answer
+
+TGCATAT `r knitr::asis_output("\U2192")` AGCATAT `r knitr::asis_output("\U2192")` ATCATAT `r knitr::asis_output("\U2192")` ATCAGAT `r knitr::asis_output("\U2192")` ATCCGAT = 4
+
+#### {-}
+
+
+### 1e)
+
+
+
+::: {.question data-latex=""}
+
+\begin{align}
+S_{1} = ACGTATATAGCCCCGCG\\
+S_{2} = ACGTTATATAGCCGCGC
+\end{align}
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+
+
+##### Hint
+
+You need to use all the possible operations
+
+ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ...
+
+##### Correct Answer
+
+ACGTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCCCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGCG `r knitr::asis_output("\U2192")` ACGTTATATAGCCGCGC = 3
+
+#### {-}
+
+
+
+# Exercise 2 - Metric function
+
+Check if the corresponding functions are metric.
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Formulae
+
+
+:::: {#explaining .message-box }
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+Definition Metric:
+
+\begin{align}
+  w(x,y) &= 0  \leftrightarrow x = y\ &\text{(identity)}\\
+  w(x, y) &= w(y, x)\ &\text{(symmetric)}\\
+  w (x, z) &\leq w (x, y ) + w (y , z) &\text{(triangle inequality)}
+\end{align}
+
+:::
+::::
+
+#### {-}
+
+
+### 2a)
+
+\begin{align}
+w(x,y) = x-y
+\end{align}
+
+#### {.tabset}
+
+
+##### Hide
+
+##### Hint
+
+What if $x = 1$ and $y = 2$?
+
+
+##### Correct Answer
+
+Not a metric, violates symmetry constraint.
+
+$$
+x = 1\\
+y = 2\\
+x - y = 1 - 2 = -1 \neq 1 = 2 - 1 = y - x
+$$
+
+#### {-}
+
+
+
+### 2b)
+
+\begin{align}
+w(x,y) = |x-y|
+\end{align}
+
+
+
+#### {.tabset}
+
+
+##### Hide
+
+
+##### Hint
+
+You need to check all the properties.
+
+
+##### Correct Answer
+
+Metric
+
+
+#### {-}
+
+### 2c)
+
+\begin{align}
+w(x,y) = x+y
+\end{align}
+
+#### {.tabset}
+
+
+##### Hide
+
+
+##### Hint
+
+What if $x = 1$ and $y = 1$?
+
+##### Correct Answer
+
+Not metric, violates identity constraint:
+
+$$
+x = y = 1\\
+x + y = x + x = 2 \neq 0 
+$$
+
+#### {-}
+
+### 2d)
+
+\begin{align}
+w(x,y) = \begin{cases} 1 \ \text{if}\ x  \neq y
+\\0\ \text{else}
+\end{cases}
+\end{align}
+
+
+#### {.tabset}
+
+
+##### Hide
+
+
+
+##### Hint
+
+You need to check all the properties.
+
+##### Correct Answer
+
+Metric
+
+
+#### {-}
+
+#### {.tabset} 
+
+---------------------------------
+
+# Exercise 3 - Programming assignment
+
+Programming assignments are available via Github Classroom and contain automatic tests.
+
+We recommend doing these assignments since they will help you to further understand this topic.
+
+Access the Github Classroom link: [Programming Assignment: Sheet 02](https://classroom.github.com/a/F-sdH7RI).
+
+-------------------------------------------
+
+
